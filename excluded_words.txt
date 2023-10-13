@@ -1,0 +1,8 @@
+sample
+instant
+capsule
+box
+gift card
+subscription
+t-shirt
+merch
