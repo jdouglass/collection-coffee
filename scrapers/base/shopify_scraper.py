@@ -1,7 +1,7 @@
 import requests
 import json
 from decimal import Decimal
-from continent import Continent
+from enums.continent import Continent
 
 
 class CoffeeScraper:
@@ -15,7 +15,7 @@ class CoffeeScraper:
         self.excluded_words = self.load_excluded_words()
 
     def load_excluded_words(self):
-        with open('excluded_words.txt', 'r') as f:
+        with open('data/excluded_words.txt', 'r') as f:
             return [line.strip().lower() for line in f]
 
     def fetch_products(self):

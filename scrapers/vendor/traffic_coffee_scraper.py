@@ -1,8 +1,7 @@
-from shopify_scraper import CoffeeScraper
-from country_to_continent_mapper import get_continent
+from scrapers.base.shopify_scraper import CoffeeScraper
+from helpers.country_to_continent_mapper import get_continent
+from helpers.variety_normalizer import normalize_variety_names
 import pycountry
-
-from variety_normalizer import normalize_variety_names
 
 
 class TrafficCoffeeScraper(CoffeeScraper):

@@ -1,4 +1,4 @@
 .env
 .vscode
 __pycache__
-cacert.pem
+config/cacert.pem

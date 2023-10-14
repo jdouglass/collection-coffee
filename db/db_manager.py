@@ -19,7 +19,7 @@ def get_db_connection():
         autocommit=True,
         ssl_mode="VERIFY_IDENTITY",
         ssl={
-            "ca": "./cacert.pem"
+            "ca": "./config/cacert.pem"
         }
     )
     return connection

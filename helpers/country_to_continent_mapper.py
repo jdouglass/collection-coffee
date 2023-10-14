@@ -1,4 +1,4 @@
-from continent import Continent
+from enums.continent import Continent
 
 
 country_to_continent = {

@@ -1,6 +1,6 @@
 import argparse
-from traffic_coffee_scraper import TrafficCoffeeScraper
-from db_manager import save_to_db, delete_old_products, delete_orphaned_records
+from scrapers.vendor.traffic_coffee_scraper import TrafficCoffeeScraper
+from db.db_manager import save_to_db, delete_old_products, delete_orphaned_records
 
 SCRAPER_CLASSES = {
     "Traffic Coffee": (TrafficCoffeeScraper, "https://www.trafficcoffee.com/collections/our-coffees/products.json?limit=250")
