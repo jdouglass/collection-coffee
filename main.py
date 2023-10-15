@@ -1,10 +1,12 @@
 import argparse
 from scrapers.vendor.traffic_coffee_scraper import TrafficCoffeeScraper
 from db.db_manager import save_to_db, delete_old_products, delete_orphaned_records
+from data.coffee_vendors_data import coffee_vendors_data
 
 SCRAPER_CLASSES = {
-    "Traffic Coffee": (TrafficCoffeeScraper, "https://www.trafficcoffee.com/collections/our-coffees/products.json?limit=250")
-    # You can extend this by adding more vendor: (ScraperClass, URL) pairs
+    vendor_data["key"]: (
+        vendor_data["scraper_class"], vendor_data["url"])
+    for vendor_data in coffee_vendors_data
 }
 
 
