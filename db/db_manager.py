@@ -29,6 +29,18 @@ def save_to_db(products):
     connection = get_db_connection()
     cursor = connection.cursor()
 
+    check_product_to_variety_query = """
+        SELECT COUNT(*)
+        FROM ProductToVariety
+        WHERE product_id = %s AND variety_id = %s;
+    """
+
+    check_product_to_tasting_note_query = """
+        SELECT COUNT(*)
+        FROM ProductToTastingNote
+        WHERE product_id = %s AND tasting_note_id = %s;
+    """
+
     insert_variety_query = """
         INSERT IGNORE INTO Variety (name) VALUES (%s)
     """
@@ -152,15 +164,25 @@ def save_to_db(products):
             cursor.execute(insert_variety_query, (variety,))
             cursor.execute(get_variety_id_query, (variety,))
             variety_id = cursor.fetchone()[0]
-            cursor.execute(insert_product_to_variety_query,
+
+            # Check if the relationship already exists
+            cursor.execute(check_product_to_variety_query,
                            (product_id, variety_id))
+            if cursor.fetchone()[0] == 0:  # Relationship doesn't exist
+                cursor.execute(insert_product_to_variety_query,
+                               (product_id, variety_id))
 
         for tasting_note in tasting_notes:
             cursor.execute(insert_tasting_note_query, (tasting_note,))
             cursor.execute(get_tasting_note_id_query, (tasting_note,))
             tasting_note_id = cursor.fetchone()[0]
-            cursor.execute(insert_product_to_tasting_note_query,
+
+            # Check if the relationship already exists
+            cursor.execute(check_product_to_tasting_note_query,
                            (product_id, tasting_note_id))
+            if cursor.fetchone()[0] == 0:  # Relationship doesn't exist
+                cursor.execute(insert_product_to_tasting_note_query,
+                               (product_id, tasting_note_id))
 
     connection.commit()
     cursor.close()
@@ -227,6 +249,19 @@ def delete_orphaned_records():
     """
     cursor.execute(delete_orphaned_varieties_query)
     print(f"{cursor.rowcount} orphan varieties deleted")
+
+    # Deleting orphaned relationships in ProductToVariety and ProductToTastingNote
+    cursor.execute('''
+        DELETE FROM ProductToVariety
+        WHERE product_id NOT IN (SELECT id FROM Product)
+    ''')
+    print(f"{cursor.rowcount} orphaned relationships deleted from ProductToVariety")
+
+    cursor.execute('''
+        DELETE FROM ProductToTastingNote
+        WHERE product_id NOT IN (SELECT id FROM Product)
+    ''')
+    print(f"{cursor.rowcount} orphaned relationships deleted from ProductToTastingNote")
 
     connection.commit()
     cursor.close()
