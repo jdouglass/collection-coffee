@@ -1,6 +1,7 @@
 from scrapers.base.shopify_scraper import CoffeeScraper
 from helpers.country_to_continent_mapper import get_continent
 from helpers.variety_normalizer import normalize_variety_names
+from enums.process_category import ProcessCategory
 import pycountry
 
 
@@ -126,14 +127,14 @@ class TrafficCoffeeScraper(CoffeeScraper):
     def get_process_category(self, body_html):
         process = self.extract_process(body_html)
 
-        if "Washed" in process:
-            return "Washed"
-        elif "Natural" in process:
-            return "Natural"
-        elif process == "Unknown":
-            return "Unknown"
+        if ProcessCategory.WASHED.name in process:
+            return ProcessCategory.WASHED.name
+        elif ProcessCategory.NATURAL.name in process:
+            return ProcessCategory.NATURAL.name
+        elif process == ProcessCategory.UNKNOWN.name:
+            return ProcessCategory.UNKNOWN.name
         else:
-            return "Experimental"
+            return ProcessCategory.EXPERIMENTAL.name
 
     def is_decaf(self, title):
         formatted_title = title.lower()
