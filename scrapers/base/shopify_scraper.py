@@ -2,6 +2,7 @@ import requests
 import json
 from decimal import Decimal
 from enums.continent import Continent
+from enums.process_category import ProcessCategory
 
 
 class CoffeeScraper:
@@ -52,6 +53,18 @@ class CoffeeScraper:
 
     def is_sold_out(self, product):
         return not product["variants"][0]["available"]
+
+    def get_process_category(self, body_html):
+        process = self.extract_process(body_html)
+
+        if ProcessCategory.WASHED.name in process:
+            return ProcessCategory.WASHED.name
+        elif ProcessCategory.NATURAL.name in process:
+            return ProcessCategory.NATURAL.name
+        elif process == ProcessCategory.UNKNOWN.name:
+            return ProcessCategory.UNKNOWN.name
+        else:
+            return ProcessCategory.EXPERIMENTAL.name
 
     def display_products(self, products):
         print(json.dumps(products, default=self.decimal_serializer,
