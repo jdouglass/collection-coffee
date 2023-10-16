@@ -1,6 +1,9 @@
 import MySQLdb
 import os
+from config.config import USE_DATABASE
 from dotenv import load_dotenv
+
+from utils.print_once import check_use_database
 load_dotenv()
 
 # Retrieve database configuration from environment variables
@@ -25,7 +28,9 @@ def get_db_connection():
     return connection
 
 
+@check_use_database
 def save_to_db(products):
+
     connection = get_db_connection()
     cursor = connection.cursor()
 
@@ -189,6 +194,7 @@ def save_to_db(products):
     connection.close()
 
 
+@check_use_database
 def delete_old_products(products):
     connection = get_db_connection()
     cursor = connection.cursor()
@@ -215,6 +221,7 @@ def delete_old_products(products):
     connection.close()
 
 
+@check_use_database
 def delete_orphaned_records():
     connection = get_db_connection()
     cursor = connection.cursor()
