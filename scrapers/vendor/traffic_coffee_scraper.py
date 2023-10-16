@@ -45,17 +45,15 @@ class TrafficCoffeeScraper(CoffeeScraper):
         return processed_products
 
     def validate_country_name(self, country_str):
-        # Convert string to have the first letter of each word capitalized
-        formatted_country_str = ' '.join(
-            [word.capitalize() for word in country_str.split()])
+        country_str = country_str.title()
 
         # Check if '&' or '+' is present, which indicates multiple countries
-        if '&' in formatted_country_str or '+' in formatted_country_str:
+        if '&' in country_str or '+' in country_str:
             return "Multiple"
 
         # Validate if the string is a valid country name
         try:
-            country = pycountry.countries.lookup(formatted_country_str)
+            country = pycountry.countries.lookup(country_str)
             return country.name
         except LookupError:
             return "Unknown"
