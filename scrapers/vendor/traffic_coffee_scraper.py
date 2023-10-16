@@ -1,6 +1,7 @@
 from scrapers.base.shopify_scraper import CoffeeScraper
 from helpers.country_to_continent_mapper import get_continent
 from helpers.variety_normalizer import normalize_variety_names
+from config.constants import UNKNOWN, MULTIPLE, LBS_TO_GRAMS
 import pycountry
 
 
@@ -49,14 +50,14 @@ class TrafficCoffeeScraper(CoffeeScraper):
 
         # Check if '&' or '+' is present, which indicates multiple countries
         if '&' in country_str or '+' in country_str:
-            return "Multiple"
+            return MULTIPLE
 
         # Validate if the string is a valid country name
         try:
             country = pycountry.countries.lookup(country_str)
             return country.name
         except LookupError:
-            return "Unknown"
+            return UNKNOWN
 
     def extract_brand(self):
         return self.vendor
@@ -67,7 +68,7 @@ class TrafficCoffeeScraper(CoffeeScraper):
             if start_pos != -1:
                 break
         else:
-            return "Unknown"
+            return UNKNOWN
         start_pos = body_html.find(":", start_pos) + 1
         info = body_html[start_pos:].strip()
         for tag in ['<span>', '</span>', '<strong>', '</strong>', '<span data-mce-fragment=\"1\">']:
@@ -81,14 +82,14 @@ class TrafficCoffeeScraper(CoffeeScraper):
                 if 'g' in weight:
                     return int(weight.split('g')[0].strip())
                 elif 'lb' in weight:
-                    return int(float(weight.split('lb')[0].strip()) * self.lbs_to_grams)
+                    return int(float(weight.split('lb')[0].strip()) * LBS_TO_GRAMS)
                 break
             else:
                 weight = product["variants"][0]["title"]
                 if 'g' in weight:
                     return int(weight.split('g')[0].strip())
                 elif 'lb' in weight:
-                    return int(float(weight.split('lb')[0].strip()) * self.lbs_to_grams)
+                    return int(float(weight.split('lb')[0].strip()) * LBS_TO_GRAMS)
 
     def extract_country_of_origin(self, body_html):
         keywords = ["Origin"]
@@ -102,7 +103,7 @@ class TrafficCoffeeScraper(CoffeeScraper):
         variety_info = variety_info.replace(" &amp; ", ", ")
         variety_info = variety_info.replace("/", ",")
         if variety_info == "":
-            return ["Unknown"]
+            return [UNKNOWN]
         variety_list = [x.strip().title() for x in variety_info.split(',')]
         return normalize_variety_names(variety_list)
 
@@ -110,14 +111,14 @@ class TrafficCoffeeScraper(CoffeeScraper):
         keywords = ["Notes", "In the cup"]
         notes_info = self._extract_from_body(body_html, keywords)
         if notes_info == "":
-            return ["Unknown"]
+            return [UNKNOWN]
         return [x.strip().title() for x in notes_info.split(',')]
 
     def extract_process(self, body_html):
         keywords = ["Process"]
         process_info = self._extract_from_body(body_html, keywords)
         if process_info == "":
-            return "Unknown"
+            return UNKNOWN
         return process_info.title().strip()
 
     def build_product_url(self, handle):

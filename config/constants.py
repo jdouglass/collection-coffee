@@ -1,2 +1,4 @@
-UNKNOWN_STRING = "Unknown"
-UNKNOWN_ARRAY = [UNKNOWN_STRING]
+UNKNOWN = "Unknown"
+MULTIPLE = "Multiple"
+DEFAULT_IMAGE_URL = "https://via.placeholder.com/300x280.webp?text=No+Image+Available"
+LBS_TO_GRAMS = 453.59237

@@ -3,11 +3,10 @@ import json
 from decimal import Decimal
 from enums.continent import Continent
 from enums.process_category import ProcessCategory
+from config.constants import DEFAULT_IMAGE_URL
 
 
 class CoffeeScraper:
-
-    lbs_to_grams = 453.59237
 
     def __init__(self, url, vendor):
         self.url = url
@@ -37,7 +36,7 @@ class CoffeeScraper:
         return product["published_at"]
 
     def extract_image_url(self, product):
-        return product["images"][0]["src"] if product["images"] else "foo"
+        return product["images"][0]["src"] if product["images"] else DEFAULT_IMAGE_URL
 
     def extract_handle(self, product):
         return product["handle"]

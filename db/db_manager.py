@@ -1,6 +1,5 @@
 import MySQLdb
 import os
-from config.config import USE_DATABASE
 from dotenv import load_dotenv
 
 from utils.print_once import check_use_database
@@ -151,11 +150,17 @@ def save_to_db(products):
                 product["is_decaf"]
             ))
         except MySQLdb.Error as e:
-            print(f"Error inserting product {product['title']}: {e}")
+            print(
+                f"Error inserting product {product}: {e}")
 
         # Insert the product first to get the product ID
         cursor.execute(get_product_id_query, (product["product_url"],))
-        product_id = cursor.fetchone()[0]
+        result = cursor.fetchone()
+        if result:
+            product_id = result[0]
+        else:
+            print("No results found for the given product URL.")
+            continue  # skip this iteration and move to the next product
 
         varieties = product.get("varieties", [])
         tasting_notes = product.get("tasting_notes", [])

@@ -1,5 +1,4 @@
 import argparse
-from scrapers.vendor.traffic_coffee_scraper import TrafficCoffeeScraper
 from db.db_manager import save_to_db, delete_old_products, delete_orphaned_records
 from data.coffee_vendors_data import coffee_vendors_data
 
