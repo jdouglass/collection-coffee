@@ -1,11 +1,11 @@
-from scrapers.base.shopify_scraper import CoffeeScraper
+from scrapers.base.shopify_scraper import ShopifyScraper
 from helpers.country_to_continent_mapper import get_continent
 from helpers.variety_normalizer import normalize_variety_names
 from config.constants import UNKNOWN, MULTIPLE, LBS_TO_GRAMS
 import pycountry
 
 
-class TrafficCoffeeScraper(CoffeeScraper):
+class TrafficCoffeeScraper(ShopifyScraper):
     def process_products(self, fetched_products):
         # If fetched_products is provided, use it. Otherwise, use the products fetched by the base method
         products_to_process = fetched_products if fetched_products is not None else super().process_products()

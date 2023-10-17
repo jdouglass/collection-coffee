@@ -6,7 +6,7 @@ coffee_vendors_data = [
         "url": "https://www.trafficcoffee.com/collections/our-coffees/products.json?limit=250",
         "vendor": "Traffic Coffee",
         "scraper_class": TrafficCoffeeScraper,
-        "mock_data_path": "traffic_coffee.json",
+        "mock_data_path": "scrapers/mock_data/traffic_coffee.json",
         "mock_html_dom_path": "traffic_coffee.html",
         "currency": "CAD",
         "vendor_location": "Canada"
