@@ -24,11 +24,9 @@ class BaseScraper:
     def fetch_products(self):
         if USE_MOCK_DATA:
             self.products = self.load_mock_data(self.mock_data_path)
-            print(self.products)
         response = requests.get(self.url)
         data = response.json()
         self.products = data['products']
-        print(self.products)
 
     def get_vendor(self, vendor):
         return vendor
