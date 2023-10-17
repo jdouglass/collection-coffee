@@ -18,15 +18,17 @@ class BaseScraper:
             return [line.strip().lower() for line in f]
 
     def load_mock_data(self, filename):
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding='utf-8') as file:
             return json.load(file)
 
     def fetch_products(self):
         if USE_MOCK_DATA:
             self.products = self.load_mock_data(self.mock_data_path)
+            print(self.products)
         response = requests.get(self.url)
         data = response.json()
         self.products = data['products']
+        print(self.products)
 
     def get_vendor(self, vendor):
         return vendor
