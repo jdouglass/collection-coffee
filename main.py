@@ -1,6 +1,7 @@
 import argparse
 from db.db_manager import save_to_db, delete_old_products, delete_orphaned_records
 from data.coffee_vendors_data import coffee_vendors_data
+from config.config import PRINT_PRODUCTS
 
 SCRAPER_CLASSES = {
     vendor_data["key"]: (
@@ -30,4 +31,5 @@ if __name__ == "__main__":
         save_to_db(processed_products)
         delete_old_products(processed_products)
         delete_orphaned_records()
-        # scraper_instance.display_products(processed_products)
+        if PRINT_PRODUCTS:
+            scraper_instance.display_products(processed_products)
