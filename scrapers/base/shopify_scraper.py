@@ -36,7 +36,3 @@ class ShopifyScraper(BaseScraper):
             return ProcessCategory.UNKNOWN.name
         else:
             return ProcessCategory.EXPERIMENTAL.name
-
-    def display_products(self, products):
-        print(json.dumps(products, default=self.decimal_serializer,
-              indent=4, ensure_ascii=False))
