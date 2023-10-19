@@ -10,6 +10,8 @@ def normalize_variety_names(varieties):
         'Sl34': 'SL-34',
         'Sl32': 'SL-32',
         'Sl 28': 'SL-28',
+        'Sl Varieties': 'SL Varieties',
+        'Landraces': 'Ethiopian Landraces'
     }
 
     normalized_varieties = [mapping.get(

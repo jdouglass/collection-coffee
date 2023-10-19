@@ -1,6 +1,4 @@
-import json
 from decimal import Decimal
-from enums.process_category import ProcessCategory
 from config.constants import DEFAULT_IMAGE_URL
 from scrapers.base.base_scraper import BaseScraper
 
@@ -24,15 +22,3 @@ class ShopifyScraper(BaseScraper):
 
     def is_sold_out(self, product):
         return not product["variants"][0]["available"]
-
-    def get_process_category(self, body_html):
-        process = self.extract_process(body_html)
-
-        if ProcessCategory.WASHED.name in process:
-            return ProcessCategory.WASHED.name
-        elif ProcessCategory.NATURAL.name in process:
-            return ProcessCategory.NATURAL.name
-        elif process == ProcessCategory.UNKNOWN.name:
-            return ProcessCategory.UNKNOWN.name
-        else:
-            return ProcessCategory.EXPERIMENTAL.name

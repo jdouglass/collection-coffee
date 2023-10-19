@@ -3,6 +3,7 @@ import requests
 from decimal import Decimal
 from enums.continent import Continent
 from config.config import USE_MOCK_DATA
+from enums.process_category import ProcessCategory
 
 
 class BaseScraper:
@@ -10,11 +11,14 @@ class BaseScraper:
         self.url = url
         self.vendor = vendor
         self.products = []
-        self.excluded_words = self.load_excluded_words()
         self.mock_data_path = mock_data_path
 
     def load_excluded_words(self):
         with open('data/excluded_words.txt', 'r') as f:
+            return [line.strip().lower() for line in f]
+
+    def load_coffee_brands(self):
+        with open('data/coffee_brands.txt', 'r') as f:
             return [line.strip().lower() for line in f]
 
     def load_mock_data(self, filename):
@@ -30,6 +34,16 @@ class BaseScraper:
 
     def get_vendor(self, vendor):
         return vendor
+
+    def get_process_category(self, process):
+        if ProcessCategory.WASHED.value in process:
+            return ProcessCategory.WASHED.value
+        elif ProcessCategory.NATURAL.value in process:
+            return ProcessCategory.NATURAL.value
+        elif process == ProcessCategory.UNKNOWN.value:
+            return ProcessCategory.UNKNOWN.value
+        else:
+            return ProcessCategory.EXPERIMENTAL.value
 
     @staticmethod
     def decimal_serializer(obj):

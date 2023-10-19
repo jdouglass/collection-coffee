@@ -2,3 +2,4 @@
 .vscode
 __pycache__
 config/cacert.pem
+output.txt
