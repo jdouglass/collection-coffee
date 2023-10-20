@@ -55,5 +55,6 @@ class BaseScraper:
         raise TypeError("Type not serializable")
 
     def display_products(self, products):
-        print(json.dumps(products, default=self.decimal_serializer,
-              indent=4, ensure_ascii=False))
+        with open("output.txt", "w") as f:
+            print(json.dumps(products, default=self.decimal_serializer,
+                  indent=4, ensure_ascii=False), file=f)

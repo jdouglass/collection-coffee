@@ -30,7 +30,9 @@ country_to_continent = {
     'Timor Leste': Continent.ASIA,
     'Paraguay': Continent.SOUTH_AMERICA,
     'Myanmar': Continent.ASIA,
-    'Papua New Guinea': Continent.OCEANIA
+    'Papua New Guinea': Continent.OCEANIA,
+    'Congo': Continent.AFRICA,
+    'Uganda': Continent.AFRICA
 }
 
 

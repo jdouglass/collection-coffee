@@ -3,3 +3,4 @@
 __pycache__
 config/cacert.pem
 output.txt
+logs.txt

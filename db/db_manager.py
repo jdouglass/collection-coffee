@@ -1,7 +1,7 @@
 import MySQLdb
 import os
 from dotenv import load_dotenv
-
+from config.constants import LOG_FILENAME
 from utils.print_once import check_use_database
 load_dotenv()
 
@@ -129,7 +129,22 @@ def save_to_db(products):
         SELECT id FROM TastingNote WHERE name = %s;
     """
 
+    delete_product_to_variety_query = """
+        DELETE FROM ProductToVariety WHERE product_id = %s AND variety_id = %s;
+    """
+
+    delete_product_to_tasting_note_query = """
+        DELETE FROM ProductToTastingNote WHERE product_id = %s AND tasting_note_id = %s;
+    """
+
     for product in products:
+        try:
+            cursor.execute(insert_brand_query, (product["brand"],))
+        except MySQLdb.Error as e:
+            with open(LOG_FILENAME, "a") as f:
+                print(
+                    f"Duplicate brand not inserted {product['brand']}: {e}", file=f)
+
         # Insert product data into Product table
         try:
             cursor.execute(insert_product_query, (
@@ -150,8 +165,9 @@ def save_to_db(products):
                 product["is_decaf"]
             ))
         except MySQLdb.Error as e:
-            print(
-                f"Error inserting product {product}: {e}")
+            with open(LOG_FILENAME, "a") as f:
+                print(
+                    f"Error inserting product {product}: {e}", file=f)
 
         # Insert the product first to get the product ID
         cursor.execute(get_product_id_query, (product["product_url"],))
@@ -159,40 +175,57 @@ def save_to_db(products):
         if result:
             product_id = result[0]
         else:
-            print("No results found for the given product URL.")
+            with open(LOG_FILENAME, "a") as f:
+                print("No results found for the given product URL.", file=f)
             continue  # skip this iteration and move to the next product
 
-        varieties = product.get("varieties", [])
-        tasting_notes = product.get("tasting_notes", [])
+        # For varieties
+        existing_varieties = set()
+        cursor.execute(
+            "SELECT variety_id FROM ProductToVariety WHERE product_id = %s;", (product_id,))
+        for row in cursor.fetchall():
+            existing_varieties.add(row[0])
 
-        try:
-            cursor.execute(insert_brand_query, (product["brand"],))
-        except MySQLdb.Error as e:
-            print(f"Duplicate brand not inserted {product['brand']}: {e}")
-
-        for variety in varieties:
+        scraped_varieties = set()
+        for variety in product.get("varieties", []):
             cursor.execute(insert_variety_query, (variety,))
             cursor.execute(get_variety_id_query, (variety,))
             variety_id = cursor.fetchone()[0]
+            scraped_varieties.add(variety_id)
 
-            # Check if the relationship already exists
-            cursor.execute(check_product_to_variety_query,
-                           (product_id, variety_id))
-            if cursor.fetchone()[0] == 0:  # Relationship doesn't exist
+            # Insert new relationships
+            if variety_id not in existing_varieties:
                 cursor.execute(insert_product_to_variety_query,
                                (product_id, variety_id))
 
-        for tasting_note in tasting_notes:
+        # Remove old relationships
+        for old_variety in existing_varieties - scraped_varieties:
+            cursor.execute(delete_product_to_variety_query,
+                           (product_id, old_variety))
+
+        # For tasting notes
+        existing_tasting_notes = set()
+        cursor.execute(
+            "SELECT tasting_note_id FROM ProductToTastingNote WHERE product_id = %s;", (product_id,))
+        for row in cursor.fetchall():
+            existing_tasting_notes.add(row[0])
+
+        scraped_tasting_notes = set()
+        for tasting_note in product.get("tasting_notes", []):
             cursor.execute(insert_tasting_note_query, (tasting_note,))
             cursor.execute(get_tasting_note_id_query, (tasting_note,))
             tasting_note_id = cursor.fetchone()[0]
+            scraped_tasting_notes.add(tasting_note_id)
 
-            # Check if the relationship already exists
-            cursor.execute(check_product_to_tasting_note_query,
-                           (product_id, tasting_note_id))
-            if cursor.fetchone()[0] == 0:  # Relationship doesn't exist
+            # Insert new relationships
+            if tasting_note_id not in existing_tasting_notes:
                 cursor.execute(insert_product_to_tasting_note_query,
                                (product_id, tasting_note_id))
+
+        # Remove old relationships
+        for old_tasting_note in existing_tasting_notes - scraped_tasting_notes:
+            cursor.execute(delete_product_to_tasting_note_query,
+                           (product_id, old_tasting_note))
 
     connection.commit()
     cursor.close()
@@ -211,7 +244,8 @@ def delete_old_products(products):
                    (products[0]["vendor"],))
     vendor_id = cursor.fetchone()
     if vendor_id is None:
-        print("Vendor not found in the database!")
+        with open(LOG_FILENAME, "a") as f:
+            print("Vendor not found in the database!", file=f)
         return
     vendor_id = vendor_id[0]  # Extracting ID from the tuple
 
@@ -219,7 +253,8 @@ def delete_old_products(products):
     format_strings = ','.join(['%s'] * len(extracted_urls))
     delete_query = f"DELETE FROM Product WHERE vendorId = %s AND productUrl NOT IN ({format_strings});"
     cursor.execute(delete_query, [vendor_id] + extracted_urls)
-    print(f"{cursor.rowcount} products deleted")
+    with open(LOG_FILENAME, "a") as f:
+        print(f"{cursor.rowcount} products deleted", file=f)
 
     connection.commit()
     cursor.close()
@@ -240,7 +275,8 @@ def delete_orphaned_records():
     """
 
     cursor.execute(delete_orphaned_brands_query)
-    print(f"{cursor.rowcount} orphan brands deleted")
+    with open(LOG_FILENAME, "a") as f:
+        print(f"{cursor.rowcount} orphan brands deleted", file=f)
 
     # Deleting orphaned tasting notes
     delete_orphaned_tasting_notes_query = """
@@ -250,7 +286,8 @@ def delete_orphaned_records():
         );
     """
     cursor.execute(delete_orphaned_tasting_notes_query)
-    print(f"{cursor.rowcount} orphan tasting notes deleted")
+    with open(LOG_FILENAME, "a") as f:
+        print(f"{cursor.rowcount} orphan tasting notes deleted", file=f)
 
     # Deleting orphaned varieties
     delete_orphaned_varieties_query = """
@@ -260,20 +297,25 @@ def delete_orphaned_records():
         );
     """
     cursor.execute(delete_orphaned_varieties_query)
-    print(f"{cursor.rowcount} orphan varieties deleted")
+    with open(LOG_FILENAME, "a") as f:
+        print(f"{cursor.rowcount} orphan varieties deleted", file=f)
 
     # Deleting orphaned relationships in ProductToVariety and ProductToTastingNote
     cursor.execute('''
         DELETE FROM ProductToVariety
         WHERE product_id NOT IN (SELECT id FROM Product)
     ''')
-    print(f"{cursor.rowcount} orphaned relationships deleted from ProductToVariety")
+    with open(LOG_FILENAME, "a") as f:
+        print(
+            f"{cursor.rowcount} orphaned relationships deleted from ProductToVariety", file=f)
 
     cursor.execute('''
         DELETE FROM ProductToTastingNote
         WHERE product_id NOT IN (SELECT id FROM Product)
     ''')
-    print(f"{cursor.rowcount} orphaned relationships deleted from ProductToTastingNote")
+    with open(LOG_FILENAME, "a") as f:
+        print(
+            f"{cursor.rowcount} orphaned relationships deleted from ProductToTastingNote", file=f)
 
     connection.commit()
     cursor.close()
