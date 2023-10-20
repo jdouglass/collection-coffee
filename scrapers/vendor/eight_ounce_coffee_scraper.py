@@ -155,7 +155,7 @@ class EightOunceCoffeeScraper(ShopifyScraper):
                 variety_info = detail.split(':')[1].strip().title()
                 if variety_info != "":
                     variety_list = [x.strip().title()
-                                    for x in re.split(',|&', variety_info)]
+                                    for x in re.split(',|&|/|And', variety_info)]
                     return normalize_variety_names(variety_list)
                 return [UNKNOWN]
 
