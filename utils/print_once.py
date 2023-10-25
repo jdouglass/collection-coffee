@@ -1,9 +1,10 @@
 from config.config import USE_DATABASE
+from config.logger_config import logger
 
 
 def print_once():
     if not hasattr(print_once, "_printed"):
-        print("Database operations are disabled via USE_DATABASE flag.")
+        logger.info("Database operations are disabled via USE_DATABASE flag.")
         print_once._printed = True
 
 

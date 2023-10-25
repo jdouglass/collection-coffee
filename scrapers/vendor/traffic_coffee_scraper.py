@@ -1,10 +1,12 @@
 from scrapers.base.shopify_scraper import ShopifyScraper
 from helpers.country_to_continent_mapper import get_continent
 from helpers.variety_normalizer import normalize_variety_names
-from config.constants import UNKNOWN, MULTIPLE
+from config.constants import UNKNOWN
 from helpers.size_parser import parse_size
 from helpers.country_name_validator import validate_country_name
 from enums.product_type import ProductType
+from helpers.variety_extractor import extract_varieties
+import re
 
 
 class TrafficCoffeeScraper(ShopifyScraper):
@@ -84,15 +86,16 @@ class TrafficCoffeeScraper(ShopifyScraper):
         variety_info = variety_info.replace("/", ",")
         if variety_info == "" or '?' in variety_info:
             return [UNKNOWN]
-        variety_list = [x.strip().title() for x in variety_info.split(',')]
-        return normalize_variety_names(variety_list)
+        variety_list = [x.strip().title()
+                        for x in re.split(',|/|&', variety_info)]
+        return extract_varieties(' '.join(variety_list))
 
     def extract_notes(self, body_html):
         keywords = ["Notes", "In the cup"]
         notes_info = self._extract_from_body(body_html, keywords)
         if notes_info == "":
             return [UNKNOWN]
-        return [x.strip().title() for x in notes_info.split(',')]
+        return [x.strip().title() for x in re.split(',|/', notes_info)]
 
     def extract_process(self, body_html):
         keywords = ["Process"]

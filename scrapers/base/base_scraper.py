@@ -4,6 +4,7 @@ from decimal import Decimal
 from enums.continent import Continent
 from config.config import USE_MOCK_DATA
 from enums.process_category import ProcessCategory
+from config.logger_config import logger
 
 
 class BaseScraper:
@@ -55,6 +56,5 @@ class BaseScraper:
         raise TypeError("Type not serializable")
 
     def display_products(self, products):
-        with open("output.txt", "w") as f:
-            print(json.dumps(products, default=self.decimal_serializer,
-                  indent=4, ensure_ascii=False), file=f)
+        logger.debug(json.dumps(
+            products, default=self.decimal_serializer, indent=4, ensure_ascii=False))

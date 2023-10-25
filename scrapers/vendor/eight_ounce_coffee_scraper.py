@@ -10,6 +10,7 @@ from enums.product_type import ProductType
 import requests
 import re
 from bs4 import BeautifulSoup
+from helpers.variety_extractor import extract_varieties
 
 
 class EightOunceCoffeeScraper(ShopifyScraper):
@@ -156,7 +157,7 @@ class EightOunceCoffeeScraper(ShopifyScraper):
                 if variety_info != "":
                     variety_list = [x.strip().title()
                                     for x in re.split(',|&|/|And', variety_info)]
-                    return normalize_variety_names(variety_list)
+                    return extract_varieties(' '.join(variety_list))
                 return [UNKNOWN]
 
         return [UNKNOWN]

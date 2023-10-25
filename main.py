@@ -2,6 +2,7 @@ import argparse
 from db.db_manager import save_to_db, delete_old_products, delete_orphaned_records
 from data.coffee_vendors_data import coffee_vendors_data
 from config.config import PRINT_PRODUCTS
+from config.logger_config import logger
 
 SCRAPER_CLASSES = {
     vendor_data["key"]: (
@@ -20,7 +21,7 @@ if __name__ == "__main__":
     scraper_data = SCRAPER_CLASSES.get(args.vendor)
 
     if scraper_data is None:
-        print(f"No scraper found for vendor: {args.vendor}")
+        logger.error(f"No scraper found for vendor: {args.vendor}")
     else:
         scraper_class, scraper_url, scraper_mock_data_path = scraper_data
         scraper_instance = scraper_class(

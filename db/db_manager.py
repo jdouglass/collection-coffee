@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from config.constants import LOG_FILENAME
 from utils.print_once import check_use_database
+from config.logger_config import logger
 load_dotenv()
 
 # Retrieve database configuration from environment variables
@@ -141,9 +142,8 @@ def save_to_db(products):
         try:
             cursor.execute(insert_brand_query, (product["brand"],))
         except MySQLdb.Error as e:
-            with open(LOG_FILENAME, "a") as f:
-                print(
-                    f"Duplicate brand not inserted {product['brand']}: {e}", file=f)
+            logger.debug(
+                f"Duplicate brand not inserted {product['brand']}: {e}")
 
         # Insert product data into Product table
         try:
@@ -165,9 +165,8 @@ def save_to_db(products):
                 product["is_decaf"]
             ))
         except MySQLdb.Error as e:
-            with open(LOG_FILENAME, "a") as f:
-                print(
-                    f"Error inserting product {product}: {e}", file=f)
+            logger.error(
+                f"Error inserting product {product}: {e}")
 
         # Insert the product first to get the product ID
         cursor.execute(get_product_id_query, (product["product_url"],))
@@ -175,8 +174,8 @@ def save_to_db(products):
         if result:
             product_id = result[0]
         else:
-            with open(LOG_FILENAME, "a") as f:
-                print("No results found for the given product URL.", file=f)
+            logger.info(
+                "No results found for the given product URL.")
             continue  # skip this iteration and move to the next product
 
         # For varieties
@@ -244,8 +243,7 @@ def delete_old_products(products):
                    (products[0]["vendor"],))
     vendor_id = cursor.fetchone()
     if vendor_id is None:
-        with open(LOG_FILENAME, "a") as f:
-            print("Vendor not found in the database!", file=f)
+        logger.debug("Vendor not found in the database!")
         return
     vendor_id = vendor_id[0]  # Extracting ID from the tuple
 
@@ -253,8 +251,7 @@ def delete_old_products(products):
     format_strings = ','.join(['%s'] * len(extracted_urls))
     delete_query = f"DELETE FROM Product WHERE vendorId = %s AND productUrl NOT IN ({format_strings});"
     cursor.execute(delete_query, [vendor_id] + extracted_urls)
-    with open(LOG_FILENAME, "a") as f:
-        print(f"{cursor.rowcount} products deleted", file=f)
+    logger.info(f"{cursor.rowcount} products deleted")
 
     connection.commit()
     cursor.close()
@@ -275,8 +272,7 @@ def delete_orphaned_records():
     """
 
     cursor.execute(delete_orphaned_brands_query)
-    with open(LOG_FILENAME, "a") as f:
-        print(f"{cursor.rowcount} orphan brands deleted", file=f)
+    logger.info(f"{cursor.rowcount} orphan brands deleted")
 
     # Deleting orphaned tasting notes
     delete_orphaned_tasting_notes_query = """
@@ -286,8 +282,7 @@ def delete_orphaned_records():
         );
     """
     cursor.execute(delete_orphaned_tasting_notes_query)
-    with open(LOG_FILENAME, "a") as f:
-        print(f"{cursor.rowcount} orphan tasting notes deleted", file=f)
+    logger.info(f"{cursor.rowcount} orphan tasting notes deleted")
 
     # Deleting orphaned varieties
     delete_orphaned_varieties_query = """
@@ -297,25 +292,22 @@ def delete_orphaned_records():
         );
     """
     cursor.execute(delete_orphaned_varieties_query)
-    with open(LOG_FILENAME, "a") as f:
-        print(f"{cursor.rowcount} orphan varieties deleted", file=f)
+    logger.info(f"{cursor.rowcount} orphan varieties deleted")
 
     # Deleting orphaned relationships in ProductToVariety and ProductToTastingNote
     cursor.execute('''
         DELETE FROM ProductToVariety
         WHERE product_id NOT IN (SELECT id FROM Product)
     ''')
-    with open(LOG_FILENAME, "a") as f:
-        print(
-            f"{cursor.rowcount} orphaned relationships deleted from ProductToVariety", file=f)
+    logger.info(
+        f"{cursor.rowcount} orphaned relationships deleted from ProductToVariety")
 
     cursor.execute('''
         DELETE FROM ProductToTastingNote
         WHERE product_id NOT IN (SELECT id FROM Product)
     ''')
-    with open(LOG_FILENAME, "a") as f:
-        print(
-            f"{cursor.rowcount} orphaned relationships deleted from ProductToTastingNote", file=f)
+    logger.info(
+        f"{cursor.rowcount} orphaned relationships deleted from ProductToTastingNote")
 
     connection.commit()
     cursor.close()
