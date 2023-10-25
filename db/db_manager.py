@@ -1,7 +1,6 @@
 import MySQLdb
 import os
 from dotenv import load_dotenv
-from config.constants import LOG_FILENAME
 from utils.print_once import check_use_database
 from config.logger_config import logger
 load_dotenv()
