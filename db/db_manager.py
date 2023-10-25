@@ -34,18 +34,6 @@ def save_to_db(products):
     connection = get_db_connection()
     cursor = connection.cursor()
 
-    check_product_to_variety_query = """
-        SELECT COUNT(*)
-        FROM ProductToVariety
-        WHERE product_id = %s AND variety_id = %s;
-    """
-
-    check_product_to_tasting_note_query = """
-        SELECT COUNT(*)
-        FROM ProductToTastingNote
-        WHERE product_id = %s AND tasting_note_id = %s;
-    """
-
     insert_variety_query = """
         INSERT IGNORE INTO Variety (name) VALUES (%s)
     """
