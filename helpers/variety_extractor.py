@@ -46,9 +46,6 @@ def extract_varieties(input_str, threshold=60):
             extracted_varieties.append(best_match)
             i += len(best_match.split())
 
-            with open("logs.txt", "a") as logfile:
-                logfile.write(
-                    f"Best match for '{potential_match}': {best_match} with ratio {best_ratio}\n")
         else:
             i += 1
 
