@@ -24,7 +24,6 @@ def extract_varieties(input_str, threshold=60):
     while i < len(words):
         best_matches = []
         best_ratio = 0
-        potential_match = None
 
         for known_variety in sorted_known_varieties:
             known_words = known_variety.split()
@@ -36,7 +35,6 @@ def extract_varieties(input_str, threshold=60):
             if current_ratio > best_ratio:
                 best_matches = [known_variety]
                 best_ratio = current_ratio
-                potential_match = current_potential_match
             elif current_ratio == best_ratio:
                 best_matches.append(known_variety)
 
@@ -46,9 +44,6 @@ def extract_varieties(input_str, threshold=60):
             extracted_varieties.append(best_match)
             i += len(best_match.split())
 
-            with open("logs.txt", "a") as logfile:
-                logfile.write(
-                    f"Best match for '{potential_match}': {best_match} with ratio {best_ratio}\n")
         else:
             i += 1
 
