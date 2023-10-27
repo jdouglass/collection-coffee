@@ -1,5 +1,5 @@
 import argparse
-from db.db_manager import save_to_db, delete_old_products, delete_orphaned_records
+from db.db_controller import DatabaseController
 from data.coffee_vendors_data import coffee_vendors_data
 from config.config import PRINT_PRODUCTS
 from config.logger_config import logger
@@ -29,8 +29,13 @@ if __name__ == "__main__":
         scraper_instance.fetch_products()
         processed_products = scraper_instance.process_products(
             scraper_instance.products)
-        save_to_db(processed_products)
-        delete_old_products(processed_products)
-        delete_orphaned_records()
+
+        db_controller = DatabaseController()
+        db_controller.connect()
+        db_controller.save_to_db(processed_products)
+        db_controller.delete_old_products(processed_products)
+        db_controller.delete_orphaned_records()
+        db_controller.close_connection()
+
         if PRINT_PRODUCTS:
             scraper_instance.display_products(processed_products)

@@ -14,7 +14,7 @@ coffee_vendors_data = [
     },
     {
         "key": "Eight Ounce Coffee",
-        "url": "https://eightouncecoffee.ca/collections/newest-coffee/products.json?limit=250",
+        "url": "https://eightouncecoffee.ca/collections/all-coffee-bags/products.json?limit=250",
         "vendor": "Eight Ounce Coffee",
         "scraper_class": EightOunceCoffeeScraper,
         "mock_data_path": "scrapers/mock_data/eight_ounce_coffee.json",
