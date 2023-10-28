@@ -1,6 +1,7 @@
 import MySQLdb
 from db.queries import *
 from db.db_connection import DBConnection
+from utils.supabase_storage_manager import SupabaseStorageManager
 from utils.print_once import check_use_database
 from config.logger_config import logger
 
@@ -8,6 +9,7 @@ from config.logger_config import logger
 class DatabaseController:
     def __init__(self):
         self.connection = None
+        self.storage_manager = SupabaseStorageManager()
 
     def connect(self):
         db_connection = DBConnection()
@@ -28,6 +30,11 @@ class DatabaseController:
                 logger.debug(
                     f"Error inserting brand {product['brand']}: {e}")
 
+            # Upload image to Supabase bucket
+            bucket_image_list = self.storage_manager.get_storage_list()
+            uploaded_image_url = self.storage_manager.upload_image(
+                product["image_url"], product["product_url"], bucket_image_list)
+
             # Insert product data into Product table
             try:
                 cursor.execute(insert_product_query, (
@@ -40,7 +47,7 @@ class DatabaseController:
                     product["weight"],
                     product["process"],
                     product["product_url"],
-                    product["image_url"],
+                    uploaded_image_url,
                     product["is_sold_out"],
                     product["discovered_date_time"],
                     product["handle"],
@@ -127,14 +134,26 @@ class DatabaseController:
             return
         vendor_id = vendor_id[0]
 
-        # Delete products for the given vendorId that are not in extracted_urls
+        # Step 1: Fetch the product URLs of the products that are about to be deleted
         format_strings = ','.join(['%s'] * len(extracted_urls))
+        select_query = f"SELECT productUrl FROM Product WHERE vendorId = %s AND productUrl NOT IN ({format_strings});"
+        cursor.execute(select_query, [vendor_id] + extracted_urls)
+        urls_to_delete = [item[0] for item in cursor.fetchall()]
+
+        # Step 2: Delete products for the given vendorId that are not in extracted_urls
         delete_query = get_delete_product_query(format_strings)
         cursor.execute(delete_query, [vendor_id] + extracted_urls)
-        logger.info(f"{cursor.rowcount} products deleted")
+        deleted_count = cursor.rowcount
+        logger.info(f"{deleted_count} products deleted")
 
         self.connection.commit()
         cursor.close()
+
+        # Step 3: Delete the corresponding images from Supabase Storage
+        storage_manager = SupabaseStorageManager()
+        for url in urls_to_delete:
+            storage_manager.delete_image(url)
+            logger.info(f"Image for product URL {url} requested to be deleted")
 
     @check_use_database
     def delete_orphaned_records(self):
