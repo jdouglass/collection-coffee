@@ -31,9 +31,8 @@ class DatabaseController:
                     f"Error inserting brand {product['brand']}: {e}")
 
             # Upload image to Supabase bucket
-            bucket_image_list = self.storage_manager.get_storage_list()
             uploaded_image_url = self.storage_manager.upload_image(
-                product["image_url"], product["product_url"], bucket_image_list)
+                product["image_url"], product["product_url"])
 
             # Insert product data into Product table
             try:

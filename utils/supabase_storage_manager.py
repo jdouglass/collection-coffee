@@ -17,12 +17,7 @@ class SupabaseStorageManager():
         self.supabase_client: Client = create_client(
             self.supabase_url, self.supabase_key)
 
-    def get_storage_list(self):
-        storage = self.supabase_client.storage
-        bucket = storage.StorageFileAPI(self.bucket_name)
-        return bucket.list()
-
-    def upload_image(self, image_url, product_url, existing_files):
+    def upload_image(self, image_url, product_url):
         # Generate a unique filename based on the image URL
         hash_object = hashlib.md5(product_url.encode())
         unique_filename = hash_object.hexdigest() + ".webp"
@@ -48,6 +43,7 @@ class SupabaseStorageManager():
         # Upload to Supabase Storage
         storage = self.supabase_client.storage
         bucket = storage.StorageFileAPI(self.bucket_name)
+        existing_files = bucket.list()
 
         if any(file['name'] == unique_filename for file in existing_files):
             logger.error(
@@ -55,7 +51,7 @@ class SupabaseStorageManager():
             return f"{self.supabase_url}/storage/v1/object/public/{self.bucket_name}/{unique_filename}"
 
         upload_response = bucket.upload(
-            unique_filename, image_webp.getvalue())
+            unique_filename, image_webp.getvalue(), file_options={"content-type": "image/webp"})
 
         if upload_response.status_code == 200:
             logger.info("Image successfully uploaded!")
@@ -75,12 +71,21 @@ class SupabaseStorageManager():
         bucket = storage.StorageFileAPI(self.bucket_name)
 
         # Delete the image from the bucket
-        delete_response = bucket.remove([unique_filename])
+        delete_responses = bucket.remove([unique_filename])
+
+        # Check if delete operation was successful
+        if isinstance(delete_responses, list) and delete_responses:
+            delete_response = delete_responses[0]
+        else:
+            logger.error(
+                f"Unexpected response format from delete operation: {delete_responses}")
+            return False
 
         if delete_response.status_code == 200:
             logger.info(f"Image successfully deleted: {unique_filename}")
             return True
         else:
+            error_message = delete_response.get('error', {}).get('message', '')
             logger.error(
-                f"Failed to delete image: {unique_filename}, {delete_response.get('error', {}).get('message', '')}")
+                f"Failed to delete image: {unique_filename}, {error_message}")
             return False
