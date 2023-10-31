@@ -3,6 +3,7 @@ from db.db_controller import DatabaseController
 from data.coffee_vendors_data import coffee_vendors_data
 from config.config import PRINT_PRODUCTS
 from config.logger_config import logger
+import time
 
 SCRAPER_CLASSES = {
     vendor_data["key"]: (
@@ -11,7 +12,7 @@ SCRAPER_CLASSES = {
 }
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description='Coffee Scraper')
     parser.add_argument('vendor', type=str,
                         help='Name of the vendor to scrape')
@@ -39,3 +40,10 @@ if __name__ == "__main__":
 
         if PRINT_PRODUCTS:
             scraper_instance.display_products(processed_products)
+
+
+if __name__ == "__main__":
+    start_time = time.time()
+    main()
+    end_time = time.time()
+    logger.info(f"The program took {end_time - start_time} seconds to finish")
