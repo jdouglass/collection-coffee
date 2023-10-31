@@ -102,6 +102,10 @@ get_vendor_id_by_vendor_name_query = """
     SELECT id FROM Vendor WHERE name = %s;
 """
 
+get_product_by_url_query = """
+    SELECT imageUrl FROM Product WHERE productUrl = %s;
+"""
+
 delete_orphaned_brands_query = """
     DELETE brands
     FROM Brand brands

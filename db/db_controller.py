@@ -30,9 +30,8 @@ class DatabaseController:
                 logger.debug(
                     f"Error inserting brand {product['brand']}: {e}")
 
-            # Upload image to Supabase bucket
-            uploaded_image_url = self.storage_manager.upload_image(
-                product["image_url"], product["product_url"])
+            cursor.execute(get_product_by_url_query, (product["product_url"],))
+            existing_product = cursor.fetchone()
 
             # Insert product data into Product table
             try:
@@ -46,7 +45,8 @@ class DatabaseController:
                     product["weight"],
                     product["process"],
                     product["product_url"],
-                    uploaded_image_url,
+                    existing_product[0] if existing_product else self.storage_manager.upload_image(
+                        product["image_url"], product["product_url"]),
                     product["is_sold_out"],
                     product["discovered_date_time"],
                     product["handle"],
