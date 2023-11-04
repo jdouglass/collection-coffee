@@ -6,7 +6,7 @@ import argparse
 
 SCRAPER_CLASSES = {
     vendor_data["key"]: (
-        vendor_data["scraper_class"], vendor_data["url"], vendor_data["mock_data_path"])
+        vendor_data["scraper_class"], vendor_data["url"], vendor_data["mock_data_path"], vendor_data["product_base_url"])
     for vendor_data in coffee_vendors_data
 }
 

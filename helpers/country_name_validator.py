@@ -3,15 +3,15 @@ from config.constants import UNKNOWN, MULTIPLE
 
 
 def validate_country_name(country_str):
-    country_str = country_str.title()
-
     # Check if '&' or '+' is present, which indicates multiple countries
-    if '&' in country_str or '+' in country_str:
+    if '&' in country_str or '+' in country_str or '%' in country_str:
         return MULTIPLE
 
-    # Validate if the string is a valid country name
-    try:
-        country = pycountry.countries.lookup(country_str)
-        return country.name
-    except LookupError:
-        return UNKNOWN
+    # Get all country names
+    countries = sorted(
+        (country.name for country in pycountry.countries), key=len, reverse=True)
+
+    for country in countries:
+        if country.lower() in country_str.lower():
+            return country.title()
+    return UNKNOWN
