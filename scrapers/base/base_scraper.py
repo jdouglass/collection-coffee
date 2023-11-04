@@ -18,6 +18,10 @@ class BaseScraper:
         with open('data/excluded_words.txt', 'r') as f:
             return [line.strip().lower() for line in f]
 
+    def load_decaf_words(self):
+        with open('data/decaf_words.txt', 'r') as f:
+            return [line.strip().lower() for line in f]
+
     def load_coffee_brands(self):
         with open('data/coffee_brands.txt', 'r') as f:
             return [line.strip().lower() for line in f]

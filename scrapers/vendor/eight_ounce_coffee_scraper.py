@@ -189,7 +189,7 @@ class EightOunceCoffeeScraper(ShopifyScraper):
                 return True
 
         lowercase_title = title.lower()
-        keywords = ['quarter caf', 'decaf']
+        keywords = self.load_decaf_words()
         for keyword in keywords:
             start_pos = lowercase_title.find(keyword)
             if start_pos != -1:
