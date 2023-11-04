@@ -111,7 +111,7 @@ class TrafficCoffeeScraper(ShopifyScraper):
 
     def is_decaf(self, title):
         formatted_title = title.lower()
-        keywords = ['quarter caf', 'decaf', 'décaf']
+        keywords = self.load_decaf_words()
         for keyword in keywords:
             start_pos = formatted_title.find(keyword)
             if start_pos != -1:
