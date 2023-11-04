@@ -171,7 +171,7 @@ class DatabaseController:
         logger.info(
             f"{cursor.rowcount} orphaned relationships deleted from ProductToVariety")
 
-        cursor.execute(delete_orphaned_variety_relations)
+        cursor.execute(delete_orphaned_tasting_note_relations)
         logger.info(
             f"{cursor.rowcount} orphaned relationships deleted from ProductToTastingNote")
 
