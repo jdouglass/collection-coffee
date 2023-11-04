@@ -1,9 +1,8 @@
-import argparse
-from db.db_controller import DatabaseController
-from data.coffee_vendors_data import coffee_vendors_data
-from config.config import PRINT_PRODUCTS
 from config.logger_config import logger
-import time
+from data.coffee_vendors_data import coffee_vendors_data
+from utils.scraper_scheduler import ScraperScheduler
+from config.config import ENABLE_CRON_JOB
+import argparse
 
 SCRAPER_CLASSES = {
     vendor_data["key"]: (
@@ -14,36 +13,40 @@ SCRAPER_CLASSES = {
 
 def main():
     parser = argparse.ArgumentParser(description='Coffee Scraper')
-    parser.add_argument('vendor', type=str,
-                        help='Name of the vendor to scrape')
+    parser.add_argument('--vendor', type=str,
+                        help='Name of the vendor to scrape', required=False)
 
     args = parser.parse_args()
 
-    scraper_data = SCRAPER_CLASSES.get(args.vendor)
+    # Instantiate the scheduler regardless of whether a specific vendor is provided
+    scheduler = ScraperScheduler(SCRAPER_CLASSES)
 
-    if scraper_data is None:
-        logger.error(f"No scraper found for vendor: {args.vendor}")
+    # Check if the --vendor argument was provided
+    if args.vendor:
+        scraper_data = SCRAPER_CLASSES.get(args.vendor)
+
+        if scraper_data is None:
+            logger.error(f"No scraper found for vendor: {args.vendor}")
+            return
+        else:
+            if ENABLE_CRON_JOB:
+                logger.info(
+                    "Cron job is enabled. Scheduling the scraper for the specified vendor...")
+                scheduler.start(args.vendor)
+            else:
+                logger.info(
+                    "Cron job is disabled. Running the scraper immediately for the specified vendor...")
+                scheduler.run_scraper(args.vendor)
     else:
-        scraper_class, scraper_url, scraper_mock_data_path = scraper_data
-        scraper_instance = scraper_class(
-            scraper_url, args.vendor, scraper_mock_data_path)
-        scraper_instance.fetch_products()
-        processed_products = scraper_instance.process_products(
-            scraper_instance.products)
-
-        db_controller = DatabaseController()
-        db_controller.connect()
-        db_controller.save_to_db(processed_products)
-        db_controller.delete_old_products(processed_products)
-        db_controller.delete_orphaned_records()
-        db_controller.close_connection()
-
-        if PRINT_PRODUCTS:
-            scraper_instance.display_products(processed_products)
+        # No specific vendor provided; run or schedule all scrapers
+        if ENABLE_CRON_JOB:
+            logger.info("Cron job is enabled. Scheduling all scrapers...")
+            scheduler.start()
+        else:
+            logger.info(
+                "Cron job is disabled. Running all scrapers immediately...")
+            scheduler.run_all_scrapers()
 
 
 if __name__ == "__main__":
-    start_time = time.time()
     main()
-    end_time = time.time()
-    logger.info(f"The program took {end_time - start_time} seconds to finish")
