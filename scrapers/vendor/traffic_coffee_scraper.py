@@ -10,6 +10,10 @@ import re
 
 
 class TrafficCoffeeScraper(ShopifyScraper):
+    def __init__(self, url, vendor, mock_data_path, product_base_url):
+        super().__init__(url, vendor, mock_data_path, product_base_url)
+        self.coffee_brands = self.load_coffee_brands()
+
     def process_products(self, fetched_products):
         # If fetched_products is provided, use it. Otherwise, use the products fetched by the base method
         products_to_process = fetched_products if fetched_products is not None else super().process_products()
@@ -107,7 +111,7 @@ class TrafficCoffeeScraper(ShopifyScraper):
         return process_info.title().strip()
 
     def build_product_url(self, handle):
-        return "https://trafficcoffee.com/collections/our-coffees/products/" + handle
+        return f"{self.product_base_url}{handle}"
 
     def is_decaf(self, title):
         formatted_title = title.lower()

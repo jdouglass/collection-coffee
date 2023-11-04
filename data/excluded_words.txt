@@ -1,5 +1,6 @@
 box
+calendar
 gift card
+merch
 subscription
 t-shirt
-merch
