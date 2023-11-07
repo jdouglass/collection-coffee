@@ -30,42 +30,92 @@ class DatabaseController:
                 logger.debug(
                     f"Error inserting brand {product['brand']}: {e}")
 
-            cursor.execute(get_product_by_url_query, (product["product_url"],))
+            cursor.execute(get_product_by_product_url,
+                           (product["product_url"],))
             existing_product = cursor.fetchone()
 
             # Insert product data into Product table
+            product_id = None
             try:
-                cursor.execute(insert_product_query, (
-                    product["brand"],
-                    product["country_of_origin"],
-                    product["vendor"],
-                    product["process_category"],
-                    product["product_type"],
-                    product["title"],
-                    product["weight"],
-                    product["process"],
-                    product["product_url"],
-                    existing_product[0] if existing_product else self.storage_manager.upload_image(
-                        product["image_url"], product["product_url"]),
-                    product["is_sold_out"],
-                    product["discovered_date_time"],
-                    product["handle"],
-                    product["price"],
-                    product["is_decaf"]
-                ))
+                if existing_product:
+                    # Update the existing product
+                    cursor.execute(update_product_query, (
+                        product["brand"],
+                        product["country_of_origin"],
+                        product["vendor"],
+                        product["process_category"],
+                        product["product_type"],
+                        product["title"],
+                        product["process"],
+                        product["product_url"],
+                        product["discovered_date_time"],
+                        product["handle"],
+                        product["is_decaf"],
+                        # This identifies the record to update
+                        product["product_url"]
+                    ))
+                    product_id = existing_product[0]
+                else:
+                    # Insert new product
+                    cursor.execute(insert_product_query, (
+                        product["brand"],
+                        product["country_of_origin"],
+                        product["vendor"],
+                        product["process_category"],
+                        product["product_type"],
+                        product["title"],
+                        product["process"],
+                        product["product_url"],
+                        self.storage_manager.upload_image(
+                            product["image_url"], product["product_url"]),
+                        product["discovered_date_time"],
+                        product["handle"],
+                        product["is_decaf"]
+                    ))
+                    # After inserting the product, get the product ID
+                    cursor.execute(get_product_id_by_product_url_query,
+                                   (product["product_url"],))
+                    product_id = cursor.fetchone()[0]
             except MySQLdb.Error as e:
                 logger.error(
                     f"Error inserting product {product}: {e}")
+                continue  # skip to the next product
 
-            # Insert the product first to get the product ID
-            cursor.execute(get_product_id_query, (product["product_url"],))
-            result = cursor.fetchone()
-            if result:
-                product_id = result[0]
-            else:
-                logger.info(
-                    "No results found for the given product URL.")
-                continue  # skip this iteration and move to the next product
+            if not product_id:
+                logger.error(
+                    "No product ID retrieved or created; skipping variant handling.")
+
+            # Now, handle the ProductVariant information for each product
+            # This assumes your variants are within the 'product' object in a 'variants' list
+            for variant in product.get("variants", []):
+                try:
+                    # Check if the variant already exists and update or insert as necessary
+                    # You'll need a query to select the variant by some unique identifier, e.g., a combination of product_id and a variant attribute
+                    cursor.execute(get_variant_by_identifier_query,
+                                   (variant['variant_id'], product_id))
+                    existing_variant = cursor.fetchone()
+
+                    if existing_variant:
+                        # Update the existing variant entry
+                        cursor.execute(update_product_variant_query, (
+                            variant["size"],
+                            variant["price"],
+                            variant["is_sold_out"],
+                            variant["variant_id"],
+                            product_id,
+                        ))
+                    else:
+                        # Insert new variant entry
+                        cursor.execute(insert_product_variant_query, (
+                            product_id,
+                            variant["variant_id"],
+                            variant["size"],
+                            variant["price"],
+                            variant["is_sold_out"],
+                        ))
+                except MySQLdb.Error as e:
+                    logger.error(
+                        f"Error handling product variant {variant}: {e}")
 
             # For varieties
             existing_varieties = set()
@@ -139,7 +189,17 @@ class DatabaseController:
         cursor.execute(select_query, [vendor_id] + extracted_urls)
         urls_to_delete = [item[0] for item in cursor.fetchall()]
 
-        # Step 2: Delete products for the given vendorId that are not in extracted_urls
+        # Only after finding the URLs to delete, proceed to delete the variants
+        # Step 2: Delete product variants related to products that are going to be deleted
+        if urls_to_delete:
+            delete_format_strings = ','.join(['%s'] * len(urls_to_delete))
+            delete_variants_query = f"DELETE FROM ProductVariant WHERE productId IN (SELECT id FROM Product WHERE productUrl IN ({delete_format_strings}));"
+            cursor.execute(delete_variants_query, urls_to_delete)
+            # Note the number of deleted variants for logging purposes
+            deleted_variants_count = cursor.rowcount
+            logger.info(f"{deleted_variants_count} product variants deleted.")
+
+        # Step 3: Delete products for the given vendorId that are not in extracted_urls
         delete_query = get_delete_product_query(format_strings)
         cursor.execute(delete_query, [vendor_id] + extracted_urls)
         deleted_count = cursor.rowcount
@@ -148,7 +208,7 @@ class DatabaseController:
         self.connection.commit()
         cursor.close()
 
-        # Step 3: Delete the corresponding images from Supabase Storage
+        # Step 4: Delete the corresponding images from Supabase Storage
         storage_manager = SupabaseStorageManager()
         for url in urls_to_delete:
             storage_manager.delete_image(url)

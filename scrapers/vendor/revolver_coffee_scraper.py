@@ -30,39 +30,41 @@ class RevolverCoffeeScraper(ShopifyScraper):
         # coffee_brands = self.load_coffee_brands()
         excluded_words = self.load_excluded_words()
         for product in products_to_process:
+            processed_product_variants = []
             if not any(word in product["title"].lower() or word in product["handle"].lower() for word in excluded_words):
                 # Creating a new product dictionary with only the required fields
-                processed_product = {}
-                processed_product["vendor"] = self.get_vendor(self.vendor)
-                processed_product["brand"] = self.extract_brand(
-                    product)
-                processed_product["title"] = self.extract_title(product)
-                processed_product["product_url"] = self.build_product_url(
-                    product["handle"])
-                processed_product["image_url"] = self.extract_image_url(
-                    product)
-                processed_product["is_sold_out"] = self.is_sold_out(product)
-                processed_product["discovered_date_time"] = self.extract_published_date(
-                    product)
-                processed_product["handle"] = self.extract_handle(product)
-                processed_product["price"] = self.extract_price(product)
-                processed_product["product_type"] = self.extract_product_type(
-                    product)
-                processed_product["is_decaf"] = self.is_decaf(product)
-                processed_product["weight"] = self.extract_size(product)
-                processed_product["country_of_origin"] = self.extract_country_of_origin(
-                    product)
-                processed_product["continent"] = get_continent(
-                    processed_product["country_of_origin"])
-                processed_product["process"] = self.extract_process(
-                    product)
-                processed_product["process_category"] = self.get_process_category(
-                    processed_product["process"])
-                processed_product["tasting_notes"] = self.extract_notes(
-                    product)
-                processed_product["varieties"] = normalize_variety_names(
-                    self.extract_varieties(product))
+                processed_product = {
+                    "brand": self.extract_brand(product),
+                    "vendor": self.get_vendor(self.vendor),
+                    "title": self.extract_title(product),
+                    "handle": (handle := self.extract_handle(product)),
+                    "product_url": self.build_product_url(handle),
+                    "image_url": self.extract_image_url(product),
+                    "is_decaf": self.is_decaf(product),
+                    "product_type": self.extract_product_type(product),
+                    "discovered_date_time": self.extract_published_date(product),
+                    "country_of_origin": (country_of_origin := self.extract_country_of_origin(product)),
+                    "continent": get_continent(country_of_origin),
+                    "process": (process := self.extract_process(product)),
+                    "process_category": self.get_process_category(process),
+                    "tasting_notes": self.extract_notes(product),
+                    "varieties": normalize_variety_names(self.extract_varieties(product))
+                }
 
+                for variant in product["variants"]:
+                    processed_product_variant = {
+                        "variant_id": self.extract_variant_id(
+                            variant),
+                        "size": self.extract_size(product),
+                        "price": self.extract_price(
+                            variant),
+                        "is_sold_out": self.is_sold_out(
+                            variant),
+                    }
+                    processed_product_variants.append(
+                        processed_product_variant)
+
+                processed_product["variants"] = processed_product_variants
                 processed_products.append(processed_product)
 
         return processed_products
@@ -97,11 +99,11 @@ class RevolverCoffeeScraper(ShopifyScraper):
         return title_formatter(title)
 
     def extract_brand(self, product):
-        brand_name = normalize_brand_name(next(
-            (brand for brand in self.coffee_brands if brand.lower()
-             in product["title"].lower()),
+        brand_name = next(
+            (normalize_brand_name(brand) for brand in self.coffee_brands
+             if brand.lower() in product["title"].lower()),
             UNKNOWN
-        ))
+        )
         return brand_name.title()
 
     def extract_size(self, product):

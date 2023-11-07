@@ -46,7 +46,7 @@ class SupabaseStorageManager():
         existing_files = bucket.list()
 
         if any(file['name'] == unique_filename for file in existing_files):
-            logger.error(
+            logger.warn(
                 f"A file with this name already exists: {unique_filename}")
             return f"{self.supabase_url}/storage/v1/object/public/{self.bucket_name}/{unique_filename}"
 
@@ -80,8 +80,7 @@ class SupabaseStorageManager():
             logger.error(
                 f"Unexpected response format from delete operation: {delete_responses}")
             return False
-
-        if delete_response.status_code == 200:
+        if delete_response.httpStatusCode == 200:
             logger.info(f"Image successfully deleted: {unique_filename}")
             return True
         else:

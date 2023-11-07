@@ -2,8 +2,13 @@ from config.constants import LBS_TO_GRAMS, KG_TO_GRAMS
 
 
 def parse_size(size):
-    if 'kg' in size:
-        return int(size.split('kg')[0].strip()) * KG_TO_GRAMS
+    size = size.lower()
+    if '-kg' in size:
+        return int(float(size.split('-kg')[0].strip()) * KG_TO_GRAMS)
+    elif '-g' in size:
+        return int(size.split('-g')[0].strip())
+    elif 'kg' in size:
+        return int(float(size.split('kg')[0].strip()) * KG_TO_GRAMS)
     elif 'g' in size:
         return int(size.split('g')[0].strip())
     elif 'lb' in size:
