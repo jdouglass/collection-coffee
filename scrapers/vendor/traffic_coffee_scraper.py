@@ -20,35 +20,41 @@ class TrafficCoffeeScraper(ShopifyScraper):
 
         processed_products = []
         for product in products_to_process:
+            processed_product_variants = []
             # Creating a new product dictionary with only the required fields
-            processed_product = {}
-            processed_product["vendor"] = self.get_vendor(self.vendor)
-            processed_product["brand"] = self.extract_brand()
-            processed_product["title"] = self.extract_title(product)
-            processed_product["weight"] = self.extract_weight(product)
-            processed_product["product_url"] = self.build_product_url(
-                product["handle"])
-            processed_product["image_url"] = self.extract_image_url(product)
-            processed_product["is_sold_out"] = self.is_sold_out(product)
-            processed_product["is_decaf"] = self.is_decaf(product["title"])
-            processed_product["product_type"] = ProductType.ROASTED_WHOLE_BEAN.value
-            processed_product["discovered_date_time"] = self.extract_published_date(
-                product)
-            processed_product["handle"] = self.extract_handle(product)
-            processed_product["price"] = self.extract_price(product)
+            processed_product = {
+                "brand": self.extract_brand(),
+                "vendor": self.get_vendor(self.vendor),
+                "title": self.extract_title(product),
+                "handle": (handle := self.extract_handle(product)),
+                "product_url": self.build_product_url(handle),
+                "image_url": self.extract_image_url(product),
+                "is_decaf": self.is_decaf(product["title"]),
+                "product_type": ProductType.ROASTED_WHOLE_BEAN.value,
+                "discovered_date_time": self.extract_published_date(
+                    product),
+                "country_of_origin": (country_of_origin := self.extract_country_of_origin(
+                    product["body_html"])),
+                "continent": get_continent(country_of_origin),
+                "process": (process := self.extract_process(product["body_html"])),
+                "process_category": UNKNOWN if '?' in process else self.get_process_category(process),
+                "tasting_notes": self.extract_notes(product["body_html"]),
+                "varieties": normalize_variety_names(self.extract_varieties(product["body_html"])),
+            }
 
-            body_html = product.get("body_html", "")
-            processed_product["country_of_origin"] = self.extract_country_of_origin(
-                body_html)
-            processed_product["continent"] = get_continent(
-                processed_product["country_of_origin"])
-            processed_product["process"] = self.extract_process(body_html)
-            processed_product["process_category"] = UNKNOWN if '?' in processed_product["process"] else self.get_process_category(
-                processed_product["process"])
-            processed_product["tasting_notes"] = self.extract_notes(body_html)
-            processed_product["varieties"] = normalize_variety_names(
-                self.extract_varieties(body_html))
+            for variant in product["variants"]:
+                processed_product_variant = {
+                    "variant_id": self.extract_variant_id(
+                        variant),
+                    "size": self.extract_size(variant),
+                    "price": self.extract_price(
+                        variant),
+                    "is_sold_out": self.is_sold_out(
+                        variant),
+                }
+                processed_product_variants.append(processed_product_variant)
 
+            processed_product["variants"] = processed_product_variants
             processed_products.append(processed_product)
 
         return processed_products
@@ -69,13 +75,10 @@ class TrafficCoffeeScraper(ShopifyScraper):
             info = info.replace(tag, '')
         return info.split('<')[0].strip()
 
-    def extract_weight(self, product):
-        for variant in product["variants"]:
-            if variant["available"]:
-                return parse_size(variant["title"])
-            else:
-                return parse_size(product["variants"][0]["title"])
-        return 0
+    def extract_size(self, variant):
+        size = variant["title"].split("(")[0].strip(
+        ) if "(" in variant["title"] else variant["title"]
+        return parse_size(size)
 
     def extract_country_of_origin(self, body_html):
         keywords = ["Origin"]
