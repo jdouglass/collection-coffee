@@ -185,7 +185,7 @@ class DatabaseController:
 
         # Step 1: Fetch the product URLs of the products that are about to be deleted
         format_strings = ','.join(['%s'] * len(extracted_urls))
-        select_query = f"SELECT productUrl FROM Product WHERE vendorId = %s AND productUrl NOT IN ({format_strings});"
+        select_query = f"SELECT product_url FROM product WHERE vendor_id = %s AND product_url NOT IN ({format_strings});"
         cursor.execute(select_query, [vendor_id] + extracted_urls)
         urls_to_delete = [item[0] for item in cursor.fetchall()]
 
@@ -193,7 +193,7 @@ class DatabaseController:
         # Step 2: Delete product variants related to products that are going to be deleted
         if urls_to_delete:
             delete_format_strings = ','.join(['%s'] * len(urls_to_delete))
-            delete_variants_query = f"DELETE FROM ProductVariant WHERE productId IN (SELECT id FROM Product WHERE productUrl IN ({delete_format_strings}));"
+            delete_variants_query = f"DELETE FROM product_variant WHERE product_id IN (SELECT id FROM product WHERE product_url IN ({delete_format_strings}));"
             cursor.execute(delete_variants_query, urls_to_delete)
             # Note the number of deleted variants for logging purposes
             deleted_variants_count = cursor.rowcount

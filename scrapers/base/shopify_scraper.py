@@ -16,7 +16,7 @@ class ShopifyScraper(BaseScraper):
         return product["handle"]
 
     def extract_price(self, variant):
-        return Decimal(variant["price"])
+        return round(Decimal(variant["price"]), 2)
 
     def extract_title(self, product):
         return product["title"].title()
@@ -31,4 +31,4 @@ class ShopifyScraper(BaseScraper):
         return variant["id"]
 
     def extract_size(self, variant):
-        return variant["grams"]
+        return round(variant["grams"], 2)

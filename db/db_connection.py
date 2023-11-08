@@ -1,4 +1,4 @@
-import MySQLdb
+import psycopg2
 import os
 from dotenv import load_dotenv
 
@@ -8,20 +8,17 @@ load_dotenv()
 class DBConnection:
     def __init__(self):
         self.host = os.environ.get('DB_HOST')
+        self.port = os.environ.get('DB_PORT')
         self.user = os.environ.get('DB_USERNAME')
         self.password = os.environ.get('DB_PASSWORD')
         self.db_name = os.environ.get('DB_NAME')
 
     def get_connection(self):
-        connection = MySQLdb.connect(
+        connection = psycopg2.connect(
             host=self.host,
+            port=self.port,
             user=self.user,
-            passwd=self.password,
-            db=self.db_name,
-            autocommit=True,
-            ssl_mode="VERIFY_IDENTITY",
-            ssl={
-                "ca": "./config/cacert.pem"
-            }
+            password=self.password,
+            dbname=self.db_name,
         )
         return connection
