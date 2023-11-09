@@ -1,0 +1,15 @@
+export const paramToColumnMapping: { [key: string]: string } = {
+  brand: "b.name",
+  continent: "cont.name",
+  country: "c.name",
+  process_category: "pc.name",
+  tasting_note: "t.name",
+  variety: "v.name",
+  vendor: "ven.name",
+  is_decaf: "p.is_decaf",
+  is_sold_out: "pv.is_sold_out",
+  min_size: "pv.product_size",
+  max_size: "pv.product_size",
+  min_price: "pv.product_price",
+  max_price: "pv.product_price",
+};
