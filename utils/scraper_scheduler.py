@@ -1,7 +1,7 @@
 import time
 from concurrent.futures import ThreadPoolExecutor
 from db.db_controller import DatabaseController
-from config.config import PRINT_PRODUCTS, ENABLE_CRON_JOB
+from config.config import PRINT_PRODUCTS, ENABLE_CRON_JOB, USE_DATABASE
 from config.logger_config import logger
 from apscheduler.schedulers.background import BackgroundScheduler
 
@@ -27,12 +27,13 @@ class ScraperScheduler:
         processed_products = scraper_instance.process_products(
             scraper_instance.products)
 
-        db_controller = DatabaseController()
-        db_controller.connect()
-        db_controller.save_to_db(processed_products)
-        db_controller.delete_old_products(processed_products)
-        db_controller.delete_orphaned_records()
-        db_controller.close_connection()
+        if USE_DATABASE:
+            db_controller = DatabaseController()
+            db_controller.connect()
+            db_controller.save_to_db(processed_products)
+            db_controller.delete_old_products(processed_products)
+            db_controller.delete_orphaned_records()
+            db_controller.close_connection()
 
         if PRINT_PRODUCTS:
             scraper_instance.display_products(processed_products)
