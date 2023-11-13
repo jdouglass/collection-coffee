@@ -1,6 +1,11 @@
 box
 calendar
+cascara
+garage sale
 gift card
 merch
+mini pack
+sample
 subscription
+surprise
 t-shirt
