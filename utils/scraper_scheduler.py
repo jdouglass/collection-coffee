@@ -4,6 +4,7 @@ from db.db_controller import DatabaseController
 from config.config import PRINT_PRODUCTS, ENABLE_CRON_JOB, USE_DATABASE
 from config.logger_config import logger
 from apscheduler.schedulers.background import BackgroundScheduler
+from utils.email_notifier import EmailNotifier
 
 
 class ScraperScheduler:
@@ -11,6 +12,7 @@ class ScraperScheduler:
         self.scraper_classes = scraper_classes
         self.executor = ThreadPoolExecutor(max_workers=len(scraper_classes))
         self.scheduler = BackgroundScheduler()
+        self.email_notifier = EmailNotifier()
 
     def run_scraper(self, vendor):
         start_time = time.time()

@@ -1,7 +1,7 @@
 from config.logger_config import logger
 import requests
 import os
-from supabase import create_client, Client
+from supabase import create_client, Client, StorageException
 import hashlib
 from PIL import Image
 from io import BytesIO
@@ -50,16 +50,23 @@ class SupabaseStorageManager():
                 f"A file with this name already exists: {unique_filename}")
             return f"{self.supabase_url}/storage/v1/object/public/{self.bucket_name}/{unique_filename}"
 
-        upload_response = bucket.upload(
-            unique_filename, image_webp.getvalue(), file_options={"content-type": "image/webp"})
+        try:
+            bucket.upload(
+                unique_filename, image_webp.getvalue(), file_options={"content-type": "image/webp"})
+        except StorageException as e:
+            error_message = str(e)
+            if 'Duplicate' in error_message:
+                logger.warn(
+                    f"A file with this name already exists: {unique_filename} for {product_url}. Skipping upload.")
+            else:
+                logger.error(
+                    f"Error uploading image for {product_url}: {error_message}")
+        except Exception as e:
+            logger.error(
+                f"Unexpected error uploading image for {product_url}: {e}")
 
-        if upload_response.status_code == 200:
-            logger.info("Image successfully uploaded!")
-            return f"{self.supabase_url}/storage/v1/object/public/{self.bucket_name}/{unique_filename}"
-        else:
-            logger.error("Failed to upload image:",
-                         upload_response["error"]["message"])
-            return None
+        logger.info("Image successfully uploaded!")
+        return f"{self.supabase_url}/storage/v1/object/public/{self.bucket_name}/{unique_filename}"
 
     def delete_image(self, product_url):
         # Generate the unique filename based on the image URL
@@ -80,7 +87,7 @@ class SupabaseStorageManager():
             logger.error(
                 f"Unexpected response format from delete operation: {delete_responses}")
             return False
-        if delete_response.httpStatusCode == 200:
+        if delete_response["metadata"]["httpStatusCode"] == 200:
             logger.info(f"Image successfully deleted: {unique_filename}")
             return True
         else:

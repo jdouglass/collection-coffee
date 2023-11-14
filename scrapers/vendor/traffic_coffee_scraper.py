@@ -7,12 +7,12 @@ from helpers.country_name_validator import validate_country_name
 from enums.product_type import ProductType
 from helpers.variety_extractor import extract_varieties
 import re
+import traceback
 
 
 class TrafficCoffeeScraper(ShopifyScraper):
     def __init__(self, url, vendor, mock_data_path, product_base_url):
         super().__init__(url, vendor, mock_data_path, product_base_url)
-        self.coffee_brands = self.load_coffee_brands()
 
     def process_products(self, fetched_products):
         # If fetched_products is provided, use it. Otherwise, use the products fetched by the base method
@@ -20,42 +20,46 @@ class TrafficCoffeeScraper(ShopifyScraper):
 
         processed_products = []
         for product in products_to_process:
-            processed_product_variants = []
-            # Creating a new product dictionary with only the required fields
-            processed_product = {
-                "brand": self.extract_brand(),
-                "vendor": self.get_vendor(self.vendor),
-                "title": self.extract_title(product),
-                "handle": (handle := self.extract_handle(product)),
-                "product_url": self.build_product_url(handle),
-                "image_url": self.extract_image_url(product),
-                "is_decaf": self.is_decaf(product["title"]),
-                "product_type": ProductType.ROASTED_WHOLE_BEAN.value,
-                "discovered_date_time": self.extract_published_date(
-                    product),
-                "country_of_origin": (country_of_origin := self.extract_country_of_origin(
-                    product["body_html"])),
-                "continent": get_continent(country_of_origin),
-                "process": (process := self.extract_process(product["body_html"])),
-                "process_category": UNKNOWN if '?' in process else self.get_process_category(process),
-                "tasting_notes": self.extract_notes(product["body_html"]),
-                "varieties": normalize_variety_names(self.extract_varieties(product["body_html"])),
-            }
-
-            for variant in product["variants"]:
-                processed_product_variant = {
-                    "variant_id": self.extract_variant_id(
-                        variant),
-                    "size": self.extract_size(variant),
-                    "price": self.extract_price(
-                        variant),
-                    "is_sold_out": self.is_sold_out(
-                        variant),
+            try:
+                processed_product_variants = []
+                processed_product = {
+                    "brand": self.extract_brand(),
+                    "vendor": self.get_vendor(self.vendor),
+                    "title": self.extract_title(product),
+                    "handle": (handle := self.extract_handle(product)),
+                    "product_url": self.build_product_url(handle),
+                    "image_url": self.extract_image_url(product),
+                    "is_decaf": self.is_decaf(product["title"]),
+                    "product_type": ProductType.ROASTED_WHOLE_BEAN.value,
+                    "discovered_date_time": self.extract_published_date(
+                        product),
+                    "country_of_origin": (country_of_origin := self.extract_country_of_origin(
+                        product["body_html"])),
+                    "continent": get_continent(country_of_origin),
+                    "process": (process := self.extract_process(product["body_html"])),
+                    "process_category": UNKNOWN if '?' in process else self.get_process_category(process),
+                    "tasting_notes": self.extract_notes(product["body_html"]),
+                    "varieties": normalize_variety_names(self.extract_varieties(product["body_html"])),
                 }
-                processed_product_variants.append(processed_product_variant)
 
-            processed_product["variants"] = processed_product_variants
-            processed_products.append(processed_product)
+                for variant in product["variants"]:
+                    processed_product_variant = {
+                        "variant_id": self.extract_variant_id(
+                            variant),
+                        "size": self.extract_size(variant),
+                        "price": self.extract_price(
+                            variant),
+                        "is_sold_out": self.is_sold_out(
+                            variant),
+                    }
+                    processed_product_variants.append(
+                        processed_product_variant)
+
+                processed_product["variants"] = processed_product_variants
+                processed_products.append(processed_product)
+            except Exception:
+                error_message = traceback.format_exc()
+                self.email_notifier.send_error_notification(error_message)
 
         return processed_products
 

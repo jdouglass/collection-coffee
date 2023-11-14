@@ -4,12 +4,15 @@ from db.db_connection import DBConnection
 from utils.supabase_storage_manager import SupabaseStorageManager
 from utils.print_once import check_use_database
 from config.logger_config import logger
+import traceback
+from utils.email_notifier import EmailNotifier
 
 
 class DatabaseController:
     def __init__(self):
         self.connection = None
         self.storage_manager = SupabaseStorageManager()
+        self.email_notifier = EmailNotifier()
 
     def connect(self):
         db_connection = DBConnection()
@@ -79,6 +82,8 @@ class DatabaseController:
             except MySQLdb.Error as e:
                 logger.error(
                     f"Error inserting product {product}: {e}")
+                error_message = traceback.format_exc()
+                self.email_notifier.send_error_notification(error_message)
                 continue  # skip to the next product
 
             if not product_id:
@@ -116,6 +121,8 @@ class DatabaseController:
                 except MySQLdb.Error as e:
                     logger.error(
                         f"Error handling product variant {variant}: {e}")
+                    error_message = traceback.format_exc()
+                    self.email_notifier.send_error_notification(error_message)
 
             # For varieties
             existing_varieties = set()
@@ -193,6 +200,18 @@ class DatabaseController:
         # Step 2: Delete product variants related to products that are going to be deleted
         if urls_to_delete:
             delete_format_strings = ','.join(['%s'] * len(urls_to_delete))
+
+            delete_related_tasting_notes_query = f"DELETE FROM product_to_tasting_note WHERE product_id IN (SELECT id FROM product WHERE product_url IN ({delete_format_strings}));"
+            delete_related_varieties_query = f"DELETE FROM product_to_variety WHERE product_id IN (SELECT id FROM product WHERE product_url IN ({delete_format_strings}));"
+
+            cursor.execute(delete_related_tasting_notes_query, urls_to_delete)
+            logger.info(
+                f"Related tasting notes deleted for {cursor.rowcount} products.")
+
+            cursor.execute(delete_related_varieties_query, urls_to_delete)
+            logger.info(
+                f"Related varieties deleted for {cursor.rowcount} products.")
+
             delete_variants_query = f"DELETE FROM product_variant WHERE product_id IN (SELECT id FROM product WHERE product_url IN ({delete_format_strings}));"
             cursor.execute(delete_variants_query, urls_to_delete)
             # Note the number of deleted variants for logging purposes

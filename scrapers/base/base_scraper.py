@@ -5,6 +5,7 @@ from enums.continent import Continent
 from config.config import USE_MOCK_DATA
 from enums.process_category import ProcessCategory
 from config.logger_config import logger
+from utils.email_notifier import EmailNotifier
 
 
 class BaseScraper:
@@ -14,6 +15,8 @@ class BaseScraper:
         self.products = []
         self.mock_data_path = mock_data_path
         self.product_base_url = product_base_url
+        self.email_notifier = EmailNotifier()
+        self.coffee_brands = self.load_coffee_brands()
 
     def load_excluded_words(self):
         with open('data/excluded_words.txt', 'r') as f:
