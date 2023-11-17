@@ -80,10 +80,31 @@ insert_product_variant_query = """
     )
 """
 
+insert_product_variant_without_variant_id_query = """
+    INSERT INTO product_variant (
+        product_id, 
+        product_size, 
+        product_price, 
+        is_sold_out
+    )
+    VALUES (
+        %s, 
+        %s, 
+        %s, 
+        %s
+    )
+"""
+
 update_product_variant_query = """
     UPDATE product_variant
     SET product_size = %s, product_price = %s, is_sold_out = %s
     WHERE variant_id = %s AND product_id = %s
+"""
+
+update_product_variant_without_variant_id_query = """
+    UPDATE product_variant
+    SET product_size = %s, product_price = %s, is_sold_out = %s
+    WHERE product_id = %s
 """
 
 get_variant_by_identifier_query = """

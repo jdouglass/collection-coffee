@@ -5,6 +5,8 @@ from enums.process_category import ProcessCategory
 from config.logger_config import logger
 from utils.email_notifier import EmailNotifier
 from datetime import datetime
+import requests
+import time
 
 
 class BaseScraper:
@@ -17,6 +19,7 @@ class BaseScraper:
         self.email_notifier = EmailNotifier()
         self.coffee_brands = self.load_coffee_brands()
         self.decaf_words = self.load_decaf_words()
+        self.excluded_words = self.load_excluded_words()
         self.home_url = home_url
 
     def load_excluded_words(self):
@@ -58,6 +61,17 @@ class BaseScraper:
         lowercase_title = title.lower()
         keywords = set(self.decaf_words)
         return any(keyword in lowercase_title for keyword in keywords)
+
+    def get_with_rate_limiting(self, url):
+        while True:
+            response = requests.get(url)
+            if response.status_code == 429:
+                # Default to 10 seconds if header is missing
+                retry_after = int(response.headers.get("Retry-After", 10))
+                time.sleep(retry_after)
+                continue
+            response.raise_for_status()
+            return response
 
     @staticmethod
     def decimal_serializer(obj):

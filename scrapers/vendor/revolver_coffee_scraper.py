@@ -12,6 +12,8 @@ from helpers.title_formatter import title_formatter
 import pycountry
 from enums.process_category import ProcessCategory
 import traceback
+from config.config import DEVELOPMENT_MODE
+from config.logger_config import logger
 
 
 class RevolverCoffeeScraper(ShopifyScraper):
@@ -21,7 +23,6 @@ class RevolverCoffeeScraper(ShopifyScraper):
 
     def __init__(self, url, vendor, mock_data_path, product_base_url, home_url):
         super().__init__(url, vendor, mock_data_path, product_base_url, home_url)
-        self.coffee_brands = self.load_coffee_brands()
 
     def process_products(self, fetched_products):
         # If fetched_products is provided, use it. Otherwise, use the products fetched by the base method
@@ -37,7 +38,7 @@ class RevolverCoffeeScraper(ShopifyScraper):
                     # Creating a new product dictionary with only the required fields
                     processed_product = {
                         "brand": self.extract_brand(product),
-                        "vendor": self.get_vendor(self.vendor),
+                        "vendor": self.vendor,
                         "title": self.extract_title(product),
                         "handle": (handle := self.extract_handle(product)),
                         "product_url": self.build_product_url(handle),
@@ -69,8 +70,10 @@ class RevolverCoffeeScraper(ShopifyScraper):
                     processed_product["variants"] = processed_product_variants
                     processed_products.append(processed_product)
             except Exception:
-                error_message = traceback.format_exc()
-                self.email_notifier.send_error_notification(error_message)
+                error_message = f"{self.vendor}\n\n{traceback.format_exc()}"
+                if not DEVELOPMENT_MODE:
+                    self.email_notifier.send_error_notification(error_message)
+                logger.error(error_message)
 
         return processed_products
 
@@ -199,6 +202,5 @@ class RevolverCoffeeScraper(ShopifyScraper):
         return f"{self.product_base_url}{handle}"
 
     def is_decaf(self, product):
-        decaf_keywords = self.load_decaf_words()
         content = (product["title"] + product["body_html"]).lower()
-        return any(keyword in content for keyword in decaf_keywords)
+        return any(keyword in content for keyword in self.decaf_words)

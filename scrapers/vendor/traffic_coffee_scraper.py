@@ -2,12 +2,14 @@ from scrapers.base.shopify_scraper import ShopifyScraper
 from helpers.country_to_continent_mapper import get_continent
 from helpers.variety_normalizer import normalize_variety_names
 from config.constants import UNKNOWN
+from config.config import DEVELOPMENT_MODE
 from helpers.size_parser import parse_size
 from helpers.country_name_validator import validate_country_name
 from enums.product_type import ProductType
 from helpers.variety_extractor import extract_varieties
 import re
 import traceback
+from config.logger_config import logger
 
 
 class TrafficCoffeeScraper(ShopifyScraper):
@@ -23,8 +25,8 @@ class TrafficCoffeeScraper(ShopifyScraper):
             try:
                 processed_product_variants = []
                 processed_product = {
-                    "brand": self.extract_brand(),
-                    "vendor": self.get_vendor(self.vendor),
+                    "brand": self.vendor,
+                    "vendor": self.vendor,
                     "title": self.extract_title(product),
                     "handle": (handle := self.extract_handle(product)),
                     "product_url": self.build_product_url(handle),
@@ -58,13 +60,12 @@ class TrafficCoffeeScraper(ShopifyScraper):
                 processed_product["variants"] = processed_product_variants
                 processed_products.append(processed_product)
             except Exception:
-                error_message = traceback.format_exc()
-                self.email_notifier.send_error_notification(error_message)
+                error_message = f"{self.vendor}\n\n{traceback.format_exc()}"
+                if not DEVELOPMENT_MODE:
+                    self.email_notifier.send_error_notification(error_message)
+                logger.error(error_message)
 
         return processed_products
-
-    def extract_brand(self):
-        return self.vendor
 
     def _extract_from_body(self, body_html, keywords):
         for keyword in keywords:
@@ -122,8 +123,7 @@ class TrafficCoffeeScraper(ShopifyScraper):
 
     def is_decaf(self, title):
         formatted_title = title.lower()
-        keywords = self.load_decaf_words()
-        for keyword in keywords:
+        for keyword in self.decaf_words:
             start_pos = formatted_title.find(keyword)
             if start_pos != -1:
                 break

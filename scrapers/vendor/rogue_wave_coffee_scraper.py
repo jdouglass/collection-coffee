@@ -63,7 +63,7 @@ class RogueWaveCoffeeScraper(ShopifyScraper):
                     processed_product["variants"] = processed_product_variants
                     processed_products.append(processed_product)
             except Exception:
-                error_message = f"{self.vendor} + \n\n{traceback.format_exc()}"
+                error_message = f"{self.vendor}\n\n{traceback.format_exc()}"
                 self.email_notifier.send_error_notification(error_message)
 
         return processed_products
@@ -134,5 +134,5 @@ class RogueWaveCoffeeScraper(ShopifyScraper):
 
     def is_decaf(self, product):
         lowercase_title = product["title"].lower()
-        keywords = set(self.load_decaf_words())
+        keywords = set(self.decaf_words)
         return any(keyword in lowercase_title for keyword in keywords)

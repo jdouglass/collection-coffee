@@ -6,6 +6,7 @@ from utils.print_once import check_use_database
 from config.logger_config import logger
 import traceback
 from utils.email_notifier import EmailNotifier
+from config.config import DEVELOPMENT_MODE
 
 
 class DatabaseController:
@@ -80,10 +81,11 @@ class DatabaseController:
                                    (product["product_url"],))
                     product_id = cursor.fetchone()[0]
             except MySQLdb.Error as e:
-                logger.error(
-                    f"Error inserting product {product}: {e}")
                 error_message = traceback.format_exc()
-                self.email_notifier.send_error_notification(error_message)
+                if not DEVELOPMENT_MODE:
+                    self.email_notifier.send_error_notification(error_message)
+                logger.error(
+                    f"Error inserting product {product}: {error_message}")
                 continue  # skip to the next product
 
             if not product_id:
@@ -94,35 +96,57 @@ class DatabaseController:
             # This assumes your variants are within the 'product' object in a 'variants' list
             for variant in product.get("variants", []):
                 try:
+                    variant_id_exists = 'variant_id' in variant
                     # Check if the variant already exists and update or insert as necessary
                     # You'll need a query to select the variant by some unique identifier, e.g., a combination of product_id and a variant attribute
-                    cursor.execute(get_variant_by_identifier_query,
-                                   (variant['variant_id'], product_id))
-                    existing_variant = cursor.fetchone()
+                    if variant_id_exists:
+                        cursor.execute(get_variant_by_identifier_query,
+                                       (variant['variant_id'], product_id))
+                        existing_variant = cursor.fetchone()
 
-                    if existing_variant:
-                        # Update the existing variant entry
-                        cursor.execute(update_product_variant_query, (
-                            variant["size"],
-                            variant["price"],
-                            variant["is_sold_out"],
-                            variant["variant_id"],
-                            product_id,
-                        ))
+                    if variant_id_exists:
+                        if existing_variant:
+                            # Update the existing variant entry
+                            cursor.execute(update_product_variant_query, (
+                                variant["size"],
+                                variant["price"],
+                                variant["is_sold_out"],
+                                variant["variant_id"],
+                                product_id,
+                            ))
+                        else:
+                            # Insert new variant entry
+                            cursor.execute(insert_product_variant_query, (
+                                product_id,
+                                variant["variant_id"],
+                                variant["size"],
+                                variant["price"],
+                                variant["is_sold_out"],
+                            ))
                     else:
-                        # Insert new variant entry
-                        cursor.execute(insert_product_variant_query, (
-                            product_id,
-                            variant["variant_id"],
-                            variant["size"],
-                            variant["price"],
-                            variant["is_sold_out"],
-                        ))
+                        if existing_product:
+                            # Update the existing variant entry
+                            cursor.execute(update_product_variant_without_variant_id_query, (
+                                variant["size"],
+                                variant["price"],
+                                variant["is_sold_out"],
+                                product_id,
+                            ))
+                        else:
+                            # Insert new variant entry
+                            cursor.execute(insert_product_variant_without_variant_id_query, (
+                                product_id,
+                                variant["size"],
+                                variant["price"],
+                                variant["is_sold_out"],
+                            ))
                 except MySQLdb.Error as e:
-                    logger.error(
-                        f"Error handling product variant {variant}: {e}")
                     error_message = traceback.format_exc()
-                    self.email_notifier.send_error_notification(error_message)
+                    if not DEVELOPMENT_MODE:
+                        self.email_notifier.send_error_notification(
+                            error_message)
+                    logger.error(
+                        f"Error handling product variant {variant}: {error_message}")
 
             # For varieties
             existing_varieties = set()

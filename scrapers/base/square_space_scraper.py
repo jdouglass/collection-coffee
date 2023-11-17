@@ -3,33 +3,33 @@ from config.constants import DEFAULT_IMAGE_URL
 from scrapers.base.base_scraper import BaseScraper
 from config.config import USE_MOCK_DATA
 import requests
+from datetime import datetime
 
 
-class ShopifyScraper(BaseScraper):
+class SquareSpaceScraper(BaseScraper):
 
     def extract_published_date(self, product):
-        return product["published_at"]
+        # Divide by 1000 to convert the timestamp from milliseconds to seconds
+        # because Python can only accept unix timestamp in seconds
+        return datetime.fromtimestamp(product["publishOn"] / 1000)
 
     def extract_image_url(self, product):
-        return product["images"][0]["src"] if product["images"] else DEFAULT_IMAGE_URL
+        return product["items"][0]["assetUrl"] if product["items"][0]["assetUrl"] else DEFAULT_IMAGE_URL
 
     def extract_handle(self, product):
-        return product["handle"]
+        return product["urlId"]
 
     def extract_price(self, variant):
-        return round(Decimal(variant["price"]), 2)
+        return Decimal(variant["priceMoney"]["value"])
 
     def extract_title(self, product):
         return product["title"].title()
 
     def is_sold_out(self, variant):
-        return not variant["available"]
+        return not variant["unlimited"]
 
     def extract_variant_id(self, variant):
         return variant["id"]
-
-    def extract_size(self, variant):
-        return round(variant["grams"], 2)
 
     def fetch_products(self):
         if USE_MOCK_DATA:
@@ -37,4 +37,4 @@ class ShopifyScraper(BaseScraper):
             return
         response = requests.get(self.url)
         data = response.json()
-        self.products = data['products']
+        self.products = data['items']

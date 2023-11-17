@@ -12,6 +12,8 @@ import re
 from bs4 import BeautifulSoup
 from helpers.variety_extractor import extract_varieties
 import traceback
+from config.config import DEVELOPMENT_MODE
+from config.logger_config import logger
 
 
 class EightOunceCoffeeScraper(ShopifyScraper):
@@ -32,7 +34,7 @@ class EightOunceCoffeeScraper(ShopifyScraper):
                         product["handle"]))
                     processed_product = {
                         "brand": self.extract_brand(product, product_details),
-                        "vendor": self.get_vendor(self.vendor),
+                        "vendor": self.vendor,
                         "title": self.extract_title(product),
                         "handle": (handle := self.extract_handle(product)),
                         "product_url": self.build_product_url(handle),
@@ -64,8 +66,10 @@ class EightOunceCoffeeScraper(ShopifyScraper):
                     processed_product["variants"] = processed_product_variants
                     processed_products.append(processed_product)
             except Exception:
-                error_message = traceback.format_exc()
-                self.email_notifier.send_error_notification(error_message)
+                error_message = f"{self.vendor}\n\n{traceback.format_exc()}"
+                if not DEVELOPMENT_MODE:
+                    self.email_notifier.send_error_notification(error_message)
+                logger.error(error_message)
 
         return processed_products
 
