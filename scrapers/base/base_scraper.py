@@ -1,15 +1,14 @@
 import json
-import requests
 from decimal import Decimal
 from enums.continent import Continent
-from config.config import USE_MOCK_DATA
 from enums.process_category import ProcessCategory
 from config.logger_config import logger
 from utils.email_notifier import EmailNotifier
+from datetime import datetime
 
 
 class BaseScraper:
-    def __init__(self, url, vendor, mock_data_path, product_base_url):
+    def __init__(self, url, vendor, mock_data_path, product_base_url, home_url):
         self.url = url
         self.vendor = vendor
         self.products = []
@@ -17,6 +16,8 @@ class BaseScraper:
         self.product_base_url = product_base_url
         self.email_notifier = EmailNotifier()
         self.coffee_brands = self.load_coffee_brands()
+        self.decaf_words = self.load_decaf_words()
+        self.home_url = home_url
 
     def load_excluded_words(self):
         with open('data/excluded_words.txt', 'r') as f:
@@ -34,34 +35,29 @@ class BaseScraper:
         with open(filename, 'r', encoding='utf-8') as file:
             return json.load(file)
 
-    def fetch_products(self):
-        if USE_MOCK_DATA:
-            self.products = self.load_mock_data(self.mock_data_path)
-            return
-        response = requests.get(self.url)
-        data = response.json()
-        self.products = data['products']
-
     def get_vendor(self, vendor):
         return vendor
 
     def get_process_category(self, process):
-        if ProcessCategory.WASHED.value in process and ProcessCategory.NATURAL.value in process or \
-                ProcessCategory.WASHED.value in process and ProcessCategory.HONEY.value in process or \
-                ProcessCategory.NATURAL.value in process and ProcessCategory.HONEY.value in process:
-            return ProcessCategory.EXPERIMENTAL.value
-        elif ProcessCategory.WASHED.value in process and ProcessCategory.HONEY.value in process:
-            return ProcessCategory.EXPERIMENTAL.value
-        elif ProcessCategory.WASHED.value in process:
-            return ProcessCategory.WASHED.value
-        elif ProcessCategory.NATURAL.value in process:
-            return ProcessCategory.NATURAL.value
-        elif ProcessCategory.HONEY.value in process:
-            return ProcessCategory.HONEY.value
-        elif process == ProcessCategory.UNKNOWN.value:
+        categories = [ProcessCategory.WASHED.value,
+                      ProcessCategory.NATURAL.value, ProcessCategory.HONEY.value]
+
+        if process == ProcessCategory.UNKNOWN.value:
             return ProcessCategory.UNKNOWN.value
+
+        found_categories = [cat for cat in categories if cat in process]
+
+        if len(found_categories) >= 2:
+            return ProcessCategory.EXPERIMENTAL.value
+        elif len(found_categories) == 1:
+            return found_categories[0]
         else:
             return ProcessCategory.EXPERIMENTAL.value
+
+    def is_decaf(self, title):
+        lowercase_title = title.lower()
+        keywords = set(self.decaf_words)
+        return any(keyword in lowercase_title for keyword in keywords)
 
     @staticmethod
     def decimal_serializer(obj):
@@ -70,6 +66,8 @@ class BaseScraper:
             return str(obj)
         if isinstance(obj, Continent):
             return obj.value
+        if isinstance(obj, datetime):
+            return str(obj)
         raise TypeError("Type not serializable")
 
     def display_products(self, products):

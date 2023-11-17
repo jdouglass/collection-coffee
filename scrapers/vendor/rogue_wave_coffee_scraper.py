@@ -14,8 +14,8 @@ import traceback
 
 
 class RogueWaveCoffeeScraper(ShopifyScraper):
-    def __init__(self, url, vendor, mock_data_path, product_base_url):
-        super().__init__(url, vendor, mock_data_path, product_base_url)
+    def __init__(self, url, vendor, mock_data_path, product_base_url, home_url):
+        super().__init__(url, vendor, mock_data_path, product_base_url, home_url)
 
     def process_products(self, fetched_products):
         # If fetched_products is provided, use it. Otherwise, use the products fetched by the base method

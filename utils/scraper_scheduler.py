@@ -22,9 +22,9 @@ class ScraperScheduler:
             return
 
         logger.debug(f"Starting scraper: {vendor}")
-        scraper_class, scraper_url, scraper_mock_data_path, product_base_url = scraper_data
+        scraper_class, scraper_url, scraper_mock_data_path, product_base_url, home_url = scraper_data
         scraper_instance = scraper_class(
-            scraper_url, vendor, scraper_mock_data_path, product_base_url)
+            scraper_url, vendor, scraper_mock_data_path, product_base_url, home_url)
         scraper_instance.fetch_products()
         processed_products = scraper_instance.process_products(
             scraper_instance.products)
