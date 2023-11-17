@@ -26,7 +26,6 @@ import logging
 class HatchCoffeeRoasterScraper(BaseScraper):
     def __init__(self, url, vendor, mock_data_path, product_base_url, home_url):
         super().__init__(url, vendor, mock_data_path, product_base_url, home_url)
-        self.excluded_words = self.load_excluded_words()
 
     def process_products(self, fetched_products):
         processed_products = []
@@ -73,7 +72,6 @@ class HatchCoffeeRoasterScraper(BaseScraper):
                                 processed_product_variants.append(option_data)
                     else:
                         option_data = {
-                            'variant_id': 1,
                             'size': self.extract_size(body_content),
                             'price': self.extract_price(soup),
                             'is_sold_out': self.is_sold_out(soup),
@@ -83,7 +81,7 @@ class HatchCoffeeRoasterScraper(BaseScraper):
                     processed_product["variants"] = processed_product_variants
                     processed_products.append(processed_product)
                 except Exception as e:
-                    error_message = traceback.format_exc()
+                    error_message = f"{self.vendor}\n\n{traceback.format_exc()}"
                     if not DEVELOPMENT_MODE:
                         self.email_notifier.send_error_notification(
                             error_message)
@@ -221,7 +219,7 @@ class HatchCoffeeRoasterScraper(BaseScraper):
                 time.sleep(2)
 
             except Exception as e:
-                error_message = traceback.format_exc()
+                error_message = f"{self.vendor}\n\n{traceback.format_exc()}"
                 if not DEVELOPMENT_MODE:
                     self.email_notifier.send_error_notification(
                         error_message)
