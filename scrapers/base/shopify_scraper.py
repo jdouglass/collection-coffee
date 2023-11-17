@@ -1,7 +1,8 @@
 from decimal import Decimal
 from config.constants import DEFAULT_IMAGE_URL
 from scrapers.base.base_scraper import BaseScraper
-from enums.product_type import ProductType
+from config.config import USE_MOCK_DATA
+import requests
 
 
 class ShopifyScraper(BaseScraper):
@@ -32,3 +33,11 @@ class ShopifyScraper(BaseScraper):
 
     def extract_size(self, variant):
         return round(variant["grams"], 2)
+
+    def fetch_products(self):
+        if USE_MOCK_DATA:
+            self.products = self.load_mock_data(self.mock_data_path)
+            return
+        response = requests.get(self.url)
+        data = response.json()
+        self.products = data['products']

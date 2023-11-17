@@ -57,6 +57,7 @@ VARIETY_MAPPINGS = {
     '74112': 'Ethiopian Landraces',
     '74118': 'Ethiopian Landraces',
     '74158': 'Ethiopian Landraces',
+    'Cm Natural': 'CM Natural',
     'Geisha': 'Gesha',
     'Landrace Cultivars': 'Ethiopian Landraces',
     'Landraces': 'Ethiopian Landraces',

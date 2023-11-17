@@ -19,8 +19,8 @@ class RevolverCoffeeScraper(ShopifyScraper):
     NOTES_KEYWORD = "notes"
     PROCESS_KEYWORD = "process"
 
-    def __init__(self, url, vendor, mock_data_path, product_base_url):
-        super().__init__(url, vendor, mock_data_path, product_base_url)
+    def __init__(self, url, vendor, mock_data_path, product_base_url, home_url):
+        super().__init__(url, vendor, mock_data_path, product_base_url, home_url)
         self.coffee_brands = self.load_coffee_brands()
 
     def process_products(self, fetched_products):
