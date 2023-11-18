@@ -1,7 +1,7 @@
 from config.logger_config import logger
 from data.coffee_vendors_data import coffee_vendors_data
 from utils.scraper_scheduler import ScraperScheduler
-from config.config import ENABLE_CRON_JOB
+from config.config import ENABLE_CRON_JOB, DEVELOPMENT_MODE, USE_DATABASE
 import argparse
 
 SCRAPER_CLASSES = {
@@ -13,6 +13,13 @@ SCRAPER_CLASSES = {
         vendor_data["home_url"])
     for vendor_data in coffee_vendors_data
 }
+
+
+def confirm_proceed(message):
+    response = input(message + " Proceed? (Y/N) ").strip().upper()
+    if response != "Y":
+        print("Operation cancelled.")
+        exit()
 
 
 def main():
@@ -50,4 +57,10 @@ def main():
 
 
 if __name__ == "__main__":
+    if USE_DATABASE:
+        confirm_proceed("USE_DATABASE flag is set to True.")
+
+    if not DEVELOPMENT_MODE:
+        confirm_proceed("DEVELOPMENT_MODE is set to False.")
+
     main()
