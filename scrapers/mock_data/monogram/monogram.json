@@ -1,0 +1,2415 @@
+[
+  {
+    "id": 7187676168245,
+    "title": "Warmth Filter Blend",
+    "handle": "warmth-filter-blend",
+    "body_html": "<p>Featuring familiar notes of chocolate and nougat, our new Warmth Filter Blend is perfect for making delicious filter coffee everyday! The flavour is approachable, the profile is consistent and the price is affordable. And it always will be.</p>\n<p>With every sip of this filter blend, you’ll enjoy a seasonally rotating blend of our freshest harvest coffees from Central and South America that combine into a smooth blend that’s rich in flavour and low in acidity.</p>\n<p>Flavours: Chocolate, Nougat</p>\n<p>Origin: Central + South America</p>",
+    "published_at": "2023-05-12T10:34:43-06:00",
+    "created_at": "2023-05-11T08:45:13-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "filter",
+      "holiday",
+      "warmth",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42268966125621,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "WARMTH-FILTER-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "14.03",
+        "grams": 300,
+        "compare_at_price": "16.50",
+        "position": 1,
+        "product_id": 7187676168245,
+        "created_at": "2023-05-15T07:45:23-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42261193621557,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "WARMTH-FILTER-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.80",
+        "grams": 907,
+        "compare_at_price": "48.00",
+        "position": 2,
+        "product_id": 7187676168245,
+        "created_at": "2023-05-11T08:45:13-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42261193654325,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "WARMTH-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "102.00",
+        "grams": 2268,
+        "compare_at_price": "120.00",
+        "position": 3,
+        "product_id": 7187676168245,
+        "created_at": "2023-05-11T08:45:13-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201757089845,
+        "created_at": "2023-11-08T13:21:12-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:21:15-07:00",
+        "product_id": 7187676168245,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/WarmthFilter.png?v=1699474875",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 33884809134133,
+        "created_at": "2023-06-07T10:47:59-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:21:15-07:00",
+        "product_id": 7187676168245,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DSC05160-2_1.jpg?v=1699474875",
+        "width": 2366,
+        "height": 3590
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 7177283108917,
+    "title": "Warmth Espresso Blend",
+    "handle": "warmth-espresso-blend",
+    "body_html": "<p>For when you want a coffee you can count on. We blended coffees from Central and South America to create a smooth, rich and approachable warmth espresso blend that's low in acidity. With each sip of this blend, you'll taste familiar flavours of chocolate, caramel and nuts. Enjoy a<span data-mce-fragment=\"1\"> seasonally rotating blend of our freshest harvest coffees, that's always dependable, always the same profile, and always delicious.  </span></p>\n<p>Flavours: Chocolate, Caramel, Nutty<br>Origin: Central + South America</p>",
+    "published_at": "2023-04-13T15:28:31-06:00",
+    "created_at": "2023-04-12T13:48:16-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_espresso",
+      "coffee",
+      "espresso",
+      "holiday",
+      "warmth",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42268966551605,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "WARMTH-ESPRESSO-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "14.03",
+        "grams": 300,
+        "compare_at_price": "16.50",
+        "position": 1,
+        "product_id": 7177283108917,
+        "created_at": "2023-05-15T07:46:38-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42199704535093,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "WARMTH-ESPRESSO-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.80",
+        "grams": 907,
+        "compare_at_price": "48.00",
+        "position": 2,
+        "product_id": 7177283108917,
+        "created_at": "2023-04-12T13:48:16-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42199704567861,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "WARMTH-ESPRESSO-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "102.00",
+        "grams": 2268,
+        "compare_at_price": "120.00",
+        "position": 3,
+        "product_id": 7177283108917,
+        "created_at": "2023-04-12T13:48:16-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201755680821,
+        "created_at": "2023-11-08T13:20:48-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:20:51-07:00",
+        "product_id": 7177283108917,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/WarmthEspresso.png?v=1699474851",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 33884807233589,
+        "created_at": "2023-06-07T10:46:51-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:20:51-07:00",
+        "product_id": 7177283108917,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DSC03412-2.jpg?v=1699474851",
+        "width": 1429,
+        "height": 2144
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 6762208559157,
+    "title": "Maximino Gutiérrez Tejada",
+    "handle": "florestales-filter",
+    "body_html": "<p><meta charset=\"utf-8\">ORIGIN: TOLIMA, COLOMBIA<br>VARIETY: YELLOW CATURRA<br>PROCESS: WASHED THROUGH STAGED FERMENTATION<br>NOTES: BROWN SUGAR, ORANGE, APPLE</p>\n<p><span></span><meta charset=\"utf-8\">Maximino was born in a coffee-growing family, and since childhood was involved in all the processes. Thirty-one years ago Maximo inherited Florestales farm, and now lives there with his wife and two of his four children, three cats and one dog. Maximino has been working hard to improve the quality of the coffee he produces by focusing on processing as well as introducing gesha trees to the farm. The team at Florestales maintains environmentally friendly agricultural practices to maintain their integrity of their land. The family also grows citrus fruit, like lemons and oranges as well as yucca and plantains, and their coffee trees are growing beside three hectares of forest that they plan to continue conserving. Florestales is an absolutely stunning property and Maximino is producing some very delicious coffees. We are excited to have his coffees on our menu this year and are looking forward to tasting his coffees in the years to come. <br></p>",
+    "published_at": "2023-09-27T14:13:39-06:00",
+    "created_at": "2022-01-12T11:54:35-07:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "colombia",
+      "filter",
+      "whole bean",
+      "wonder"
+    ],
+    "variants": [
+      {
+        "id": 40434093817909,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "MAXIMINO-FILTER-300g",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "23.80",
+        "grams": 300,
+        "compare_at_price": "28.00",
+        "position": 1,
+        "product_id": 6762208559157,
+        "created_at": "2022-01-12T11:54:35-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 40434093916213,
+        "title": "2lb",
+        "option1": "2lb",
+        "option2": null,
+        "option3": null,
+        "sku": "MAXIMINO-FILTER-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "65.45",
+        "grams": 907,
+        "compare_at_price": "77.00",
+        "position": 2,
+        "product_id": 6762208559157,
+        "created_at": "2022-01-12T11:54:35-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 40434093981749,
+        "title": "5lb",
+        "option1": "5lb",
+        "option2": null,
+        "option3": null,
+        "sku": "MAXIMINO-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "160.65",
+        "grams": 2268,
+        "compare_at_price": "189.00",
+        "position": 3,
+        "product_id": 6762208559157,
+        "created_at": "2022-01-12T11:54:35-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201774948405,
+        "created_at": "2023-11-08T13:26:53-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:26:56-07:00",
+        "product_id": 6762208559157,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Maximino.png?v=1699475216",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 30820300783669,
+        "created_at": "2022-01-12T14:10:22-07:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:26:56-07:00",
+        "product_id": 6762208559157,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/products/MAXIMINO.gif?v=1699475216",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2lb", "5lb"]
+      }
+    ]
+  },
+  {
+    "id": 7165172777013,
+    "title": "Wonder + Warmth Box Set",
+    "handle": "wonder-warmth-box-set",
+    "body_html": "<p>Try the best of both (coffee) worlds with our new wonder + warmth boxed set!</p>\n<p>This set is designed to allow you to try two distinct coffees from our lineup so you can really taste the difference in our wonder and warmth coffees and learn what you like best.</p>\n<p>The first is a coffee from our wonder line. These coffees are your more adventurous option. They tend to be fruitier, more exciting and a little more on the acidic side.</p>\n<p>The second coffee is from our warmth line which is more approachable with familiar flavours. These are your smooth, rich, easy-drinking coffees that are lower in acidity.</p>",
+    "published_at": "2023-03-10T10:59:19-07:00",
+    "created_at": "2023-03-07T11:04:52-07:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": ["Badge_Filter", "coffee", "filter"],
+    "variants": [
+      {
+        "id": 42146283913269,
+        "title": "Wonder + Warmth Box Set",
+        "option1": "Wonder + Warmth Box Set",
+        "option2": null,
+        "option3": null,
+        "sku": "WONDERWARMTH-BOX",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.00",
+        "grams": 700,
+        "compare_at_price": null,
+        "position": 1,
+        "product_id": 7165172777013,
+        "created_at": "2023-03-07T11:04:52-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201759612981,
+        "created_at": "2023-11-08T13:21:53-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:21:56-07:00",
+        "product_id": 7165172777013,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/WarmthWonderBox.png?v=1699474916",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34201761513525,
+        "created_at": "2023-11-08T13:22:15-07:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:22:16-07:00",
+        "product_id": 7165172777013,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/WarmthWonderCards.png?v=1699474936",
+        "width": 1200,
+        "height": 1200
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["Wonder + Warmth Box Set"]
+      }
+    ]
+  },
+  {
+    "id": 7182362083381,
+    "title": "Huila + Narino Blend",
+    "handle": "huila",
+    "body_html": "<p><span>ORIGIN: Huila/Narino Colombia<br>VARIETY: Castillo, Caturra<br>PROCESS: Washed, EA Decaf<br>NOTES: Dark Chocolate, Orange, Brown Sugar</span></p>\n<p><meta charset=\"utf-8\"><meta charset=\"utf-8\"><meta charset=\"utf-8\"><meta charset=\"utf-8\"><meta charset=\"utf-8\"><span class=\"s1\" data-mce-fragment=\"1\"><br data-mce-fragment=\"1\"></span><span class=\"s1\" data-mce-fragment=\"1\"></span></p>",
+    "published_at": "2023-04-24T15:11:46-06:00",
+    "created_at": "2023-04-24T12:19:43-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_DECAF",
+      "coffee",
+      "decaf",
+      "holiday",
+      "warmth",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42268987916341,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "HUILANARINO-DECAF-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "17.00",
+        "grams": 300,
+        "compare_at_price": "20.00",
+        "position": 1,
+        "product_id": 7182362083381,
+        "created_at": "2023-05-15T08:08:01-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42226413666357,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "HUILANARINO-DECAF-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.80",
+        "grams": 907,
+        "compare_at_price": "48.00",
+        "position": 2,
+        "product_id": 7182362083381,
+        "created_at": "2023-04-24T12:19:43-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42226413699125,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "HUILANARINO-DECAF-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "102.00",
+        "grams": 2268,
+        "compare_at_price": "120.00",
+        "position": 3,
+        "product_id": 7182362083381,
+        "created_at": "2023-04-24T12:19:43-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201750437941,
+        "created_at": "2023-11-08T13:17:56-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:17:59-07:00",
+        "product_id": 7182362083381,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DecafHuilaNarino.png?v=1699474679",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 33791673925685,
+        "created_at": "2023-04-24T15:07:47-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:17:59-07:00",
+        "product_id": 7182362083381,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Huila_Narino.jpg?v=1699474679",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 7194441842741,
+    "title": "Murue Kianyangi AA",
+    "handle": "murue-kianyangi-aa",
+    "body_html": "<p> </p>\n<p>FLAVOURS: Red Grapefruit, Hibiscus, Raspberry<br>ORIGIN:  Embu, Kenya<br>VARIETY:  Ruiru 11, Batian, SL28, SL34<br>PROCESS:  Double Washed </p>\n<div>\n<p data-mce-fragment=\"1\" class=\"p2\">Owned by the Murue FCS, the Kianyangi factory receives ripe cherries from 750 different small holder farmers in the Embu region. The coffees are graded by density twice: before going into fermentation, and prior to being washed and soaked under clean water from the Gatomboya stream. The rich volcanic soil and ideal growing conditions here is what makes this coffee unique for its high quality acidity and intense sweetness.</p>\n</div>\n<span data-mce-fragment=\"1\" class=\"s1\"></span>\n<p> </p>",
+    "published_at": "2023-11-15T14:55:57-07:00",
+    "created_at": "2023-05-30T15:20:57-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "filter",
+      "holiday",
+      "Kenya",
+      "whole bean",
+      "wonder"
+    ],
+    "variants": [
+      {
+        "id": 42303391072309,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "MURUEKIANYANGI-FILTER-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "28.48",
+        "grams": 300,
+        "compare_at_price": "33.50",
+        "position": 1,
+        "product_id": 7194441842741,
+        "created_at": "2023-05-30T15:20:57-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42303391105077,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "MURUEKIANYANGI-FILTER-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "79.90",
+        "grams": 907,
+        "compare_at_price": "94.00",
+        "position": 2,
+        "product_id": 7194441842741,
+        "created_at": "2023-05-30T15:20:57-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42303391137845,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "MURUEKIANYANGI-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "196.35",
+        "grams": 2268,
+        "compare_at_price": "231.00",
+        "position": 3,
+        "product_id": 7194441842741,
+        "created_at": "2023-05-30T15:20:57-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34218246504501,
+        "created_at": "2023-11-15T15:03:40-07:00",
+        "position": 1,
+        "updated_at": "2023-11-15T15:03:41-07:00",
+        "product_id": 7194441842741,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/MURUE_1.png?v=1700085821",
+        "width": 1200,
+        "height": 1200
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 7208799797301,
+    "title": "San Vicente",
+    "handle": "san-vicente",
+    "body_html": "<meta charset=\"utf-8\">\n<p data-mce-fragment=\"1\"><meta charset=\"utf-8\"><span data-mce-fragment=\"1\" class=\"s1\">ORIGIN: HUILA, COLOMBIA<br data-mce-fragment=\"1\"></span><span data-mce-fragment=\"1\" class=\"s1\">VARIETY: CASTILLO, CATURRA, COLOMBIA<br data-mce-fragment=\"1\"></span><span data-mce-fragment=\"1\" class=\"s1\">PROCESS: WASHED<br data-mce-fragment=\"1\"></span><span data-mce-fragment=\"1\" class=\"s1\">NOTES: <meta charset=\"utf-8\"> <span data-mce-fragment=\"1\">ORANGE, PLUM, CANE SUGAR</span></span></p>\n<p><meta charset=\"utf-8\">This coffee is produced by many small holder farmers who are members of the OCCICAFE cooperative from San Vicente, which is located just 10 km away from La Plata, Huila, sitting between 1500 - 1950 MASL. The members of this cooperative have been working together to improve the quality of their coffee since 2015, and for the last 4 years they have been under the guidance of the Cofinet to make further improvements, including some new processing methods. This regional blend is super approachable with classic flavours of chocolate and brown sugar with some juicy orange citrus notes.</p>",
+    "published_at": "2023-10-11T10:42:35-06:00",
+    "created_at": "2023-07-06T14:58:04-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "colombia",
+      "filter",
+      "grind",
+      "warmth",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42387570917429,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "SANVICENTE-FILTER-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "16.58",
+        "grams": 300,
+        "compare_at_price": "19.50",
+        "position": 1,
+        "product_id": 7208799797301,
+        "created_at": "2023-07-06T14:58:04-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42387570950197,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "SANVICENTE-FILTER-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.80",
+        "grams": 907,
+        "compare_at_price": "48.00",
+        "position": 2,
+        "product_id": 7208799797301,
+        "created_at": "2023-07-06T14:58:04-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42387570982965,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "SANVICENTE-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "102.00",
+        "grams": 2268,
+        "compare_at_price": "120.00",
+        "position": 3,
+        "product_id": 7208799797301,
+        "created_at": "2023-07-06T14:58:04-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201753616437,
+        "created_at": "2023-11-08T13:19:47-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:19:51-07:00",
+        "product_id": 7208799797301,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/SanVinFilter.png?v=1699474791",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 33936007135285,
+        "created_at": "2023-07-06T15:22:19-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:19:51-07:00",
+        "product_id": 7208799797301,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/San-Vicente-filter.jpg?v=1699474791",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 7209091530805,
+    "title": "San Vicente",
+    "handle": "san-vicente-1",
+    "body_html": "<meta charset=\"utf-8\">\n<p data-mce-fragment=\"1\"><meta charset=\"utf-8\"><span data-mce-fragment=\"1\" class=\"s1\">ORIGIN: HUILA, COLOMBIA<br data-mce-fragment=\"1\"></span><span data-mce-fragment=\"1\" class=\"s1\">VARIETY: CASTILLO, CATURRA, COLOMBIA<br data-mce-fragment=\"1\"></span><span data-mce-fragment=\"1\" class=\"s1\">PROCESS: WASHED<br data-mce-fragment=\"1\"></span><span data-mce-fragment=\"1\" class=\"s1\">NOTES: <span data-mce-fragment=\"1\" mce-data-marked=\"1\">NOUGAT, MILK CHOCOLATE, RED APPLE</span></span></p>\n<p><meta charset=\"utf-8\">This coffee is produced by many small holder farmers who are members of the OCCICAFE cooperative from San Vicente, which is located just 10 km away from La Plata, Huila, sitting between 1500 - 1950 MASL. The members of this cooperative have been working together to improve the quality of their coffee since 2015, and for the last 4 years they have been under the guidance of the Cofinet to make further improvements, including some new processing methods. This regional blend is super approachable with classic flavours of chocolate and brown sugar with some juicy orange citrus notes.</p>",
+    "published_at": "2023-10-11T10:42:54-06:00",
+    "created_at": "2023-07-07T14:28:41-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_espresso",
+      "coffee",
+      "colombia",
+      "espresso",
+      "grind",
+      "warmth",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42389690286133,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "SANVICENTE-ESPRESSO-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "16.58",
+        "grams": 300,
+        "compare_at_price": "19.50",
+        "position": 1,
+        "product_id": 7209091530805,
+        "created_at": "2023-07-07T14:28:41-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42389690318901,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "SANVICENTE-ESPRESSO-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.80",
+        "grams": 907,
+        "compare_at_price": "48.00",
+        "position": 2,
+        "product_id": 7209091530805,
+        "created_at": "2023-07-07T14:28:41-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42389690351669,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "SANVICENTE-ESPRESSO-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "102.00",
+        "grams": 2268,
+        "compare_at_price": "120.00",
+        "position": 3,
+        "product_id": 7209091530805,
+        "created_at": "2023-07-07T14:28:41-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201751650357,
+        "created_at": "2023-11-08T13:18:30-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T15:03:19-07:00",
+        "product_id": 7209091530805,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/SanVicente.png?v=1699480999",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 33938936856629,
+        "created_at": "2023-07-07T14:40:57-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T15:03:19-07:00",
+        "product_id": 7209091530805,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/SANVICENTEESPRESO.jpg?v=1699480999",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 7222705684533,
+    "title": "Decaf Peru",
+    "handle": "decaf-peru",
+    "body_html": "<p><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">FLAVOURS: Chocolate, Black Tea, Plum</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">ORIGIN:   Peru</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">VARIETY:  Typica<br></span>PROCESS:  Washed, Swiss Water Natural Decaffeination</p>\n<p>This coffee comes from the Oro Verde Cooperative in Peru. This cooperative also sells cacao as coffee leaf rust has forced producers to diversify their crops.</p>",
+    "published_at": "2023-08-15T12:09:03-06:00",
+    "created_at": "2023-08-15T10:53:17-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_DECAF",
+      "Black Friday",
+      "coffee",
+      "decaf",
+      "ethiopia",
+      "holiday",
+      "warmth",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42486474080309,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "DECAFPERU-FILTER-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "17.00",
+        "grams": 300,
+        "compare_at_price": "20.00",
+        "position": 1,
+        "product_id": 7222705684533,
+        "created_at": "2023-08-15T10:53:17-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42486474113077,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "DECAFPERU-FILTER-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.80",
+        "grams": 907,
+        "compare_at_price": "48.00",
+        "position": 2,
+        "product_id": 7222705684533,
+        "created_at": "2023-08-15T10:53:17-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42486474145845,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "DECAFPERU-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "102.00",
+        "grams": 2268,
+        "compare_at_price": "120.00",
+        "position": 3,
+        "product_id": 7222705684533,
+        "created_at": "2023-08-15T10:53:17-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34197875785781,
+        "created_at": "2023-11-07T14:54:10-07:00",
+        "position": 1,
+        "updated_at": "2023-11-07T14:54:13-07:00",
+        "product_id": 7222705684533,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DecafPeru_846814a3-8280-4c8a-b2c3-46a7a69b4243.png?v=1699394053",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34007531094069,
+        "created_at": "2023-08-15T11:25:58-06:00",
+        "position": 2,
+        "updated_at": "2023-11-07T14:54:13-07:00",
+        "product_id": 7222705684533,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Decafperu.jpg?v=1699394053",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 7224120082485,
+    "title": "Fazenda Santa Inês",
+    "handle": "fazenda-santa-ines",
+    "body_html": "<p class=\"p1\"><meta charset=\"utf-8\"><span>FLAVOURS: Peanut Brittle, Dried Fruit, Brown Sugar</span><br><span>ORIGIN:   Brazil</span><br><span>VARIETY:  Acaia</span><br><span>PROCESS:  Natural</span></p>\n<p>We had the privilege of visiting Brazil last fall and there we began a new relationship with the team at Carmo Coffee. Carmo has spent many years producing and processing amazing coffees in Brazil with a strong focus on quality standards, innovation and local social projects. They not only process coffees grown on their own family farms, they also partner with other producers from farms of all scales to process and export their coffee.</p>\n<p>This farm is 530 hectares in total with 260 hectares planted with coffee. This farm is owned by the third generation of the Pereira family and it continues to produce excellent quality as part of the family's legacy of agriculture in the area. This farm produces mainly Red and Yellow bourbon but also has plots of Acaia, Mundo Novo and Catuai. This lot of Acaia varietal is a cousin of the Mundo Novo varietal bred to deal with lower altitudes and warmer weather while maintaining high potential for top cup quality.</p>\n<p class=\"p4\"> </p>",
+    "published_at": "2023-10-05T15:28:28-06:00",
+    "created_at": "2023-08-18T11:42:06-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": ["Badge_espresso", "coffee", "espresso", "warmth", "whole bean"],
+    "variants": [
+      {
+        "id": 42496394166325,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "FAZENDASANTAINES-ESPRESSO-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "14.03",
+        "grams": 300,
+        "compare_at_price": "16.50",
+        "position": 1,
+        "product_id": 7224120082485,
+        "created_at": "2023-08-18T11:42:06-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42496394199093,
+        "title": "2lb",
+        "option1": "2lb",
+        "option2": null,
+        "option3": null,
+        "sku": "FAZENDASANTAINES-ESPRESSO-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.80",
+        "grams": 907,
+        "compare_at_price": "48.00",
+        "position": 2,
+        "product_id": 7224120082485,
+        "created_at": "2023-08-18T11:42:06-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42496394231861,
+        "title": "5lb",
+        "option1": "5lb",
+        "option2": null,
+        "option3": null,
+        "sku": "FAZENDASANTAINES-ESPRESSO-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "102.00",
+        "grams": 2268,
+        "compare_at_price": "120.00",
+        "position": 3,
+        "product_id": 7224120082485,
+        "created_at": "2023-08-18T11:42:07-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34197874376757,
+        "created_at": "2023-11-07T14:53:21-07:00",
+        "position": 1,
+        "updated_at": "2023-11-07T14:53:43-07:00",
+        "product_id": 7224120082485,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Fazenda.png?v=1699394023",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34014554882101,
+        "created_at": "2023-08-18T11:55:18-06:00",
+        "position": 2,
+        "updated_at": "2023-11-07T14:53:43-07:00",
+        "product_id": 7224120082485,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/FAZENDASANTAINES.jpg?v=1699394023",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2lb", "5lb"]
+      }
+    ]
+  },
+  {
+    "id": 7233472299061,
+    "title": "Floripondio",
+    "handle": "floripondio",
+    "body_html": "<meta charset=\"utf-8\">\n<p data-mce-fragment=\"1\"><meta charset=\"utf-8\"><span class=\"s1\" data-mce-fragment=\"1\">ORIGIN: SAMAIPATA, BOLIVIA<br data-mce-fragment=\"1\"></span><span class=\"s1\" data-mce-fragment=\"1\">VARIETY: BATIAN<br></span><span class=\"s1\" data-mce-fragment=\"1\">PROCESS: COCO NATURAL<br data-mce-fragment=\"1\"></span><span class=\"s1\" data-mce-fragment=\"1\">NOTES: NOUGAT, CREAMY BODY, PLUM</span></p>\n<p data-mce-fragment=\"1\"><meta charset=\"utf-8\">Floripondio is located 120km away from the city of Santa Cruz, and is one of the most recent farms planted in that area. The terroir in this region make Floripondio an ideal farm for experimenting with growing different types of coffee varieties. Currently, the Rodriguez family have planted Java, Caturra, Gesha, Bourbon, Ethiosar, SL28, SL34, Yellow Pacamara, Batian, as well as a variety garden with over 60 other varieties from all over the world. The hope of this garden is to discover which varieties are best suited for their land and this particular latitude and altitude. At the end of harvest, the various coffee varieties are cupped and decisions are made about which varieties to plant at the other farms of Los Rodriguez. It is a breathtaking farm, growing incredible coffees, and under the guidance of the Rodriguez family the coffees are grown, harvested and processed with close attention to detail every step of the way.</p>",
+    "published_at": "2023-11-17T11:17:04-07:00",
+    "created_at": "2023-09-20T10:08:29-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "bolivia",
+      "coffee",
+      "exceptional",
+      "filter",
+      "grind",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42591500140597,
+        "title": "200g",
+        "option1": "200g",
+        "option2": null,
+        "option3": null,
+        "sku": "FLORIPONDIOBATIAN-FILTER-200G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "26.60",
+        "grams": 200,
+        "compare_at_price": "38.00",
+        "position": 1,
+        "product_id": 7233472299061,
+        "created_at": "2023-09-20T10:08:29-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42591500173365,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "FLORIPONDIOBATIAN-FILTER-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": false,
+        "price": "112.00",
+        "grams": 907,
+        "compare_at_price": "160.00",
+        "position": 2,
+        "product_id": 7233472299061,
+        "created_at": "2023-09-20T10:08:29-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42591500206133,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "FLORIPONDIOBATIAN-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": false,
+        "price": "277.20",
+        "grams": 2268,
+        "compare_at_price": "396.00",
+        "position": 3,
+        "product_id": 7233472299061,
+        "created_at": "2023-09-20T10:08:29-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201763151925,
+        "created_at": "2023-11-08T13:22:57-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:23:00-07:00",
+        "product_id": 7233472299061,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Floripondio.png?v=1699474980",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34158707212341,
+        "created_at": "2023-10-20T16:54:22-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:23:00-07:00",
+        "product_id": 7233472299061,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/FLOROPONDIONEW.jpg?v=1699474980",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["200g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 7240439627829,
+    "title": "Los Rodriguez Caturra Peaberry",
+    "handle": "los-rodriguez-peaberry-1",
+    "body_html": "<meta charset=\"utf-8\">\n<p data-mce-fragment=\"1\"><span class=\"s1\" data-mce-fragment=\"1\"><meta charset=\"utf-8\">The Rodriguez family have been in the specialty coffee industry since 1986. Pioneering the way for many other Bolivian farmers, the Rodriguez's have dedicated their lives to producing the best coffee they can. They are constantly learning and innovating, always looking for new ways to produce a better cup of coffee. They have spent years cultivating their processing techniques and it is very evident in the cup. This coffee, processed as a coco natural, is a collection harvested from their family farms including both caturra and java varieties. </span></p>\n<p data-mce-fragment=\"1\">ORIGIN: CARANAVI, BOLIVIA<br><span class=\"s1\" data-mce-fragment=\"1\">VARIETY: CATURRA PEABERRY<br data-mce-fragment=\"1\"></span><span class=\"s1\" data-mce-fragment=\"1\">PROCESS: COCO NATURAL<br data-mce-fragment=\"1\"></span><span class=\"s1\" data-mce-fragment=\"1\">NOTES: GRAPE JELLY, STRAWBERRY, BLACK TEA</span><br></p>",
+    "published_at": "2023-11-06T09:25:51-07:00",
+    "created_at": "2023-10-06T11:17:25-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "Black Friday",
+      "bolivia",
+      "coffee",
+      "filter",
+      "holiday",
+      "whole bean",
+      "wonder"
+    ],
+    "variants": [
+      {
+        "id": 42615814455349,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "LOSRODPB-FILTER-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "25.50",
+        "grams": 300,
+        "compare_at_price": "30.00",
+        "position": 1,
+        "product_id": 7240439627829,
+        "created_at": "2023-10-06T11:17:25-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42615814488117,
+        "title": "2lb",
+        "option1": "2lb",
+        "option2": null,
+        "option3": null,
+        "sku": "LOSRODPB-FILTER-2lb",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "71.40",
+        "grams": 907,
+        "compare_at_price": "84.00",
+        "position": 2,
+        "product_id": 7240439627829,
+        "created_at": "2023-10-06T11:17:25-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42615814520885,
+        "title": "5lb",
+        "option1": "5lb",
+        "option2": null,
+        "option3": null,
+        "sku": "LOSRODPB-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "174.25",
+        "grams": 2268,
+        "compare_at_price": "205.00",
+        "position": 3,
+        "product_id": 7240439627829,
+        "created_at": "2023-10-06T11:17:25-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201773539381,
+        "created_at": "2023-11-08T13:25:52-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:25:55-07:00",
+        "product_id": 7240439627829,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/LosRod.png?v=1699475155",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34126469791797,
+        "created_at": "2023-10-06T11:46:18-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:25:55-07:00",
+        "product_id": 7240439627829,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/losrodpb_4c4ef129-a599-4bd9-a5f1-c71adb92f8ab.jpg?v=1699475155",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2lb", "5lb"]
+      }
+    ]
+  },
+  {
+    "id": 7243588042805,
+    "title": "Atlas Coffee Program - George Howell - La Bendicion",
+    "handle": "atlas-coffee-program-george-howell-la-bendicion",
+    "body_html": "<p><meta charset=\"utf-8\"><i data-stringify-type=\"italic\" data-mce-fragment=\"1\">At Monogram, we are passionate about exceptional coffee experiences that inspire wonder. Over the years, through our global travels and competitions, we have discovered not only some of the best coffee producers in the world, but also some of the best roasters as well. At our Britannia location, we are bringing together our favourite roasters from around the world and their best selections alongside our own Monogram roasts. We are excited for people to discover new roasters, new coffees and new taste experiences. With this program we will carefully-select global roasters take an in-house \"residency\" in Britannia, with us working closely with each roaster to bringing the best and most diverse selection of beans. Let's explore the wonderful world of coffee together.<br></i></p>\n<p><span style=\"font-weight: 400;\">George’s life in coffee began in 1975 with his first café, The Coffee Connection in Cambridge’s Harvard Square. George began roasting for George Howell Coffee in 2004, a decade after selling his 24 \"The Coffee Connection\" cafes to Starbucks in 1994, and 30 years after he started roasting coffee. Fun fact: the Frappuccino was originally developed, trademarked, and named by The Coffee Connection chain.</span></p>\n<p>George Howell Coffee was founded in 2004 with its primary focus being to continually identify, source and roast the highest quality coffees available. George Howell coffee acknowledges and highlights the influence of the region, terroir, and the farmer’s craftsmanship in every bean. <br></p>\n<p>George Howell has a direct trade policy in order to provide maximum incentive to the fine craftspeople who produce what they celebrate. They seek these quality producers through the many networks that George has connected with over his almost fifty years in specialty coffee. Above all, George Howell Coffee aims to share the experience of the highest quality coffee, from seed to cup, with their customers.<br></p>\n<p>We are so happy to have this amazing coffee in our cafes to share with all of you!<br></p>",
+    "published_at": "2023-10-10T08:19:39-06:00",
+    "created_at": "2023-10-10T08:10:40-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "",
+    "tags": ["atlas"],
+    "variants": [
+      {
+        "id": 42626248114229,
+        "title": "341g",
+        "option1": "341g",
+        "option2": null,
+        "option3": null,
+        "sku": "ATLAS-GHLABEN-341G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": false,
+        "price": "35.00",
+        "grams": 341,
+        "compare_at_price": null,
+        "position": 1,
+        "product_id": 7243588042805,
+        "created_at": "2023-10-10T08:10:40-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34135686807605,
+        "created_at": "2023-10-10T08:18:54-06:00",
+        "position": 1,
+        "updated_at": "2023-10-10T08:18:55-06:00",
+        "product_id": 7243588042805,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DSC07294.jpg?v=1696947535",
+        "width": 1583,
+        "height": 2048
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["341g"]
+      }
+    ]
+  },
+  {
+    "id": 7243604394037,
+    "title": "Atlas Coffee Program - George Howell - Gesha Village",
+    "handle": "atlas-coffee-program-george-howell-gesha-village",
+    "body_html": "<p><meta charset=\"utf-8\"><i data-stringify-type=\"italic\" data-mce-fragment=\"1\">At Monogram, we are passionate about exceptional coffee experiences that inspire wonder. Over the years, through our global travels and competitions, we have discovered not only some of the best coffee producers in the world, but also some of the best roasters as well. At our Britannia location, we are bringing together our favourite roasters from around the world and their best selections alongside our own Monogram roasts. We are excited for people to discover new roasters, new coffees and new taste experiences. With this program we will carefully-select global roasters take an in-house \"residency\" in Britannia, with us working closely with each roaster to bringing the best and most diverse selection of beans. Let's explore the wonderful world of coffee together.<br></i></p>\n<p><span style=\"font-weight: 400;\">George’s life in coffee began in 1975 with his first café, The Coffee Connection in Cambridge’s Harvard Square. George began roasting for George Howell Coffee in 2004, a decade after selling his 24 \"The Coffee Connection\" cafes to Starbucks in 1994, and 30 years after he started roasting coffee. Fun fact: the Frappuccino was originally developed, trademarked, and named by The Coffee Connection chain.</span></p>\n<p>George Howell Coffee was founded in 2004 with its primary focus being to continually identify, source and roast the highest quality coffees available. George Howell coffee acknowledges and highlights the influence of the region, terroir, and the farmer’s craftsmanship in every bean. <br></p>\n<p>George Howell has a direct trade policy in order to provide maximum incentive to the fine craftspeople who produce what they celebrate. They seek these quality producers through the many networks that George has connected with over his almost fifty years in specialty coffee. Above all, George Howell Coffee aims to share the experience of the highest quality coffee, from seed to cup, with their customers.<br></p>\n<p>We are so happy to have this amazing coffee in our cafes to share with all of you!<br></p>",
+    "published_at": "2023-10-10T08:24:15-06:00",
+    "created_at": "2023-10-10T08:20:47-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "",
+    "tags": ["atlas"],
+    "variants": [
+      {
+        "id": 42626325938229,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "ATLAS-GHGESHAVILLAGE-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": false,
+        "price": "55.00",
+        "grams": 227,
+        "compare_at_price": null,
+        "position": 1,
+        "product_id": 7243604394037,
+        "created_at": "2023-10-10T08:20:47-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34135698964533,
+        "created_at": "2023-10-10T08:22:39-06:00",
+        "position": 1,
+        "updated_at": "2023-10-10T08:22:40-06:00",
+        "product_id": 7243604394037,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DSC07296.jpg?v=1696947760",
+        "width": 1583,
+        "height": 2048
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7243610685493,
+    "title": "Atlas Coffee Program - George Howell - Ferney Quipo",
+    "handle": "copy-of-atlas-coffee-program-george-howell-ferney-quipo",
+    "body_html": "<p><meta charset=\"utf-8\"><i data-stringify-type=\"italic\" data-mce-fragment=\"1\">At Monogram, we are passionate about exceptional coffee experiences that inspire wonder. Over the years, through our global travels and competitions, we have discovered not only some of the best coffee producers in the world, but also some of the best roasters as well. At our Britannia location, we are bringing together our favourite roasters from around the world and their best selections alongside our own Monogram roasts. We are excited for people to discover new roasters, new coffees and new taste experiences. With this program we will carefully-select global roasters take an in-house \"residency\" in Britannia, with us working closely with each roaster to bringing the best and most diverse selection of beans. Let's explore the wonderful world of coffee together.<br></i></p>\n<p><span style=\"font-weight: 400;\">George’s life in coffee began in 1975 with his first café, The Coffee Connection in Cambridge’s Harvard Square. George began roasting for George Howell Coffee in 2004, a decade after selling his 24 \"The Coffee Connection\" cafes to Starbucks in 1994, and 30 years after he started roasting coffee. Fun fact: the Frappuccino was originally developed, trademarked, and named by The Coffee Connection chain.</span></p>\n<p>George Howell Coffee was founded in 2004 with its primary focus being to continually identify, source and roast the highest quality coffees available. George Howell coffee acknowledges and highlights the influence of the region, terroir, and the farmer’s craftsmanship in every bean. <br></p>\n<p>George Howell has a direct trade policy in order to provide maximum incentive to the fine craftspeople who produce what they celebrate. They seek these quality producers through the many networks that George has connected with over his almost fifty years in specialty coffee. Above all, George Howell Coffee aims to share the experience of the highest quality coffee, from seed to cup, with their customers.<br></p>\n<p>We are so happy to have this amazing coffee in our cafes to share with all of you!<br></p>",
+    "published_at": "2023-10-10T08:27:23-06:00",
+    "created_at": "2023-10-10T08:24:49-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "",
+    "tags": ["atlas"],
+    "variants": [
+      {
+        "id": 42626355789877,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "ATLAS-GHFERNEYQUIPO-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": false,
+        "price": "40.00",
+        "grams": 227,
+        "compare_at_price": null,
+        "position": 1,
+        "product_id": 7243610685493,
+        "created_at": "2023-10-10T08:24:50-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34135707648053,
+        "created_at": "2023-10-10T08:25:11-06:00",
+        "position": 1,
+        "updated_at": "2023-10-10T08:25:13-06:00",
+        "product_id": 7243610685493,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DSC07298.jpg?v=1696947913",
+        "width": 1583,
+        "height": 2048
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7258374996021,
+    "title": "Johan Vergara",
+    "handle": "johan-vergara-1",
+    "body_html": "<p><meta charset=\"utf-8\"><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">FLAVOURS: Mint Julep, Strawberry Yogurt, Fudge<br></span><span data-mce-fragment=\"1\">ORIGIN:   Huila, Colombia</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">VARIETY:  Caturra Chiroso</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">PROCESS:  Natural</span><br></p>\n<p>In 1990, Edilberto Vergara and Nubia Ayure arrived in Pitalito, Huila and at that time they started Las Flores. Then, the farm started with 2 hectares in total with 18,000 caturra and colombia variety trees. Today, the farm has 14.5 hectares of coffee with 90,000 coffee trees and 1.5 hectares of nature reserve. They grow many varieties on their farm such as Java, Pacamara, Tabi, Pink Bourbon, Chiroso Caturra and Catimore.<br></p>\n<p data-mce-fragment=\"1\">Edilberto and Nubia had three children, and now the farm is managed by all three who have all been trained in different areas of the family business such as cultivation, processing, cupping and preparation. Carlos, together with his brother Diego, are in charge of most of the logistics on the farm, such as collection processes, selection, and personnel management. Johan, the producer of this coffee, is in charge of qualities, cupping and verifying all the processes. Colombia is on the cutting edge when it comes to new techniques and Las Flores is one the farms leading this charge. After extensive trials with different fermentations, Johan Vergara developed a natural process is nothing short of transformative with intense fruit and huge aromatics. Applied to this Chiroso variety results in the best qualities of both variety and process: Red fruit, sparkling acidity, and deep sweetness.</p>\n<!-- notionvc: 02a799dc-aaaf-42e0-b56a-0ead579f20b8 --><br>",
+    "published_at": "2023-10-24T12:36:09-06:00",
+    "created_at": "2023-10-24T11:43:14-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "colombia",
+      "filter",
+      "holiday",
+      "whole bean",
+      "wonder"
+    ],
+    "variants": [
+      {
+        "id": 42665566896181,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "JOHANVERGARA-FILTER-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "27.63",
+        "grams": 300,
+        "compare_at_price": "32.50",
+        "position": 1,
+        "product_id": 7258374996021,
+        "created_at": "2023-10-24T11:43:15-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42665566928949,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "JOHANVERGARA-FILTER-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "78.20",
+        "grams": 907,
+        "compare_at_price": "92.00",
+        "position": 2,
+        "product_id": 7258374996021,
+        "created_at": "2023-10-24T11:43:15-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42665566961717,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "JOHANVERGARA-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "192.10",
+        "grams": 2268,
+        "compare_at_price": "226.00",
+        "position": 3,
+        "product_id": 7258374996021,
+        "created_at": "2023-10-24T11:43:15-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201767313461,
+        "created_at": "2023-11-08T13:23:42-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:23:46-07:00",
+        "product_id": 7258374996021,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Johan.png?v=1699475026",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34166717251637,
+        "created_at": "2023-10-24T11:58:26-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:23:46-07:00",
+        "product_id": 7258374996021,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/JOHANVERGARA.jpg?v=1699475026",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 7260655517749,
+    "title": "Tinoco",
+    "handle": "tinoco",
+    "body_html": "<meta charset=\"utf-8\">ORIGIN: PLANADAS, COLOMBIA<br>VARIETY: ANCIENT TYPICA<br>PROCESS: HONEY<br>NOTES: MANDARIN, PEACH, ROSE<br><br><meta charset=\"utf-8\">In late 2021 we were able to visit Finca San Luis, a coffee farm owned by producer Omar Arango Tinoco and his family. The lush and vibrant Finca San Luis is nestled into the hillside of the municipality of Líbano, in Tolima, Colombia. Omar works hard to make his farm sustainable and biodiverse - keeping colonies of bees, many different varieties of shrubs and flowers (to attract and sustain the bees and birds in the area), and although San Luis is not formally organic certified, Omar has maintained organic practises on his farm for the last 25 years! Environmental sustainability, respect, and fair treatment of the people who work on and with the farm are part of a strict policy that Omar and his family uphold for San Luis. Omar employs a small team that works on the farm with him year round and at the height of the season he has up to 90 pickers hired from nearby communities. San Luis is truly a labour of love. There is so much intentionality and purpose behind everything that happens on the farm, and we are so proud to have the opportunity to offer his beautiful coffees on our menu.<!-- notionvc: 375e4126-865e-4592-a3d3-39d439f0426c --><br>",
+    "published_at": "2023-10-25T15:00:49-06:00",
+    "created_at": "2023-10-25T09:14:19-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "Black Friday",
+      "coffee",
+      "filter",
+      "holiday",
+      "whole bean",
+      "wonder"
+    ],
+    "variants": [
+      {
+        "id": 42670088355893,
+        "title": "300G",
+        "option1": "300G",
+        "option2": null,
+        "option3": null,
+        "sku": "TINOCO-FILTER-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "26.35",
+        "grams": 300,
+        "compare_at_price": "31.00",
+        "position": 1,
+        "product_id": 7260655517749,
+        "created_at": "2023-10-25T09:14:20-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42670088388661,
+        "title": "2lb",
+        "option1": "2lb",
+        "option2": null,
+        "option3": null,
+        "sku": "TINOCO-FILTER-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "73.95",
+        "grams": 907,
+        "compare_at_price": "87.00",
+        "position": 2,
+        "product_id": 7260655517749,
+        "created_at": "2023-10-25T09:14:20-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42670088421429,
+        "title": "5lb",
+        "option1": "5lb",
+        "option2": null,
+        "option3": null,
+        "sku": "TINOCO-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "181.90",
+        "grams": 2268,
+        "compare_at_price": "214.00",
+        "position": 3,
+        "product_id": 7260655517749,
+        "created_at": "2023-10-25T09:14:20-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201776422965,
+        "created_at": "2023-11-08T13:28:15-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:28:18-07:00",
+        "product_id": 7260655517749,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Tinoco.png?v=1699475298",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34170041368629,
+        "created_at": "2023-10-25T15:00:37-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:28:18-07:00",
+        "product_id": 7260655517749,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/TINOCO.jpg?v=1699475298",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300G", "2lb", "5lb"]
+      }
+    ]
+  },
+  {
+    "id": 7260666167349,
+    "title": "Jairo Arcila - Decaf",
+    "handle": "jairo-arcila-decaf",
+    "body_html": "<meta charset=\"utf-8\">ORIGIN: HUILA, COLOMBIA<br>VARIETY: PINK BOURBON<br>PROCESS: NATURAL DECAF<br>NOTES: HOT CHOCOLATE, CINNAMON, BAKED APPLE<br><br><meta charset=\"utf-8\">\n<p data-mce-fragment=\"1\">Jairo Arcila has spent most of his life in coffee, and previously worked for one of Colombia's largest exporters working as their mill manager for over 40 years. In 1987, Jairo purchased his first farm and planted his first Caturra lot. Now, Jairo owns five farms with a focus on specialty coffee. He grows Gesha, Pink Bourbon, Tabi, and Sidra, Castillo and many other varieties.</p>\n<p data-mce-fragment=\"1\">This lot has been processed in Colombia using the sugar can method, removing the decaf, but leaving behind an amazingly flavourful coffee.</p>",
+    "published_at": "2023-10-25T14:22:35-06:00",
+    "created_at": "2023-10-25T09:26:17-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_DECAF",
+      "Black Friday",
+      "coffee",
+      "decaf",
+      "holiday",
+      "whole bean",
+      "wonder"
+    ],
+    "variants": [
+      {
+        "id": 42670137835573,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "JAIROARCILA-DECAF-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "27.63",
+        "grams": 300,
+        "compare_at_price": "32.50",
+        "position": 1,
+        "product_id": 7260666167349,
+        "created_at": "2023-10-25T09:26:17-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42670137868341,
+        "title": "2lb",
+        "option1": "2lb",
+        "option2": null,
+        "option3": null,
+        "sku": "JAIROARCILA-DECAF-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "77.35",
+        "grams": 907,
+        "compare_at_price": "91.00",
+        "position": 2,
+        "product_id": 7260666167349,
+        "created_at": "2023-10-25T09:26:17-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42670137901109,
+        "title": "5lb",
+        "option1": "5lb",
+        "option2": null,
+        "option3": null,
+        "sku": "JAIROARCILA-DECAF-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "190.40",
+        "grams": 2268,
+        "compare_at_price": "224.00",
+        "position": 3,
+        "product_id": 7260666167349,
+        "created_at": "2023-10-25T09:26:17-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201765183541,
+        "created_at": "2023-11-08T13:23:19-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:23:22-07:00",
+        "product_id": 7260666167349,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/JairoArcila.png?v=1699475002",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34169998442549,
+        "created_at": "2023-10-25T14:21:58-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:23:22-07:00",
+        "product_id": 7260666167349,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/JAIROARCILA.jpg?v=1699475002",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2lb", "5lb"]
+      }
+    ]
+  },
+  {
+    "id": 7261217488949,
+    "title": "Atlas Coffee Program - George Howell - Montecarlos",
+    "handle": "atlas-coffee-program-george-howell-montecarlos",
+    "body_html": "<p><meta charset=\"utf-8\"><i data-stringify-type=\"italic\" data-mce-fragment=\"1\">At Monogram, we are passionate about exceptional coffee experiences that inspire wonder. Over the years, through our global travels and competitions, we have discovered not only some of the best coffee producers in the world, but also some of the best roasters as well. At our Britannia location, we are bringing together our favourite roasters from around the world and their best selections alongside our own Monogram roasts. We are excited for people to discover new roasters, new coffees and new taste experiences. With this program we will carefully-select global roasters take an in-house \"residency\" in Britannia, with us working closely with each roaster to bringing the best and most diverse selection of beans. Let's explore the wonderful world of coffee together.<br></i></p>\n<p><span style=\"font-weight: 400;\">George’s life in coffee began in 1975 with his first café, The Coffee Connection in Cambridge’s Harvard Square. George began roasting for George Howell Coffee in 2004, a decade after selling his 24 \"The Coffee Connection\" cafes to Starbucks in 1994, and 30 years after he started roasting coffee. Fun fact: the Frappuccino was originally developed, trademarked, and named by The Coffee Connection chain.</span></p>\n<p>George Howell Coffee was founded in 2004 with its primary focus being to continually identify, source and roast the highest quality coffees available. George Howell coffee acknowledges and highlights the influence of the region, terroir, and the farmer’s craftsmanship in every bean. <br></p>\n<p>George Howell has a direct trade policy in order to provide maximum incentive to the fine craftspeople who produce what they celebrate. They seek these quality producers through the many networks that George has connected with over his almost fifty years in specialty coffee. Above all, George Howell Coffee aims to share the experience of the highest quality coffee, from seed to cup, with their customers.<br></p>\n<p>We are so happy to have this amazing coffee in our cafes to share with all of you!<br></p>",
+    "published_at": "2023-10-25T15:59:35-06:00",
+    "created_at": "2023-10-25T15:34:53-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "",
+    "tags": ["atlas"],
+    "variants": [
+      {
+        "id": 42671530213429,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "ATLAS-GHMONTECARLOS-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "38.00",
+        "grams": 227,
+        "compare_at_price": null,
+        "position": 1,
+        "product_id": 7261217488949,
+        "created_at": "2023-10-25T15:34:53-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201779535925,
+        "created_at": "2023-11-08T13:29:54-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:29:57-07:00",
+        "product_id": 7261217488949,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Atlas_MonteCarlos.png?v=1699475397",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34170118471733,
+        "created_at": "2023-10-25T15:38:32-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:29:57-07:00",
+        "product_id": 7261217488949,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DSC08564_1.jpg?v=1699475397",
+        "width": 2455,
+        "height": 3177
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7261249306677,
+    "title": "Atlas Coffee Program - George Howell - Guadalupe Miramar",
+    "handle": "atlas-coffee-program-george-howell-guadalupe-miramar",
+    "body_html": "<p><meta charset=\"utf-8\"><i data-stringify-type=\"italic\" data-mce-fragment=\"1\">At Monogram, we are passionate about exceptional coffee experiences that inspire wonder. Over the years, through our global travels and competitions, we have discovered not only some of the best coffee producers in the world, but also some of the best roasters as well. At our Britannia location, we are bringing together our favourite roasters from around the world and their best selections alongside our own Monogram roasts. We are excited for people to discover new roasters, new coffees and new taste experiences. With this program we will carefully-select global roasters take an in-house \"residency\" in Britannia, with us working closely with each roaster to bringing the best and most diverse selection of beans. Let's explore the wonderful world of coffee together.<br></i></p>\n<p><span style=\"font-weight: 400;\">George’s life in coffee began in 1975 with his first café, The Coffee Connection in Cambridge’s Harvard Square. George began roasting for George Howell Coffee in 2004, a decade after selling his 24 \"The Coffee Connection\" cafes to Starbucks in 1994, and 30 years after he started roasting coffee. Fun fact: the Frappuccino was originally developed, trademarked, and named by The Coffee Connection chain.</span></p>\n<p>George Howell Coffee was founded in 2004 with its primary focus being to continually identify, source and roast the highest quality coffees available. George Howell coffee acknowledges and highlights the influence of the region, terroir, and the farmer’s craftsmanship in every bean. <br></p>\n<p>George Howell has a direct trade policy in order to provide maximum incentive to the fine craftspeople who produce what they celebrate. They seek these quality producers through the many networks that George has connected with over his almost fifty years in specialty coffee. Above all, George Howell Coffee aims to share the experience of the highest quality coffee, from seed to cup, with their customers.<br></p>\n<p>We are so happy to have this amazing coffee in our cafes to share with all of you!<br></p>",
+    "published_at": "2023-10-25T15:59:00-06:00",
+    "created_at": "2023-10-25T15:46:45-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "",
+    "tags": ["atlas"],
+    "variants": [
+      {
+        "id": 42671571435573,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "ATLAS-GHGUADALUPE-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "38.00",
+        "grams": 227,
+        "compare_at_price": null,
+        "position": 1,
+        "product_id": 7261249306677,
+        "created_at": "2023-10-25T15:46:45-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201778946101,
+        "created_at": "2023-11-08T13:29:26-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:29:30-07:00",
+        "product_id": 7261249306677,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Atlas_Guad.png?v=1699475370",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34170135543861,
+        "created_at": "2023-10-25T15:50:10-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:29:30-07:00",
+        "product_id": 7261249306677,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DSC08569_1.jpg?v=1699475370",
+        "width": 2742,
+        "height": 3548
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7261263757365,
+    "title": "Atlas Coffee Program - George Howell - Yukro Lot #8",
+    "handle": "atlas-coffee-program-george-howell-yukro-lot-8",
+    "body_html": "<p><meta charset=\"utf-8\"><i data-stringify-type=\"italic\" data-mce-fragment=\"1\">At Monogram, we are passionate about exceptional coffee experiences that inspire wonder. Over the years, through our global travels and competitions, we have discovered not only some of the best coffee producers in the world, but also some of the best roasters as well. At our Britannia location, we are bringing together our favourite roasters from around the world and their best selections alongside our own Monogram roasts. We are excited for people to discover new roasters, new coffees and new taste experiences. With this program we will carefully-select global roasters take an in-house \"residency\" in Britannia, with us working closely with each roaster to bringing the best and most diverse selection of beans. Let's explore the wonderful world of coffee together.<br></i></p>\n<p><span style=\"font-weight: 400;\">George’s life in coffee began in 1975 with his first café, The Coffee Connection in Cambridge’s Harvard Square. George began roasting for George Howell Coffee in 2004, a decade after selling his 24 \"The Coffee Connection\" cafes to Starbucks in 1994, and 30 years after he started roasting coffee. Fun fact: the Frappuccino was originally developed, trademarked, and named by The Coffee Connection chain.</span></p>\n<p>George Howell Coffee was founded in 2004 with its primary focus being to continually identify, source and roast the highest quality coffees available. George Howell coffee acknowledges and highlights the influence of the region, terroir, and the farmer’s craftsmanship in every bean. <br></p>\n<p>George Howell has a direct trade policy in order to provide maximum incentive to the fine craftspeople who produce what they celebrate. They seek these quality producers through the many networks that George has connected with over his almost fifty years in specialty coffee. Above all, George Howell Coffee aims to share the experience of the highest quality coffee, from seed to cup, with their customers.<br></p>\n<p>We are so happy to have this amazing coffee in our cafes to share with all of you!<br></p>",
+    "published_at": "2023-10-25T15:59:50-06:00",
+    "created_at": "2023-10-25T15:51:18-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "",
+    "tags": ["atlas"],
+    "variants": [
+      {
+        "id": 42671587000373,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "ATLAS-GHYUKRO-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.00",
+        "grams": 227,
+        "compare_at_price": null,
+        "position": 1,
+        "product_id": 7261263757365,
+        "created_at": "2023-10-25T15:51:18-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201780387893,
+        "created_at": "2023-11-08T13:30:24-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:30:28-07:00",
+        "product_id": 7261263757365,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Atlas_Yukro.png?v=1699475428",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34170142130229,
+        "created_at": "2023-10-25T15:54:30-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:30:28-07:00",
+        "product_id": 7261263757365,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DSC08568_1.jpg?v=1699475428",
+        "width": 2685,
+        "height": 3475
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7261274472501,
+    "title": "Atlas Coffee Program - George Howell - Alto Lagunillas",
+    "handle": "atlas-coffee-program-george-howell",
+    "body_html": "<p><meta charset=\"utf-8\"><i data-stringify-type=\"italic\" data-mce-fragment=\"1\">At Monogram, we are passionate about exceptional coffee experiences that inspire wonder. Over the years, through our global travels and competitions, we have discovered not only some of the best coffee producers in the world, but also some of the best roasters as well. At our Britannia location, we are bringing together our favourite roasters from around the world and their best selections alongside our own Monogram roasts. We are excited for people to discover new roasters, new coffees and new taste experiences. With this program we will carefully-select global roasters take an in-house \"residency\" in Britannia, with us working closely with each roaster to bringing the best and most diverse selection of beans. Let's explore the wonderful world of coffee together.<br></i></p>\n<p><span style=\"font-weight: 400;\">George’s life in coffee began in 1975 with his first café, The Coffee Connection in Cambridge’s Harvard Square. George began roasting for George Howell Coffee in 2004, a decade after selling his 24 \"The Coffee Connection\" cafes to Starbucks in 1994, and 30 years after he started roasting coffee. Fun fact: the Frappuccino was originally developed, trademarked, and named by The Coffee Connection chain.</span></p>\n<p>George Howell Coffee was founded in 2004 with its primary focus being to continually identify, source and roast the highest quality coffees available. George Howell coffee acknowledges and highlights the influence of the region, terroir, and the farmer’s craftsmanship in every bean. <br></p>\n<p>George Howell has a direct trade policy in order to provide maximum incentive to the fine craftspeople who produce what they celebrate. They seek these quality producers through the many networks that George has connected with over his almost fifty years in specialty coffee. Above all, George Howell Coffee aims to share the experience of the highest quality coffee, from seed to cup, with their customers.<br></p>\n<p>We are so happy to have this amazing coffee in our cafes to share with all of you!<br></p>",
+    "published_at": "2023-10-26T15:59:45-06:00",
+    "created_at": "2023-10-25T15:55:42-06:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "",
+    "tags": ["atlas"],
+    "variants": [
+      {
+        "id": 42671599714357,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "ATLAS-GHALTOLAGUNILLAS-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "45.00",
+        "grams": 227,
+        "compare_at_price": null,
+        "position": 1,
+        "product_id": 7261274472501,
+        "created_at": "2023-10-25T15:55:42-06:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34201777864757,
+        "created_at": "2023-11-08T13:28:51-07:00",
+        "position": 1,
+        "updated_at": "2023-11-08T13:28:54-07:00",
+        "product_id": 7261274472501,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Atlas_Alto.png?v=1699475334",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34171917697077,
+        "created_at": "2023-10-26T15:59:20-06:00",
+        "position": 2,
+        "updated_at": "2023-11-08T13:28:54-07:00",
+        "product_id": 7261274472501,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/DSC08563_1.jpg?v=1699475334",
+        "width": 2670,
+        "height": 3455
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7278350270517,
+    "title": "La Laguenta",
+    "handle": "la-laguenta",
+    "body_html": "<p><meta charset=\"utf-8\"><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">FLAVOURS: Milk Chocolate, Almond, Caramel<br></span><span data-mce-fragment=\"1\">ORIGIN:  <meta charset=\"utf-8\">Acatenango, Guatemala</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">VARIETY:  Various</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">PROCESS:  Washed</span><br></p>\n<p><meta charset=\"utf-8\">In 2013, La Laguneta was purchased by Mr. Héctor Ricardo Leal Pivaral. Since then, work has been underway to replant and restructure the farm, as it had been abandoned at the time when Mr. Hector took over ownership.</p>\n<p>Currently, the farm is being replanted with new and non-traditional varieties, and the team is implementing drying techniques such as raised African beds and greenhouses. Projects on the horizon include exploring new processing techniques starting with the production of naturally processed coffees which is already underway with more to be expected in the years to come! <!-- notionvc: f9799b2a-12fc-4333-aabe-46a3880b6312 --></p>\n<p><!-- notionvc: e812f1da-0514-473a-9095-ecfc9e91c031 --><br></p>\n<!-- notionvc: 02a799dc-aaaf-42e0-b56a-0ead579f20b8 --><br>",
+    "published_at": "2023-11-09T15:12:00-07:00",
+    "created_at": "2023-11-07T16:04:09-07:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "filter",
+      "Guatemala",
+      "holiday",
+      "warmth",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42704547217461,
+        "title": "300g",
+        "option1": "300g",
+        "option2": null,
+        "option3": null,
+        "sku": "LALAGUENTA-FILTER-300G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "17.43",
+        "grams": 300,
+        "compare_at_price": "20.50",
+        "position": 1,
+        "product_id": 7278350270517,
+        "created_at": "2023-11-07T16:04:09-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42704547250229,
+        "title": "2LB",
+        "option1": "2LB",
+        "option2": null,
+        "option3": null,
+        "sku": "LALAGUENTA-FILTER-2LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "45.90",
+        "grams": 907,
+        "compare_at_price": "54.00",
+        "position": 2,
+        "product_id": 7278350270517,
+        "created_at": "2023-11-07T16:04:09-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      },
+      {
+        "id": 42704547282997,
+        "title": "5LB",
+        "option1": "5LB",
+        "option2": null,
+        "option3": null,
+        "sku": "LALAGUENTA-FILTER-5LB",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "112.20",
+        "grams": 2268,
+        "compare_at_price": "132.00",
+        "position": 3,
+        "product_id": 7278350270517,
+        "created_at": "2023-11-07T16:04:09-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34206564778037,
+        "created_at": "2023-11-10T09:52:49-07:00",
+        "position": 1,
+        "updated_at": "2023-11-10T09:52:53-07:00",
+        "product_id": 7278350270517,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/Laguenta.png?v=1699635173",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": 34204958425141,
+        "created_at": "2023-11-09T15:10:22-07:00",
+        "position": 2,
+        "updated_at": "2023-11-10T09:52:53-07:00",
+        "product_id": 7278350270517,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/lalaguenta.jpg?v=1699635173",
+        "width": 2000,
+        "height": 3000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["300g", "2LB", "5LB"]
+      }
+    ]
+  },
+  {
+    "id": 7286783213621,
+    "title": "Luis Choquehuanca Gesha",
+    "handle": "luis-choquehuanca-gesha-natural",
+    "body_html": "<p><meta charset=\"utf-8\"><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">FLAVOURS: <meta charset=\"utf-8\">Strawberry Jam, Chocolate Fudge, Plum<br></span><span data-mce-fragment=\"1\">ORIGIN:   Caranavi, Bolivia</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">VARIETY:  Gesha</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">PROCESS:  Natural</span><br></p>\n<p>Luis Choqueuanca is another one of the farmers who are part of Agricafe’s Sol De La Mañana program. Luis is a friendly, soft spoken man, married with two kids. His farm located in a remote, mountainous area a couple hours drive from Caranavi, through winding roads and steep climbs.</p>\n<p>The Sol de La Mañana program was created as a way to educate and train local producers with the skills necessary to improve the quality of their farms. It is a strict program that requires alot of commitment by the producers. However, by doing so, these farmers are able to produce higher quality coffees with more yield providing them with better prices for their crops allowing them to provide a better life for their families.</p>\n<p><!-- notionvc: bbcfea4e-977e-4266-8efe-18fcd192cd30 --><br></p>\n<!-- notionvc: 02a799dc-aaaf-42e0-b56a-0ead579f20b8 --><br>",
+    "published_at": "2023-11-16T23:02:34-07:00",
+    "created_at": "2023-11-15T15:06:57-07:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "bolivia",
+      "coffee",
+      "exceptional",
+      "filter",
+      "natural",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42722745352245,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "LUISCHOQGESHA-FILTER-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "40.60",
+        "grams": 227,
+        "compare_at_price": "58.00",
+        "position": 1,
+        "product_id": 7286783213621,
+        "created_at": "2023-11-15T15:06:57-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34221444300853,
+        "created_at": "2023-11-16T21:01:20-07:00",
+        "position": 1,
+        "updated_at": "2023-11-16T21:01:21-07:00",
+        "product_id": 7286783213621,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/LUISGESHA.jpg?v=1700193681",
+        "width": 2000,
+        "height": 2000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7286793044021,
+    "title": "Humberto Calderon",
+    "handle": "humerto-calderon-gesha",
+    "body_html": "<p><meta charset=\"utf-8\"><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">FLAVOURS: Lemongrass, Green Tea, Pomegranate<br></span><span data-mce-fragment=\"1\">ORIGIN:   Huila, Colombia</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">VARIETY:  Gesha</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">PROCESS:  Washed</span><br></p>\n<p>Huila is famously known for producing some of the worlds favourite coffees, giving us complex, sweet and balanced flavours. This lot comes to us from the Buena Vista farm located in Saladoblanco, a municpality of Huila, sitting at 1,680 MASL.</p>\n<p>This coffee is produced by the Calderon family. Don Humberto left behind a legacy of hard work and dedication to coffee growing to his two children and wife who now carry out his mandate at Buena Vista.</p>\n<p>This gesha was harvested by hand at the peak of maturation to ensure only the sweetest cherries are picked. Once picked, the coffee is taken to a mill where it ferments for 24 hours in bags before being pulped, and then subsequently taken to cement tanks where it ferments for an additional 40-50 hours, which gives the coffee extra sweetness.</p>\n<p>In this coffee you will find delicate florals and citrus, thanks to the careful cultivation and processing of this washed gesha.</p>\n<p><!-- notionvc: a660fb0f-9168-4df4-8dcc-a2c6d9a998b4 --><br></p>\n<p><!-- notionvc: bbcfea4e-977e-4266-8efe-18fcd192cd30 --><br></p>\n<!-- notionvc: 02a799dc-aaaf-42e0-b56a-0ead579f20b8 --><br>",
+    "published_at": "2023-11-16T23:02:11-07:00",
+    "created_at": "2023-11-15T15:52:44-07:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "colombia",
+      "exceptional",
+      "filter",
+      "washed",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42722766520373,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "HUMBERTOGESHA-FILTER-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "19.60",
+        "grams": 227,
+        "compare_at_price": "28.00",
+        "position": 1,
+        "product_id": 7286793044021,
+        "created_at": "2023-11-15T15:52:44-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34221454491701,
+        "created_at": "2023-11-16T21:17:10-07:00",
+        "position": 1,
+        "updated_at": "2023-11-16T21:17:11-07:00",
+        "product_id": 7286793044021,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/humberto.jpg?v=1700194631",
+        "width": 2000,
+        "height": 2000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7286811263029,
+    "title": "Monteverde Natural Wush Wush",
+    "handle": "monteverde-green-natural-wush-wush",
+    "body_html": "<p><meta charset=\"utf-8\"><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">FLAVOURS: Pineapple, Peach, Black Tea<br></span><span data-mce-fragment=\"1\">ORIGIN:   Tolima, Colombia</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">VARIETY:  Wush Wush</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">PROCESS:  Natural</span><br></p>\n<p><meta charset=\"utf-8\">The Gutierrez family has been producing coffee for five generations at Finca Monteverde. Finca Monteverde in nestled among the most beautiful landscape, home to many native trees and wildlife. They have an immense catalogue of different varieties, including Moka, Gesha, Maragogipe, Bourbon, and this coffee, Wush Wush! The Gutierrez’s produce some of the most delicious expressions of this variety that we have ever tasted, and this one processed as a natural coffee, giving it delicous jammy fruit and citrus notes, accentuating all the characteristics we love about this variety! They also experiment with processing and have developed an excellent system for bringing out the best in each variety, whether it is a deeply fermented natural or a floral, bright washed.<!-- notionvc: 38c4f7dc-5969-4e82-b2d3-0d2e75c19bae --></p>\n<p><!-- notionvc: a660fb0f-9168-4df4-8dcc-a2c6d9a998b4 --><br></p>\n<p><!-- notionvc: bbcfea4e-977e-4266-8efe-18fcd192cd30 --><br></p>\n<!-- notionvc: 02a799dc-aaaf-42e0-b56a-0ead579f20b8 --><br>",
+    "published_at": "2023-11-16T23:01:47-07:00",
+    "created_at": "2023-11-15T16:52:04-07:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "colombia",
+      "exceptional",
+      "filter",
+      "natural",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42722873278517,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "MONTEVERDEWUSH-FILTER-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "23.80",
+        "grams": 227,
+        "compare_at_price": "34.00",
+        "position": 1,
+        "product_id": 7286811263029,
+        "created_at": "2023-11-15T16:52:04-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34221462814773,
+        "created_at": "2023-11-16T21:25:46-07:00",
+        "position": 1,
+        "updated_at": "2023-11-16T21:25:47-07:00",
+        "product_id": 7286811263029,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/MonteverdeWW.jpg?v=1700195147",
+        "width": 2000,
+        "height": 2000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7287104274485,
+    "title": "Monteverde Yellow Honey Gesha",
+    "handle": "monteverde-yellow-honey-gesha",
+    "body_html": "<p><meta charset=\"utf-8\"><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">FLAVOURS: Lemon Lime, Fresh Strawberry, White Tea<br></span><span data-mce-fragment=\"1\">ORIGIN:   Tolima, Colombia</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">VARIETY:  Gesha</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">PROCESS:  Yellow Honey</span><br></p>\n<p>The Gutierrez family has been producing coffee for five generations at Finca Monteverde. They have an immense catalogue of different varieties, including Moka, Gesha, Maragogipe, Bourbon, and Wush Wush They also experiment with processing and have developed an excellent system for bringing out the best in each variety, whether it is a deeply fermented natural or a floral, bright washed.</p>\n<p>This coffee has been processed as a yellow honey, which means that the coffee spends time in contact with the cherry before it is pulped. This processing method imparts a new layer of complexity with lots of big floral and tea notes.</p>\n<p>In addition to producing incredible coffees, the Gutierrez family is doing some really great things in their community. They have begun to feature and promote their neighbouring farms, introducing them to new buyers and exporting coffees themselves. By exporting coffees themselves, they can eliminate the need to use a different exporter, which ultimately means better prices for the producers.</p>\n<p>We are very excited to share this coffee (and future coffees from the Gutierrez family) with you!</p>\n<!-- notionvc: 02a799dc-aaaf-42e0-b56a-0ead579f20b8 --><br>",
+    "published_at": "2023-11-16T23:01:48-07:00",
+    "created_at": "2023-11-16T10:27:10-07:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "colombia",
+      "exceptional",
+      "filter",
+      "honey",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42723847995445,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "MONTEVERDERGESHA-FILTER-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": false,
+        "price": "23.80",
+        "grams": 227,
+        "compare_at_price": "34.00",
+        "position": 1,
+        "product_id": 7287104274485,
+        "created_at": "2023-11-16T10:27:10-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34221482639413,
+        "created_at": "2023-11-16T21:41:27-07:00",
+        "position": 1,
+        "updated_at": "2023-11-16T21:41:28-07:00",
+        "product_id": 7287104274485,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/MonteverdeYHGesha.jpg?v=1700196088",
+        "width": 2000,
+        "height": 2000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  },
+  {
+    "id": 7287106338869,
+    "title": "Maximino Gutiérrez Tejada Gesha",
+    "handle": "maximino-gutierrez-tejada-gesha",
+    "body_html": "<p><meta charset=\"utf-8\"><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">FLAVOURS: <meta charset=\"utf-8\">Iced Tea, Plum, Milk Chocolate<br></span><span data-mce-fragment=\"1\">ORIGIN:   Tolima, Colombia</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">VARIETY:  Gesha</span><br data-mce-fragment=\"1\"><span data-mce-fragment=\"1\">PROCESS:  Honey</span><br></p>\n<p>Maximino was born in a coffee-growing family, and since childhood was involved in all the processes. Thirty-one years ago Maximo inherited Florestales farm, and now lives there with his wife and two of his four children, three cats and one dog. Maximino has been working hard to improve the quality of the coffee he produces by focusing on processing and introducing new varieties to his farm.</p>\n<p>This is the first gesha we have had from Maximino and the outstanding quality of this coffee is exactly as we would expect from him. Processed a honey, this coffee spends a little bit of time in contact with the fruit while it dries which gives this coffee complexity and sweetness.</p>\n<p>The team at Florestales maintains environmentally friendly agricultural practices to maintain their integrity of their land. The family also grows citrus fruit, like lemons and oranges as well as yucca and plantains, and their coffee trees are growing beside three hectares of forest that they plan to continue conserving. Florestales is an absolutely stunning property and Maximino is producing some very delicious coffees. We are excited to have his coffees on our menu and are looking forward to tasting more of coffees in the years to come.</p>\n<p><!-- notionvc: b35e2c70-e889-42bb-84d5-d701d4c80ce5 --><br></p>\n<!-- notionvc: 02a799dc-aaaf-42e0-b56a-0ead579f20b8 --><br>",
+    "published_at": "2023-11-16T23:03:13-07:00",
+    "created_at": "2023-11-16T10:32:50-07:00",
+    "updated_at": "2023-11-18T00:01:12-07:00",
+    "vendor": "Monogram Coffee",
+    "product_type": "Whole Bean",
+    "tags": [
+      "Badge_Filter",
+      "coffee",
+      "colombia",
+      "exceptional",
+      "filter",
+      "honey",
+      "whole bean"
+    ],
+    "variants": [
+      {
+        "id": 42723854450741,
+        "title": "227g",
+        "option1": "227g",
+        "option2": null,
+        "option3": null,
+        "sku": "MAXIMINOGESHA-FILTER-227G",
+        "requires_shipping": true,
+        "taxable": false,
+        "featured_image": null,
+        "available": true,
+        "price": "19.60",
+        "grams": 227,
+        "compare_at_price": "28.00",
+        "position": 1,
+        "product_id": 7287106338869,
+        "created_at": "2023-11-16T10:32:50-07:00",
+        "updated_at": "2023-11-18T00:01:12-07:00"
+      }
+    ],
+    "images": [
+      {
+        "id": 34221410353205,
+        "created_at": "2023-11-16T20:39:50-07:00",
+        "position": 1,
+        "updated_at": "2023-11-16T20:39:51-07:00",
+        "product_id": 7287106338869,
+        "variant_ids": [],
+        "src": "https://cdn.shopify.com/s/files/1/0702/0489/files/MAXIMINOGESHA.jpg?v=1700192391",
+        "width": 2000,
+        "height": 2000
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["227g"]
+      }
+    ]
+  }
+]

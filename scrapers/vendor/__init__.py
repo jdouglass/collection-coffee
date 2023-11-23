@@ -1,0 +1,7 @@
+from scrapers.vendor.eight_ounce_coffee_scraper import EightOunceCoffeeScraper
+from scrapers.vendor.hatch_coffee_roasters_scraper import HatchCoffeeRoasterScraper
+from scrapers.vendor.monogram import MonogramScraper
+from scrapers.vendor.prototype_coffee_scraper import PrototypeCoffeeScraper
+from scrapers.vendor.revolver_coffee_scraper import RevolverCoffeeScraper
+from scrapers.vendor.rogue_wave_coffee_scraper import RogueWaveCoffeeScraper
+from scrapers.vendor.traffic_coffee_scraper import TrafficCoffeeScraper

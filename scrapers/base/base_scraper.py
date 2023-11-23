@@ -62,6 +62,10 @@ class BaseScraper:
         keywords = set(self.decaf_words)
         return any(keyword in lowercase_title for keyword in keywords)
 
+    def is_valid_product(self, title, handle=None):
+        combined_text = ' '.join(filter(None, [title, handle])).lower()
+        return not any(word in combined_text for word in self.excluded_words)
+
     def get_with_rate_limiting(self, url):
         while True:
             response = requests.get(url)
