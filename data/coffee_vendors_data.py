@@ -1,10 +1,5 @@
 from enums.vendor_name import VendorName
-from scrapers.vendor.traffic_coffee_scraper import TrafficCoffeeScraper
-from scrapers.vendor.eight_ounce_coffee_scraper import EightOunceCoffeeScraper
-from scrapers.vendor.revolver_coffee_scraper import RevolverCoffeeScraper
-from scrapers.vendor.rogue_wave_coffee_scraper import RogueWaveCoffeeScraper
-from scrapers.vendor.hatch_coffee_roasters_scraper import HatchCoffeeRoasterScraper
-from scrapers.vendor.prototype_coffee_scraper import PrototypeCoffeeScraper
+from scrapers.vendor import *
 
 coffee_vendors_data = [
     {
@@ -14,7 +9,7 @@ coffee_vendors_data = [
         "product_base_url": "https://www.trafficcoffee.com/collections/our-coffees/products/",
         "vendor": VendorName.TRAFFIC.value,
         "scraper_class": TrafficCoffeeScraper,
-        "mock_data_path": "scrapers/mock_data/traffic_coffee.json",
+        "mock_data_path": "scrapers/mock_data/traffic/traffic_coffee.json",
         "mock_html_dom_path": "",
         "currency": "CAD",
         "vendor_location": "Canada",
@@ -26,8 +21,8 @@ coffee_vendors_data = [
         "product_base_url": "https://eightouncecoffee.ca/products/",
         "vendor": VendorName.EIGHT_OUNCE.value,
         "scraper_class": EightOunceCoffeeScraper,
-        "mock_data_path": "scrapers/mock_data/eight_ounce_coffee.json",
-        "mock_html_dom_path": "scrapers/mock_data/eight_ounce_coffee.html",
+        "mock_data_path": "scrapers/mock_data/eight_ounce/eight_ounce_coffee.json",
+        "mock_html_dom_path": "scrapers/mock_data/eight_ounce/eight_ounce_coffee.html",
         "currency": "CAD",
         "vendor_location": "Canada",
     },
@@ -38,7 +33,7 @@ coffee_vendors_data = [
         "product_base_url": "https://revolvercoffee.ca/collections/all-coffee/products/",
         "vendor": VendorName.REVOLVER.value,
         "scraper_class": RevolverCoffeeScraper,
-        "mock_data_path": "scrapers/mock_data/revolver_coffee.json",
+        "mock_data_path": "scrapers/mock_data/revolver/revolver_coffee.json",
         "mock_html_dom_path": "",
         "currency": "CAD",
         "vendor_location": "Canada",
@@ -50,8 +45,8 @@ coffee_vendors_data = [
         "product_base_url": "https://www.roguewavecoffee.ca/products/",
         "vendor": VendorName.ROGUE_WAVE.value,
         "scraper_class": RogueWaveCoffeeScraper,
-        "mock_data_path": "scrapers/mock_data/rogue_wave_coffee.json",
-        "mock_html_dom_path": "scrapers/mock_data/rogue_wave_coffee.html",
+        "mock_data_path": "scrapers/mock_data/rogue_wave/rogue_wave_coffee.json",
+        "mock_html_dom_path": "scrapers/mock_data/rogue_wave/rogue_wave_coffee.html",
         "currency": "CAD",
         "vendor_location": "Canada",
     },
@@ -74,8 +69,20 @@ coffee_vendors_data = [
         "product_base_url": "https://prototypecoffee.ca/shop",
         "vendor": VendorName.PROTOTYPE.value,
         "scraper_class": PrototypeCoffeeScraper,
-        "mock_data_path": "scrapers/mock_data/prototype_coffee.json",
-        "mock_html_dom_path": "scrapers/mock_data/prototype_coffee.html",
+        "mock_data_path": "scrapers/mock_data/prototype/prototype_coffee.json",
+        "mock_html_dom_path": "scrapers/mock_data/prototype/prototype_coffee.html",
+        "currency": "CAD",
+        "vendor_location": "Canada",
+    },
+    {
+        "key": VendorName.MONOGRAM.value,
+        "home_url": "https://monogramcoffee.com",
+        "url": "https://monogramcoffee.com/collections/whole-bean-coffee/products.json?limit=250",
+        "product_base_url": "https://monogramcoffee.com/collections",
+        "vendor": VendorName.MONOGRAM.value,
+        "scraper_class": MonogramScraper,
+        "mock_data_path": "scrapers/mock_data/monogram/monogram.json",
+        "mock_html_dom_path": "scrapers/mock_data/monogram/monogram.html",
         "currency": "CAD",
         "vendor_location": "Canada",
     }
