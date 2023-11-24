@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { IQueryParams } from "@/app/lib/interfaces/IQueryParams";
-import { client } from "@/app/lib/db/db";
+import { pool } from "@/app/lib/db/db";
 import { paramToColumnMapping } from "@/app/lib/utils/api/productQueryMappings";
 
 export async function GET(request: Request) {
@@ -18,7 +18,7 @@ export async function GET(request: Request) {
   });
 
   try {
-    await client.connect();
+    const client = await pool.connect();
 
     let sqlQuery = `
       SELECT
@@ -100,7 +100,7 @@ export async function GET(request: Request) {
 
     const { rows } = await client.query(sqlQuery, values);
 
-    await client.end();
+    client.release();
 
     return NextResponse.json(rows);
   } catch (error) {
