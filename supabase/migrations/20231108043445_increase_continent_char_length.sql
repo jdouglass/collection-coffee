@@ -1,2 +1,0 @@
-ALTER TABLE continent
-ALTER COLUMN name TYPE VARCHAR(14);
