@@ -5,7 +5,7 @@ CREATE TABLE brand (
 
 CREATE TABLE continent (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(10) UNIQUE
+    name VARCHAR(14) UNIQUE
 );
 
 CREATE TABLE currency_code (
@@ -96,4 +96,62 @@ CREATE TABLE product_variant (
 
 -- Indexes on product_id for faster lookups and JOIN operations.
 CREATE INDEX idx_product_variant_product ON product_variant(product_id);
+
+-- Seed the `continent` table
+INSERT INTO continent (name) VALUES
+('Africa'),
+('Antarctica'),
+('Asia'),
+('Europe'),
+('North America'),
+('Oceania'),
+('South America'),
+('Unknown')
+ON CONFLICT (name) DO NOTHING;
+
+-- Seed the `currency_code` table
+INSERT INTO currency_code (code) VALUES
+('CAD'),
+('USD')
+ON CONFLICT (code) DO NOTHING;
+
+-- Seed the country table
+INSERT INTO country (name, continent_id) VALUES
+('Burundi', (SELECT id FROM continent WHERE name = 'Africa')),
+('Bolivia', (SELECT id FROM continent WHERE name = 'South America')),
+('Brazil', (SELECT id FROM continent WHERE name = 'South America')),
+('Canada', (SELECT id FROM continent WHERE name = 'North America')),
+('Chile', (SELECT id FROM continent WHERE name = 'South America')),
+('China', (SELECT id FROM continent WHERE name = 'Asia')),
+('Congo', (SELECT id FROM continent WHERE name = 'Africa')),
+('Colombia', (SELECT id FROM continent WHERE name = 'South America')),
+('Costa Rica', (SELECT id FROM continent WHERE name = 'North America')),
+('Ecuador', (SELECT id FROM continent WHERE name = 'South America')),
+('Ethiopia', (SELECT id FROM continent WHERE name = 'Africa')),
+('United Kingdom', (SELECT id FROM continent WHERE name = 'Europe')),
+('Guinea', (SELECT id FROM continent WHERE name = 'Africa')),
+('Guatemala', (SELECT id FROM continent WHERE name = 'North America')),
+('Honduras', (SELECT id FROM continent WHERE name = 'North America')),
+('Indonesia', (SELECT id FROM continent WHERE name = 'Asia')),
+('India', (SELECT id FROM continent WHERE name = 'Asia')),
+('Kenya', (SELECT id FROM continent WHERE name = 'Africa')),
+('Mexico', (SELECT id FROM continent WHERE name = 'North America')),
+('Myanmar', (SELECT id FROM continent WHERE name = 'Asia')),
+('Nicaragua', (SELECT id FROM continent WHERE name = 'North America')),
+('Panama', (SELECT id FROM continent WHERE name = 'North America')),
+('Peru', (SELECT id FROM continent WHERE name = 'South America')),
+('Philippines', (SELECT id FROM continent WHERE name = 'Asia')),
+('Papua New Guinea', (SELECT id FROM continent WHERE name = 'Oceania')),
+('Paraguay', (SELECT id FROM continent WHERE name = 'South America')),
+('Rwanda', (SELECT id FROM continent WHERE name = 'Africa')),
+('El Salvador', (SELECT id FROM continent WHERE name = 'North America')),
+('Thailand', (SELECT id FROM continent WHERE name = 'Asia')),
+('Tunisia', (SELECT id FROM continent WHERE name = 'Africa')),
+('Tanzania', (SELECT id FROM continent WHERE name = 'Africa')),
+('United States', (SELECT id FROM continent WHERE name = 'North America')),
+('Yemen', (SELECT id FROM continent WHERE name = 'Asia')),
+('South Africa', (SELECT id FROM continent WHERE name = 'Africa')),
+('Unknown', (SELECT id FROM continent WHERE name = 'Unknown')),
+('Multiple', (SELECT id FROM continent WHERE name = 'Unknown'))
+ON CONFLICT (name) DO NOTHING;
 
