@@ -1,3 +1,8 @@
+DROP POLICY IF EXISTS "Admin privileges for authenticated users 16wiy3a_1" ON "storage"."objects";
+DROP POLICY IF EXISTS "Admin privileges for authenticated users 16wiy3a_2" ON "storage"."objects";
+DROP POLICY IF EXISTS "Admin privileges for authenticated users 16wiy3a_3" ON "storage"."objects";
+DROP POLICY IF EXISTS "Anon users allowed to read all files 16wiy3a_0" ON "storage"."objects";
+
 create policy "Admin privileges for authenticated users 16wiy3a_1"
 on "storage"."objects"
 as permissive
