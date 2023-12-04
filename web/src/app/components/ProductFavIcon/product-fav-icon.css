@@ -1,0 +1,31 @@
+.product-fav-icon {
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  display: flex;
+  padding: 6px;
+  background-color: none;
+  border-radius: 50%;
+  border: solid 1px var(--gray-400);
+  box-shadow: 0 1px 3px 1px rgb(0 0 0 / 0.05);
+  cursor: pointer;
+}
+
+.product-fav-button {
+  background: none;
+  border: none;
+  fill: var(--gray-800);
+}
+
+.favourited {
+  fill: var(--red-500);
+  background-color: var(--red-100);
+  border: solid 1px var(--rose-300);
+}
+
+[data-theme="dark"] {
+  .product-fav-icon {
+    border: solid 1px var(--gray-900);
+  }
+}

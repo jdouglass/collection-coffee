@@ -1,0 +1,47 @@
+.filter-option {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.filter-checkbox {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  margin-right: 8px;
+  padding: 0;
+}
+
+.filter-checkbox:hover {
+  cursor: pointer;
+}
+
+.filter-count {
+  align-content: end;
+}
+
+.filter-checkbox:checked {
+  accent-color: var(--gray-800);
+}
+
+.filter-label {
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filter-info {
+  width: 100%;
+  line-height: 24px;
+}
+
+[data-theme="dark"] {
+  .filter-checkbox:checked {
+    accent-color: var(--gray-500);
+  }
+}
