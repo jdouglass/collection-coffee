@@ -1,0 +1,30 @@
+def normalize_brand_name(brand):
+    mapping = {
+        'barn': 'The Barn',
+        'dak': 'DAK Coffee Roasters',
+        'ethica': 'Ethica Coffee Roasters',
+        'firebat': 'Firebat Coffee Roasters',
+        'hasty': 'Hasty Coffee',
+        'hatch': 'Hatch Coffee Roasters',
+        'house of funk': 'House of Funk Brewing Co',
+        'keen': 'Keen Coffee',
+        'loquat': 'Loquat Coffee',
+        'manhattan': 'Manhattan Coffee Roasters',
+        'monogram': 'Monogram Coffee',
+        'onyx': 'Onyx Coffee Lab',
+        'prodigal': 'Prodigal Coffee',
+        'proud Mary': 'Proud Mary Coffee Roasters',
+        'september': 'September Coffee Co',
+        'rabbit hole': 'Rabbit Hole Roasters',
+        'resident': 'Resident Coffee Roasters',
+        'roasti': 'Roasti Coffee',
+        'rooftop': 'Rooftop Coffee Roasters',
+        'sloane': 'Sloane Coffee',
+        'sorellina': 'Sorellina Coffee',
+        'thom bargen': 'Thom Bargen Coffee Roasters',
+        'traffic': 'Traffic Coffee',
+        'transcend': 'Transcend Coffee',
+        'valor': 'Valor Coffee',
+    }
+
+    return mapping.get(brand.lower(), brand)
