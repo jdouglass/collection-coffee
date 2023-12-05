@@ -3,7 +3,8 @@
   display: flex;
   cursor: pointer;
   font-size: 12px;
-  font-weight: 500;
+  line-height: 16px;
+  font-weight: 400;
   width: 100%;
 }
 
