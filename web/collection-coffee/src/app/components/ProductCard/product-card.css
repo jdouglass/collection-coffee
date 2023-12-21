@@ -87,4 +87,11 @@
 }
 
 [data-theme="dark"] {
+  .product-card-container {
+    border-color: var(--gray-950);
+  }
+
+  .product-card-info-border {
+    border-color: var(--gray-950);
+  }
 }
