@@ -1,3 +1,17 @@
+update_start_time_query = """
+    UPDATE runtime
+    SET start_time = CURRENT_TIMESTAMP
+    FROM (SELECT id FROM vendor WHERE name = %s) AS vendor
+    WHERE runtime.vendor_id = vendor.id
+"""
+
+update_end_time_query = """
+    UPDATE runtime
+    SET end_time = CURRENT_TIMESTAMP
+    FROM (SELECT id FROM vendor WHERE name = %s) AS vendor
+    WHERE runtime.vendor_id = vendor.id
+"""
+
 insert_variety_query = """
     INSERT INTO variety (name) VALUES (%s) ON CONFLICT (name) DO NOTHING;
 """

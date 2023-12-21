@@ -32,9 +32,11 @@ class ScraperScheduler:
         if USE_DATABASE:
             db_controller = DatabaseController()
             db_controller.connect()
+            db_controller.update_runtime_timestamp(vendor, is_start_time=True)
             db_controller.save_to_db(processed_products)
             db_controller.delete_old_products(processed_products)
             db_controller.delete_orphaned_records()
+            db_controller.update_runtime_timestamp(vendor)
             db_controller.close_connection()
 
         if PRINT_PRODUCTS:

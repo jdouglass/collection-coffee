@@ -23,6 +23,28 @@ class DatabaseController:
         if self.connection:
             self.connection.close()
 
+    def update_runtime_timestamp(self, vendor, is_start_time=False):
+        cursor = self.connection.cursor()
+
+        try:
+            if is_start_time:
+                cursor.execute(update_start_time_query, (vendor,))
+            else:
+                cursor.execute(update_end_time_query, (vendor,))
+        except MySQLdb.Error as e:
+            if is_start_time:
+                logger.debug(
+                    f"Error updating the start_time for {vendor}: {e}"
+                )
+            else:
+                logger.debug(
+                    f"Error updating the end_time for {vendor}: {e}"
+                )
+        
+        self.connection.commit()
+        cursor.close()
+
+
     @check_use_database
     def save_to_db(self, products):
         cursor = self.connection.cursor()
