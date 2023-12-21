@@ -20,7 +20,7 @@ export const FilterCheckbox = ({
   const lowercaseLabel = label.toLowerCase().replaceAll(" ", "-");
 
   return (
-    <span className="filter-option" key={lowercaseLabel}>
+    <div className="filter-option">
       <input
         key={`${formattedCategory}-${lowercaseLabel}-checkbox`}
         type="checkbox"
@@ -40,6 +40,6 @@ export const FilterCheckbox = ({
           {label}
         </label>
       </div>
-    </span>
+    </div>
   );
 };

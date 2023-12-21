@@ -30,6 +30,16 @@ const nextConfig = {
   env: {
     DISCORD_INVITE_URL: process.env.DISCORD_INVITE_URL,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "54321",
+        pathname: "/storage/v1/object/public/product-images/**",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

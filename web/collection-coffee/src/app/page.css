@@ -1,0 +1,17 @@
+.home-container {
+  display: flex;
+}
+
+.filter-bar__container {
+  display: flex;
+}
+
+.products__container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  flex-basis: 100%;
+  place-items: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 20px;
+}

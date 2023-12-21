@@ -1,6 +1,6 @@
 .sold-out-chip {
   width: max-content;
-  margin: 4px;
+  margin: 16px;
   background-color: var(--red-100);
   color: var(--red-800);
   font-size: 12px;
