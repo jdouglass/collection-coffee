@@ -1,0 +1,27 @@
+.logout-button {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+  color: var(--gray-900);
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+  margin: 0 5px 0 25px;
+}
+
+.logout-button:hover {
+  color: black;
+  cursor: pointer;
+}
+
+[data-theme="dark"] {
+  .logout-button {
+    color: var(--gray-300);
+  }
+
+  .logout-button:hover {
+    color: white;
+  }
+}

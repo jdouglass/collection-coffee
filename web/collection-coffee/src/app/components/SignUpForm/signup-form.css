@@ -1,0 +1,134 @@
+/* Form Section Styles */
+.auth-container__form-section {
+  margin-top: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 24rem;
+}
+
+.auth-container__title-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+/* Form Styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.auth-form__name-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Input Styles */
+.auth-form__name-input {
+  display: flex;
+}
+
+.auth-form__credentials-input {
+  display: block;
+}
+
+.auth-form__name-input:focus {
+  outline: 1px solid var(--gray-900);
+}
+
+/* Form Field Styles */
+.auth-form__field {
+  margin-bottom: 1.5rem;
+}
+
+/* Label Styles */
+.auth-form__label {
+  display: block;
+  font-size: 12px;
+  font-weight: medium;
+  color: var(--gray-900);
+}
+
+/* Input Container Styles */
+.auth-form__input-container {
+  margin-top: 0.5rem;
+}
+
+/* Input Styles */
+.auth-form__input {
+  width: 100%;
+  height: 40px;
+  padding: 7px;
+  font-size: 14px;
+  color: var(--gray-900);
+  background-color: white;
+  border: solid 1px var(--gray-400);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  outline: 2px solid transparent;
+  box-sizing: border-box;
+}
+
+.auth-form__input:focus {
+  outline: 1px solid var(--gray-900);
+}
+
+/* Password Header Styles */
+.auth-form__password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Forgot Password Link Styles */
+.auth-form__forgot-password {
+  font-size: 12px;
+}
+
+/* Link Styles */
+.auth-form__link {
+  color: var(--gray-800);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-form__link:hover {
+  color: black;
+}
+
+/* Submit Button Container Styles */
+.auth-form__submit-container {
+  text-align: center;
+}
+
+/* Submit Button Styles */
+.auth-form__submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--gray-900);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: none;
+  cursor: pointer;
+}
+
+.auth-form__submit-button:hover {
+  background-color: black;
+}
+
+/* Footer Text Styles */
+.auth-container__footer-text {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 14px;
+  color: var(--gray-800);
+}

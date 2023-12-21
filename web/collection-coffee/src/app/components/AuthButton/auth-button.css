@@ -1,0 +1,48 @@
+.auth__button {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+}
+
+.auth__button--container {
+  display: flex;
+  justify-content: space-between;
+  width: 125px;
+  align-items: center;
+  margin: 0 5px 0 25px;
+}
+
+.sign-in__button {
+  color: var(--gray-900);
+  display: flex;
+  align-items: center;
+}
+
+.sign-up__button {
+  background-color: var(--gray-900);
+  color: var(--gray-200);
+  padding: 7px;
+  border-radius: 7px;
+  display: flex;
+  border: solid 1px var(--gray-900);
+}
+
+.sign-up__button:hover {
+  background-color: white;
+  color: var(--gray-900);
+}
+
+.sign-in__button:hover {
+  color: black;
+}
+
+[data-theme="dark"] {
+  .sign-in__button {
+    color: var(--gray-200);
+  }
+
+  .sign-in__button:hover {
+    color: var(--gray-600);
+  }
+}
