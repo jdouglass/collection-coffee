@@ -6,8 +6,7 @@ import { FilterButton } from "../FilterButton/FilterButton";
 import { IReferenceDataResponse } from "@/app/lib/interfaces/IReferenceDataResponse";
 
 async function getReferenceData() {
-  const API_BASE_URL = `${process.env.API_BASE_URL}`;
-  const res = await fetch(`${API_BASE_URL}/api/v1/reference-data`);
+  const res = await fetch(`${process.env.API_BASE_URL}/api/v1/reference-data`);
   if (!res.ok) {
     throw new Error("Failed to fetch reference data");
   }
