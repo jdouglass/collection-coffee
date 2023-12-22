@@ -1,6 +1,6 @@
 export const filterBarCategories = [
   {
-    category: "Roaster",
+    category: "Brand",
     referenceDataKey: "brands",
   },
   {
