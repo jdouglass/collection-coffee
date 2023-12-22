@@ -33,7 +33,13 @@ export const ProductCard = (product: IProductCard) => {
             src={imageUrl}
             placeholder="blur"
             alt={`${brand} ${title} coffee beans`}
-            className="product-card-image"
+            className={`product-card-image ${
+              brand === "Monogram" ||
+              brand === "Manhattan" ||
+              vendor === "Pallet Coffee Roasters"
+                ? "object-contain"
+                : "object-cover"
+            }`}
           />
         </div>
       </Link>
