@@ -1,0 +1,9 @@
+.sort-container {
+  display: flex;
+}
+
+.sort-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 5px;
+}

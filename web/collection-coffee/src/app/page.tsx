@@ -1,6 +1,6 @@
 import { FilterBar } from "./components/FilterBar/FilterBar";
+import { FilterUtilityBar } from "./components/FilterUtilityBar/FilterUtilityBar";
 import { ProductCard } from "./components/ProductCard/ProductCard";
-import { IProductResponse } from "./lib/interfaces/IProductResponse";
 import "./page.css";
 
 async function getProducts(searchParams: {
@@ -41,11 +41,14 @@ const Home = async ({
       <div className="filter-bar__container">
         <FilterBar />
       </div>
-      <div className="products__container">
-        {products &&
-          products.map((product: any) => {
-            return <ProductCard product={product} key={product.productId} />;
-          })}
+      <div>
+        <FilterUtilityBar searchParams={searchParams} />
+        <div className="products__container">
+          {products &&
+            products.map((product: any) => {
+              return <ProductCard product={product} key={product.productId} />;
+            })}
+        </div>
       </div>
     </main>
   );
