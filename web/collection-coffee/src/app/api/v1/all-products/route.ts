@@ -22,27 +22,7 @@ export async function GET(request: Request) {
   try {
     const client = await pool.connect();
 
-    let sqlQuery = `
-      SELECT
-        p.id AS product_id,
-        pv.variant_id,
-        pv.product_size,
-        pv.product_price,
-        pv.is_sold_out,
-        p.title,
-        p.process,
-        p.product_url,
-        p.image_url,
-        p.discovered_date_time,
-        p.product_handle,
-        p.is_decaf,
-        b.name AS brand_name,
-        cont.name AS continent_name,
-        c.name AS country_name,
-        pc.name AS process_category_name,
-        ARRAY_AGG(DISTINCT t.name) FILTER (WHERE t.name IS NOT NULL) AS tasting_notes,
-        ARRAY_AGG(DISTINCT v.name) FILTER (WHERE v.name IS NOT NULL) AS varieties,
-        ven.name AS vendor_name
+    let baseQuery = `
       FROM product_variant pv
       JOIN product p ON pv.product_id = p.id
       JOIN brand b ON p.brand_id = b.id
@@ -85,8 +65,38 @@ export async function GET(request: Request) {
 
     // Add conditions to the base SQL query
     if (conditions.length > 0) {
-      sqlQuery += ` AND ${conditions.join(" AND ")}`;
+      baseQuery += ` AND ${conditions.join(" AND ")}`;
     }
+
+    // Query for total count
+    const countQuery = `SELECT COUNT(DISTINCT pv.id) ${baseQuery}`;
+    const countResult = await client.query(countQuery, values);
+    const totalCount = countResult.rows[0].count;
+
+    // Query for paginated results
+    let sqlQuery = `
+      SELECT
+        p.id AS product_id,
+        pv.variant_id,
+        pv.product_size,
+        pv.product_price,
+        pv.is_sold_out,
+        p.title,
+        p.process,
+        p.product_url,
+        p.image_url,
+        p.discovered_date_time,
+        p.product_handle,
+        p.is_decaf,
+        b.name AS brand_name,
+        cont.name AS continent_name,
+        c.name AS country_name,
+        pc.name AS process_category_name,
+        ARRAY_AGG(DISTINCT t.name) FILTER (WHERE t.name IS NOT NULL) AS tasting_notes,
+        ARRAY_AGG(DISTINCT v.name) FILTER (WHERE v.name IS NOT NULL) AS varieties,
+        ven.name AS vendor_name
+      ${baseQuery}
+    `;
 
     // Add the GROUP BY clause
     sqlQuery += `
@@ -147,7 +157,7 @@ export async function GET(request: Request) {
 
     client.release();
 
-    return NextResponse.json(products);
+    return NextResponse.json({ products, totalCount });
   } catch (error) {
     console.error("Database query failed:", error);
     return NextResponse.json(
