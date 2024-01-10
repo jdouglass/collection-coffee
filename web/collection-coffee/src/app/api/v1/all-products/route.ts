@@ -3,6 +3,7 @@ import { IQueryParams } from "@/app/lib/interfaces/IQueryParams";
 import { pool } from "@/app/lib/db/db";
 import { paramToColumnMapping } from "@/app/lib/utils/api/productQueryMappings";
 import { IProductResponse } from "@/app/lib/interfaces/IProductResponse";
+import { SORT_OPTIONS } from "@/app/lib/enums/sortOptions";
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
@@ -98,6 +99,27 @@ export async function GET(request: Request) {
         pc.id,
         ven.id
     `;
+
+    sqlQuery +=
+      queryParams.sort === SORT_OPTIONS.NEWEST
+        ? `
+          ORDER BY p.discovered_date_time DESC
+          `
+        : queryParams.sort === SORT_OPTIONS.OLDEST
+        ? `
+          ORDER BY p.discovered_date_time ASC
+          `
+        : queryParams.sort === SORT_OPTIONS.ASCENDING
+        ? `
+          ORDER BY pv.product_price ASC
+          `
+        : queryParams.sort === SORT_OPTIONS.DESCENDING
+        ? `
+          ORDER BY pv.product_price DESC
+          `
+        : `
+          ORDER BY p.discovered_date_time DESC
+          `;
 
     const { rows } = await client.query(sqlQuery, values);
 
