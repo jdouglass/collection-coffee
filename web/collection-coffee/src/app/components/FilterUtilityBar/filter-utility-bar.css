@@ -1,12 +1,13 @@
 .filter-utility-container {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
   height: 50px;
+  max-width: 100%;
   background-color: white;
   align-items: center;
   position: sticky;
   top: 51px;
-  margin: 0 20px 0 20px;
+  padding: 0 10px 0 10px;
   z-index: 1;
 }
 

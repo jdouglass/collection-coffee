@@ -1,0 +1,8 @@
+.product-results-count {
+  display: flex;
+  font-size: 13px;
+}
+
+.product-results-count-value {
+  font-weight: 700;
+}

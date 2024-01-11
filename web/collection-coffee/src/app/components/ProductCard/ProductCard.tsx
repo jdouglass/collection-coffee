@@ -44,19 +44,21 @@ export const ProductCard = (product: IProductCard) => {
         </div>
       </Link>
       <div className="product-card-info-container">
-        <div className="product-card-info-top">
-          <div className="product-card-info-top-left">
-            <div className="product-card-brand">{brand}</div>
-            <div className="product-card-title">{title}</div>
-            <div className="product-card-sold-by-info">Sold by {vendor}</div>
-          </div>
-          <div className="product-card-info-top-right">
-            <div className="product-card-price">${productPrice}</div>
-            <div className="product-card-size">
-              for {productSize.split(".")[0]}g
+        <Link href={productUrl} target="_blank" className="product-card-link">
+          <div className="product-card-info-top">
+            <div className="product-card-info-top-left">
+              <div className="product-card-brand">{brand}</div>
+              <div className="product-card-title">{title}</div>
+              <div className="product-card-sold-by-info">Sold by {vendor}</div>
+            </div>
+            <div className="product-card-info-top-right">
+              <div className="product-card-price">${productPrice}</div>
+              <div className="product-card-size">
+                for {productSize.split(".")[0]}g
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
       <div className="product-card-info-border" />
       <div className="product-card-info-container">

@@ -2,7 +2,7 @@ export const paramToColumnMapping: { [key: string]: string } = {
   brand: "b.name",
   continent: "cont.name",
   country: "c.name",
-  process_category: "pc.name",
+  process: "pc.name",
   tasting_note: "t.name",
   variety: "v.name",
   vendor: "ven.name",

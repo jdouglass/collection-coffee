@@ -1,0 +1,51 @@
+.last-updated-details-container {
+  display: flex;
+  align-items: center;
+}
+
+.last-updated-details {
+  display: flex;
+  font-size: 13px;
+}
+
+.last-updated-details-value {
+  font-weight: 700;
+  display: flex;
+}
+
+.scraper-indicator {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.running {
+  background-color: rgba(255, 121, 63, 1);
+  box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
+  transform: scale(1);
+  animation: running-pulse 2s infinite;
+}
+
+.stopped {
+  background-color: limegreen;
+}
+
+@keyframes running-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 121, 63, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 121, 63, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 121, 63, 0);
+  }
+}

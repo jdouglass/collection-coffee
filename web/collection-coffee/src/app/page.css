@@ -1,5 +1,8 @@
 .home-container {
   display: flex;
+  width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .filter-bar__container {
@@ -13,5 +16,8 @@
   place-items: center;
   align-items: flex-start;
   gap: 1rem;
-  margin: 0 20px 20px 20px;
+}
+
+.products-utility__container {
+  width: 100%;
 }

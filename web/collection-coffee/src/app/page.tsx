@@ -30,22 +30,40 @@ async function getProducts(searchParams: {
   return res.json();
 }
 
+async function getLastUpdatedDetails() {
+  const res = await fetch(`${process.env.API_BASE_URL}/api/v1/last-updated`, {
+    next: { revalidate: 60 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch products");
+  }
+
+  return res.json();
+}
+
 const Home = async ({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
   const products = await getProducts(searchParams);
+  const lastUpdatedDetails = await getLastUpdatedDetails();
+
   return (
     <main className="home-container">
       <div className="filter-bar__container">
         <FilterBar />
       </div>
-      <div>
-        <FilterUtilityBar searchParams={searchParams} />
+      <div className="products-utility__container">
+        <FilterUtilityBar
+          searchParams={searchParams}
+          lastUpdatedDetails={lastUpdatedDetails}
+          totalCount={products.totalCount ? (products.totalCount as number) : 0}
+        />
         <div className="products__container">
-          {products &&
-            products.map((product: any) => {
+          {products.products &&
+            products.products.map((product: any) => {
               return <ProductCard product={product} key={product.productId} />;
             })}
         </div>
