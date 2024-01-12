@@ -63,3 +63,9 @@
     transform: scale(0);
   }
 }
+
+[data-theme="dark"] {
+  .loading-dots div {
+    background: var(--gray-300);
+  }
+}
