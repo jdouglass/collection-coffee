@@ -1,6 +1,7 @@
 .product-results-count {
   display: flex;
   font-size: 13px;
+  justify-content: flex-end;
 }
 
 .product-results-count-value {

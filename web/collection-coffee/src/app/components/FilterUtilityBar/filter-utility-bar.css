@@ -1,6 +1,6 @@
 .filter-utility-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   height: 50px;
   max-width: 100%;
   background-color: white;

@@ -1,6 +1,7 @@
 .last-updated-details-container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .last-updated-details {

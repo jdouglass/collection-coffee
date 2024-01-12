@@ -1,11 +1,21 @@
 import { FilterBar } from "./components/FilterBar/FilterBar";
 import { FilterUtilityBar } from "./components/FilterUtilityBar/FilterUtilityBar";
-import { ProductCard } from "./components/ProductCard/ProductCard";
+import Products from "./components/Products/Products";
+import { IProductResponse } from "./lib/interfaces/IProductResponse";
 import "./page.css";
 
-async function getProducts(searchParams: {
-  [key: string]: string | string[] | undefined;
-}) {
+export interface ProductFetchResponse {
+  products: IProductResponse[];
+  totalCount: number;
+}
+
+export async function getProducts(
+  searchParams: {
+    [key: string]: string | string[] | undefined;
+  },
+  page = 1
+): Promise<ProductFetchResponse> {
+  "use server";
   const params = new URLSearchParams();
 
   for (const key in searchParams) {
@@ -19,7 +29,9 @@ async function getProducts(searchParams: {
     }
   }
   const res = await fetch(
-    `${process.env.API_BASE_URL}/api/v1/all-products?${params.toString()}`,
+    `${process.env.API_BASE_URL}/api/v1/products?${params.toString()}${
+      params.toString() !== "" ? "&" : ""
+    }${page ? `page=${page}` : ""}`,
     { next: { revalidate: 60 } }
   );
 
@@ -61,12 +73,7 @@ const Home = async ({
           lastUpdatedDetails={lastUpdatedDetails}
           totalCount={products.totalCount ? (products.totalCount as number) : 0}
         />
-        <div className="products__container">
-          {products.products &&
-            products.products.map((product: any) => {
-              return <ProductCard product={product} key={product.productId} />;
-            })}
-        </div>
+        <Products searchParams={searchParams} fetchProducts={getProducts} />
       </div>
     </main>
   );

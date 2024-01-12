@@ -4,14 +4,20 @@ import { useRouter, useSearchParams } from "next/navigation";
 import "./clear-filter-button.css";
 
 export const ClearFilterButton = () => {
-  const searchParams = useSearchParams();
+  const readOnlySearchParams = useSearchParams();
+  const searchParams = new URLSearchParams();
   const router = useRouter();
+
+  const clearFilters = () => {
+    searchParams.delete(searchParams.toString());
+    router.push("/");
+  };
 
   return (
     <button
       className="clear-filter-button"
-      disabled={!searchParams.toString().length}
-      onClick={() => router.push("/")}
+      disabled={!readOnlySearchParams.toString().length}
+      onClick={clearFilters}
     >
       Clear Filters
     </button>

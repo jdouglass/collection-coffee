@@ -1,0 +1,26 @@
+.loading-indicator {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.products__container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  flex-basis: 100%;
+  place-items: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.end-of-results-message {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.no-results-message {
+  display: flex;
+  justify-content: center;
+  padding: 40px 10px 10px 10px;
+}
