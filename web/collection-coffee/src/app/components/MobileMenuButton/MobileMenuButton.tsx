@@ -28,7 +28,7 @@ const MobileMenu = () => {
           </Link>
         </div>
         <div className="mobile-topnav-right">
-          <button onClick={toggleMenu}>
+          <button onClick={toggleMenu} className="mobile-topnav-button">
             {isOpen ? <ExitIcon /> : <MenuIcon />}
           </button>
         </div>

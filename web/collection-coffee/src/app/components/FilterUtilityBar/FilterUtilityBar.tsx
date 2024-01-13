@@ -36,6 +36,12 @@ export const FilterUtilityBar = ({
       <div className="product-results-count-section">
         <ProductResultsCount totalCount={totalCount ? totalCount : 0} />
       </div>
+      <div className="combined-filter-utility-data">
+        <ProductResultsCount totalCount={totalCount ? totalCount : 0} />
+        <div className="smaller-last-updated-details-section">
+          <LastUpdatedDetails {...lastUpdatedDetails} />
+        </div>
+      </div>
     </div>
   );
 };

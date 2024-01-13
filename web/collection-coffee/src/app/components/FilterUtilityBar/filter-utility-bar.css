@@ -19,6 +19,10 @@
   display: none;
 }
 
+.combined-filter-utility-data {
+  display: none;
+}
+
 [data-theme="dark"] {
   .filter-utility-container {
     background-color: var(--background);
@@ -30,6 +34,30 @@
 
   .mobile-filter-icon {
     fill: var(--gray-100);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .filter-utility-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .last-updated-details-section {
+    display: none;
+  }
+
+  .product-results-count-section {
+    display: none;
+  }
+
+  .combined-filter-utility-data {
+    display: block;
+    justify-content: flex-end;
+  }
+
+  .smaller-last-updated-details-section {
+    display: flex;
+    justify-content: end;
   }
 }
 

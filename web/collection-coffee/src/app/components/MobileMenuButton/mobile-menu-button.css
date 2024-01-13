@@ -38,6 +38,18 @@
   justify-content: space-between;
 }
 
+.mobile-topnav-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+[data-theme="dark"] {
+  .mobile-topnav-logo {
+    fill: var(--gray-300);
+  }
+}
+
 @media screen and (min-width: 600px) {
   .mobile-topnav {
     display: none;
