@@ -27,6 +27,10 @@
   .scrolled {
     border-bottom: 1px solid var(--gray-950);
   }
+
+  .mobile-filter-icon {
+    fill: var(--gray-100);
+  }
 }
 
 @media screen and (max-width: 1000px) {
