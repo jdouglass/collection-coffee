@@ -4,6 +4,19 @@
 
 .sort-label {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   margin-right: 5px;
+}
+
+.sort-select {
+  border: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .sort-container {
+    width: 100%;
+  }
+  .sort-select {
+    max-width: 100%;
+  }
 }

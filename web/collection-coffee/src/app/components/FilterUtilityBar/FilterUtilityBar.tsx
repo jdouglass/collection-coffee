@@ -28,7 +28,7 @@ export const FilterUtilityBar = ({
         <div className="mobile-filter-icon">
           <FilterIcon />
         </div>
-        <div>Filter Products</div>
+        <div>Product Filters</div>
       </div>
       <div className="last-updated-details-section">
         <LastUpdatedDetails {...lastUpdatedDetails} />

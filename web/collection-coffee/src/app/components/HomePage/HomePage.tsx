@@ -34,7 +34,11 @@ export const HomePage = ({
   return (
     <>
       <div className="filter-bar__container">
-        <FilterBar referenceData={referenceData} />
+        <FilterBar
+          referenceData={referenceData}
+          isFilterBarOpen={isOpen}
+          toggleMobileFilterBar={toggleMobileFilterBar}
+        />
       </div>
       <div className="products-utility__container">
         <FilterUtilityBar
