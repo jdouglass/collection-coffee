@@ -5,16 +5,11 @@ import FilterIcon from "../../../../public/filterIcon.svg";
 import { FilterButton } from "../FilterButton/FilterButton";
 import { IReferenceDataResponse } from "@/app/lib/interfaces/IReferenceDataResponse";
 
-async function getReferenceData() {
-  const res = await fetch(`${process.env.API_BASE_URL}/api/v1/reference-data`);
-  if (!res.ok) {
-    throw new Error("Failed to fetch reference data");
-  }
-  return res.json();
-}
+type FilterBarProps = {
+  referenceData: IReferenceDataResponse;
+};
 
-export const FilterBar = async () => {
-  const referenceData: IReferenceDataResponse = await getReferenceData();
+export const FilterBar = ({ referenceData }: FilterBarProps) => {
   return (
     <div className="filter-bar scrollbar">
       <div className="filter-bar-header">

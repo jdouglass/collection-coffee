@@ -10,11 +10,13 @@ import FilterIcon from "../../../../public/filterAltIcon.svg";
 type FilterUtilityBarProps = {
   lastUpdatedDetails: { lastUpdatedDateTime: Date; isScraperRunning: boolean };
   totalCount: number;
+  toggleMobileFilterBar: () => void;
 };
 
 export const FilterUtilityBar = ({
   lastUpdatedDetails,
   totalCount,
+  toggleMobileFilterBar,
 }: FilterUtilityBarProps) => {
   const scrolled = useScroll(10);
   return (
@@ -22,7 +24,7 @@ export const FilterUtilityBar = ({
       <div className="sort-select-section">
         <SortSelect />
       </div>
-      <div className="mobile-filter-toggle">
+      <div className="mobile-filter-toggle" onClick={toggleMobileFilterBar}>
         <div className="mobile-filter-icon">
           <FilterIcon />
         </div>

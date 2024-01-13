@@ -1,12 +1,19 @@
-import { FilterBar } from "./components/FilterBar/FilterBar";
-import { FilterUtilityBar } from "./components/FilterUtilityBar/FilterUtilityBar";
-import Products from "./components/Products/Products";
+import { HomePage } from "./components/HomePage/HomePage";
 import { IProductResponse } from "./lib/interfaces/IProductResponse";
+import { IReferenceDataResponse } from "./lib/interfaces/IReferenceDataResponse";
 import "./page.css";
 
 export interface ProductFetchResponse {
   products: IProductResponse[];
   totalCount: number;
+}
+
+export async function getReferenceData(): Promise<IReferenceDataResponse> {
+  const res = await fetch(`${process.env.API_BASE_URL}/api/v1/reference-data`);
+  if (!res.ok) {
+    throw new Error("Failed to fetch reference data");
+  }
+  return res.json();
 }
 
 export async function getProducts(
@@ -61,19 +68,16 @@ const Home = async ({
 }) => {
   const products = await getProducts(searchParams);
   const lastUpdatedDetails = await getLastUpdatedDetails();
-
+  const referenceData = await getReferenceData();
   return (
     <main className="home-container">
-      <div className="filter-bar__container">
-        <FilterBar />
-      </div>
-      <div className="products-utility__container">
-        <FilterUtilityBar
-          lastUpdatedDetails={lastUpdatedDetails}
-          totalCount={products.totalCount ? (products.totalCount as number) : 0}
-        />
-        <Products searchParams={searchParams} fetchProducts={getProducts} />
-      </div>
+      <HomePage
+        products={products}
+        lastUpdatedDetails={lastUpdatedDetails}
+        searchParams={searchParams}
+        getProducts={getProducts}
+        referenceData={referenceData}
+      />
     </main>
   );
 };
