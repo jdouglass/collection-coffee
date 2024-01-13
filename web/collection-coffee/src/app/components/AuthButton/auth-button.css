@@ -46,3 +46,13 @@
     color: var(--gray-600);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .sign-up__button {
+    display: none;
+  }
+
+  .sign-in__button {
+    display: none;
+  }
+}

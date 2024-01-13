@@ -15,6 +15,10 @@
   border-bottom: 1px solid var(--gray-500);
 }
 
+.mobile-filter-toggle {
+  display: none;
+}
+
 [data-theme="dark"] {
   .filter-utility-container {
     background-color: var(--background);
@@ -22,5 +26,25 @@
 
   .scrolled {
     border-bottom: 1px solid var(--gray-950);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .sort-select-section {
+    display: none;
+  }
+
+  .mobile-filter-toggle {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .mobile-filter-icon {
+    height: 18px;
+    width: 18px;
+    padding-right: 5px;
   }
 }

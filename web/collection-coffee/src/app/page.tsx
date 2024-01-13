@@ -69,7 +69,6 @@ const Home = async ({
       </div>
       <div className="products-utility__container">
         <FilterUtilityBar
-          searchParams={searchParams}
           lastUpdatedDetails={lastUpdatedDetails}
           totalCount={products.totalCount ? (products.totalCount as number) : 0}
         />

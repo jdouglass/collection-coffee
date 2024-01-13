@@ -39,3 +39,9 @@
     fill: var(--gray-200);
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .filter-bar {
+    display: none;
+  }
+}

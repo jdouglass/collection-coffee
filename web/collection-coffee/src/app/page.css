@@ -1,6 +1,6 @@
 .home-container {
   display: flex;
-  width: 1600px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -10,5 +10,6 @@
 }
 
 .products-utility__container {
-  width: 100%;
+  max-width: 100%;
+  flex-grow: 1;
 }

@@ -6,6 +6,7 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import { cookies } from "next/headers";
 import { createClient } from "@/app/lib/utils/supabase/server";
 import AuthButton from "../AuthButton/AuthButton";
+import MobileMenu from "../MobileMenuButton/MobileMenuButton";
 
 export const TopNav = () => {
   const cookieStore = cookies();
@@ -22,21 +23,24 @@ export const TopNav = () => {
   const isSupabaseConnected = canInitSupabaseClient();
 
   return (
-    <div className="topnav-container">
-      <div className="topnav-items">
-        <div className="topnav-left">
-          <Link href="/">
-            <CollectionCoffeeLogo className="topnav-logo" />
-          </Link>
-        </div>
-        <div className="topnav-right">
-          <Link href={`${process.env.DISCORD_INVITE_URL}`} target="_blank">
-            <DiscordAltLogo className="discord-logo" />
-          </Link>
-          <ThemeToggle />
-          {isSupabaseConnected && <AuthButton />}
+    <>
+      <div className="topnav-container">
+        <div className="topnav-items">
+          <div className="topnav-left">
+            <Link href="/">
+              <CollectionCoffeeLogo className="topnav-logo" />
+            </Link>
+          </div>
+          <div className="topnav-right">
+            <Link href={`${process.env.DISCORD_INVITE_URL}`} target="_blank">
+              <DiscordAltLogo className="discord-logo" />
+            </Link>
+            <ThemeToggle />
+            {isSupabaseConnected && <AuthButton />}
+          </div>
         </div>
       </div>
-    </div>
+      <MobileMenu />
+    </>
   );
 };
