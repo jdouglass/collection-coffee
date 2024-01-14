@@ -18,6 +18,7 @@ def normalize_brand_name(brand):
         'rabbit hole': 'Rabbit Hole Roasters',
         'resident': 'Resident Coffee Roasters',
         'roasti': 'Roasti Coffee',
+        'rogue wave': 'Rogue Wave Coffee',
         'rooftop': 'Rooftop Coffee Roasters',
         'sloane': 'Sloane Coffee',
         'sorellina': 'Sorellina Coffee',
