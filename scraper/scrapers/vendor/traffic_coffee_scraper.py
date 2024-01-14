@@ -105,6 +105,7 @@ class TrafficCoffeeScraper(ShopifyScraper):
     def extract_notes(self, body_html):
         keywords = ["Notes", "In the cup"]
         notes_info = self._extract_from_body(body_html, keywords)
+        notes_info = notes_info.replace(" and ", ",")
         if notes_info == "":
             return [UNKNOWN]
         return [x.strip().title() for x in re.split(',|/', notes_info)]
