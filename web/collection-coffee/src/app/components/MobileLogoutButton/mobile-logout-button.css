@@ -21,3 +21,14 @@
   display: flex;
   justify-content: center;
 }
+
+[data-theme="dark"] {
+  .mobile-logout-button {
+    color: var(--gray-300);
+  }
+
+  .mobile-logout-button:hover {
+    color: white;
+    background-color: var(--gray-800);
+  }
+}
