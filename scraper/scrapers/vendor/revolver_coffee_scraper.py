@@ -70,7 +70,7 @@ class RevolverCoffeeScraper(ShopifyScraper):
                     processed_product["variants"] = processed_product_variants
                     processed_products.append(processed_product)
             except Exception:
-                error_message = f"{self.vendor}\n\n{traceback.format_exc()}"
+                error_message = f"{self.vendor}\n\n{self.build_product_url(handle)}\n\n{traceback.format_exc()}"
                 if not DEVELOPMENT_MODE:
                     self.email_notifier.send_error_notification(error_message)
                 logger.error(error_message)
