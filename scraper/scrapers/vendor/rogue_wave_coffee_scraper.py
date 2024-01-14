@@ -51,7 +51,7 @@ class RogueWaveCoffeeScraper(ShopifyScraper):
                         processed_product_variant = {
                             "variant_id": self.extract_variant_id(
                                 variant),
-                            "size": self.extract_size(variant),
+                            "size": self.extract_size(variant, product["title"]),
                             "price": self.extract_price(
                                 variant),
                             "is_sold_out": self.is_sold_out(
@@ -104,8 +104,11 @@ class RogueWaveCoffeeScraper(ShopifyScraper):
 
         return title.strip()
 
-    def extract_size(self, variant):
-        return parse_size(variant["title"])
+    def extract_size(self, variant, title):
+        size = parse_size(variant["title"])
+        if (size == 0):
+            size = parse_size(title.split('-')[-1])
+        return size
 
     def extract_country_of_origin(self, product_details):
         if "origin" in product_details:
