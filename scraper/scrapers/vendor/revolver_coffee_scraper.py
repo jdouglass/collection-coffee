@@ -120,6 +120,8 @@ class RevolverCoffeeScraper(ShopifyScraper):
             'g': r'\d+g',
             'pods': r'\d+ pods',
             'packs': r'\d+ packs',
+            'pack': r'\d+ pack',
+            '-pack': r'\d+-pack',
             'grams': lambda p: p["variants"][0]["grams"]
         }
 
