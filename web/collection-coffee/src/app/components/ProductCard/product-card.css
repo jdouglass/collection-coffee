@@ -7,6 +7,7 @@
   border: solid 1px var(--gray-200);
   border-radius: 6px;
   overflow: hidden;
+  max-width: 500px;
 }
 
 .product-card__image-container {
