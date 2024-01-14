@@ -1,18 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import MenuIcon from "../../../../public/menuIcon.svg";
 import ExitIcon from "../../../../public/exitIcon.svg";
 import CollectionCoffeeLogo from "../../../../public/collectionCoffeeLogo.svg";
-import "./mobile-menu-button.css";
+import "./mobile-menu.css";
 import Link from "next/link";
-import AuthButton from "../AuthButton/AuthButton";
+import DiscordAltLogo from "../../../../public/discordAltLogo.svg";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 type MobileMenuProps = {
-  isSupabaseConnected: boolean;
+  children: ReactNode;
 };
 
-const MobileMenu = () => {
+const MobileMenu = ({ children }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -28,12 +29,18 @@ const MobileMenu = () => {
           </Link>
         </div>
         <div className="mobile-topnav-right">
+          <div className="mobile-topnav-right-items">
+            <Link href={`${process.env.DISCORD_INVITE_URL}`} target="_blank">
+              <DiscordAltLogo className="discord-logo" />
+            </Link>
+            <ThemeToggle />
+          </div>
           <button onClick={toggleMenu} className="mobile-topnav-button">
             {isOpen ? <ExitIcon /> : <MenuIcon />}
           </button>
         </div>
       </div>
-      {/* {isOpen ? <div>{isSupabaseConnected && <AuthButton />}</div> : null} */}
+      {isOpen ? <div className="mobile-topnav-open">{children}</div> : null}
     </div>
   );
 };

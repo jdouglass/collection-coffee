@@ -6,7 +6,8 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import { cookies } from "next/headers";
 import { createClient } from "@/app/lib/utils/supabase/server";
 import AuthButton from "../AuthButton/AuthButton";
-import MobileMenu from "../MobileMenuButton/MobileMenuButton";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import MobileAuthButton from "../MobileAuthButton/MobileAuthButton";
 
 export const TopNav = () => {
   const cookieStore = cookies();
@@ -40,7 +41,7 @@ export const TopNav = () => {
           </div>
         </div>
       </div>
-      <MobileMenu />
+      <MobileMenu>{isSupabaseConnected && <MobileAuthButton />}</MobileMenu>
     </>
   );
 };

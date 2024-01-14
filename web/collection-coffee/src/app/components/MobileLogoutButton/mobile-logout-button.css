@@ -1,0 +1,23 @@
+.mobile-logout-button {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+  color: var(--gray-900);
+  display: block;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.mobile-logout-button:hover {
+  background-color: var(--gray-200);
+}
+
+.mobile-logout-container {
+  display: flex;
+  justify-content: center;
+}

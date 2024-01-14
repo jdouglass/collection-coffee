@@ -19,9 +19,3 @@
     fill: var(--gray-300);
   }
 }
-
-@media screen and (max-width: 600px) {
-  .toggle {
-    display: none;
-  }
-}

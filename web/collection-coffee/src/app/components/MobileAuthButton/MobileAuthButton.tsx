@@ -2,10 +2,10 @@ import { createClient } from "@/app/lib/utils/supabase/server";
 import Link from "next/link";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import "./auth-button.css";
-import { LogoutButton } from "../LogoutButton/LogoutButton";
+import "./mobile-auth-button.css";
+import { MobileLogoutButton } from "../MobileLogoutButton/MobileLogoutButton";
 
-export default async function AuthButton() {
+export default async function MobileAuthButton() {
   const cookieStore = cookies();
   const supabase = createClient(cookieStore);
 
@@ -25,15 +25,21 @@ export default async function AuthButton() {
   return user ? (
     <div>
       <form action={signOut}>
-        <LogoutButton />
+        <MobileLogoutButton />
       </form>
     </div>
   ) : (
-    <div className="auth__button--container">
-      <Link href="/account/login" className="auth__button sign-in__button">
+    <div className="mobile-auth__button--container">
+      <Link
+        href="/account/login"
+        className="mobile-auth__button mobile-sign-in__button mobile-auth-button"
+      >
         Sign in
       </Link>
-      <Link href="/account/signup" className="auth__button sign-up__button">
+      <Link
+        href="/account/signup"
+        className="mobile-auth__button mobile-sign-up__button mobile-auth-button"
+      >
         Sign up
       </Link>
     </div>
