@@ -30,6 +30,9 @@ const Products = ({
   const loader = useRef(null);
   const isFetching = useRef(false);
 
+  console.log(hasMoreProducts);
+  console.log(page);
+
   // Memoize loadProducts function
   const loadProducts = useCallback(
     async (currentPage: number) => {
@@ -54,40 +57,33 @@ const Products = ({
     [fetchProducts, searchParams]
   );
 
+  const loadMoreProducts = useCallback(() => {
+    if (hasMoreProducts && !isFetching.current) {
+      loadProducts(page);
+    }
+  }, [hasMoreProducts, page, loadProducts]);
+
   useEffect(() => {
-    const observerSetup = () => {
-      const currentLoader = loader.current;
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (
-            entries[0].isIntersecting &&
-            !isFetching.current &&
-            hasMoreProducts
-          ) {
-            loadProducts(page); // Load next page of products
-          }
-        },
-        { threshold: 1.0 }
-      );
-
-      if (currentLoader) {
-        observer.observe(currentLoader);
-      }
-
-      return () => {
-        if (currentLoader) {
-          observer.unobserve(currentLoader);
+    const currentLoader = loader.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          loadMoreProducts();
         }
-      };
-    };
+      },
+      { threshold: 0.1 }
+    );
 
-    // Delay the observer setup to allow the initial page rendering
-    const observerSetupDelay = setTimeout(observerSetup, 1000); // Delay for 1 second
+    if (currentLoader) {
+      observer.observe(currentLoader);
+    }
 
     return () => {
-      clearTimeout(observerSetupDelay);
+      if (currentLoader) {
+        observer.unobserve(currentLoader);
+      }
     };
-  }, [loadProducts, page, hasMoreProducts]); // Removed unnecessary dependencies
+  }, [loadMoreProducts]);
 
   return (
     <div className="products-with-loading">
