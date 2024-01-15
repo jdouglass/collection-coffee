@@ -5,10 +5,11 @@ import { FilterUtilityBar } from "../FilterUtilityBar/FilterUtilityBar";
 import Products from "../Products/Products";
 import { ProductFetchResponse } from "@/app/page";
 import { IReferenceDataResponse } from "@/app/lib/interfaces/IReferenceDataResponse";
+import { ILastUpdatedResponse } from "@/app/lib/interfaces/ILastUpdatedResponse";
 
 type HomePageProps = {
   products: ProductFetchResponse;
-  lastUpdatedDetails: any;
+  lastUpdatedDetails: ILastUpdatedResponse;
   searchParams: { [key: string]: string | string[] | undefined };
   getProducts: (
     searchParams: {

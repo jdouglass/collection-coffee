@@ -6,9 +6,10 @@ import "./filter-utility-bar.css";
 import ProductResultsCount from "../ProductResultsCount/ProductResultsCount";
 import LastUpdatedDetails from "../LastUpdatedDetails/LastUpdatedDetails";
 import FilterIcon from "../../../../public/filterAltIcon.svg";
+import { ILastUpdatedResponse } from "@/app/lib/interfaces/ILastUpdatedResponse";
 
 type FilterUtilityBarProps = {
-  lastUpdatedDetails: { lastUpdatedDateTime: Date; isScraperRunning: boolean };
+  lastUpdatedDetails: ILastUpdatedResponse;
   totalCount: number;
   toggleMobileFilterBar: () => void;
 };

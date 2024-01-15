@@ -1,4 +1,5 @@
 import { HomePage } from "./components/HomePage/HomePage";
+import { ILastUpdatedResponse } from "./lib/interfaces/ILastUpdatedResponse";
 import { IProductResponse } from "./lib/interfaces/IProductResponse";
 import { IReferenceDataResponse } from "./lib/interfaces/IReferenceDataResponse";
 import "./page.css";
@@ -49,9 +50,9 @@ export async function getProducts(
   return res.json();
 }
 
-async function getLastUpdatedDetails() {
+async function getLastUpdatedDetails(): Promise<ILastUpdatedResponse> {
   const res = await fetch(`${process.env.API_BASE_URL}/api/v1/last-updated`, {
-    next: { revalidate: 60 },
+    cache: "no-store",
   });
 
   if (!res.ok) {
@@ -69,6 +70,8 @@ const Home = async ({
   const products = await getProducts(searchParams);
   const lastUpdatedDetails = await getLastUpdatedDetails();
   const referenceData = await getReferenceData();
+
+  console.log(lastUpdatedDetails);
   return (
     <main className="home-container">
       <HomePage
