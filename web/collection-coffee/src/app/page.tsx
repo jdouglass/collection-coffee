@@ -36,11 +36,7 @@ export async function getProducts(
       params.append(key, value);
     }
   }
-  console.log(
-    `${process.env.API_BASE_URL}/api/v1/products?${params.toString()}${
-      params.toString() !== "" ? "&" : ""
-    }${page ? `page=${page}` : ""}`
-  );
+
   const res = await fetch(
     `${process.env.API_BASE_URL}/api/v1/products?${params.toString()}${
       params.toString() !== "" ? "&" : ""

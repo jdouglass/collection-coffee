@@ -30,6 +30,8 @@ const Products = ({
   const loader = useRef(null);
   const isFetching = useRef(false);
 
+  console.log(products);
+
   // Memoize loadProducts function
   const loadProducts = useCallback(
     async (currentPage: number) => {
@@ -81,6 +83,13 @@ const Products = ({
       }
     };
   }, [loadMoreProducts]);
+
+  // useEffect for handling changes in searchParams
+  useEffect(() => {
+    setProducts(initialProducts);
+    setPage(2);
+    loadProducts(1);
+  }, [searchParams, initialProducts, loadProducts]);
 
   return (
     <div className="products-with-loading">
