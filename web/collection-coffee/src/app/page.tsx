@@ -71,7 +71,6 @@ const Home = async ({
   const lastUpdatedDetails = await getLastUpdatedDetails();
   const referenceData = await getReferenceData();
 
-  console.log(lastUpdatedDetails);
   return (
     <main className="home-container">
       <HomePage
