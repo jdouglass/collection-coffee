@@ -8,7 +8,7 @@ import { IReferenceDataResponse } from "@/app/lib/interfaces/IReferenceDataRespo
 import { ILastUpdatedResponse } from "@/app/lib/interfaces/ILastUpdatedResponse";
 
 type HomePageProps = {
-  products: ProductFetchResponse;
+  initialProducts: ProductFetchResponse;
   lastUpdatedDetails: ILastUpdatedResponse;
   searchParams: { [key: string]: string | string[] | undefined };
   getProducts: (
@@ -21,7 +21,7 @@ type HomePageProps = {
 };
 
 export const HomePage = ({
-  products,
+  initialProducts,
   lastUpdatedDetails,
   searchParams,
   getProducts,
@@ -44,10 +44,18 @@ export const HomePage = ({
       <div className="products-utility__container">
         <FilterUtilityBar
           lastUpdatedDetails={lastUpdatedDetails}
-          totalCount={products.totalCount ? (products.totalCount as number) : 0}
+          totalCount={
+            initialProducts.totalCount
+              ? (initialProducts.totalCount as number)
+              : 0
+          }
           toggleMobileFilterBar={toggleMobileFilterBar}
         />
-        <Products searchParams={searchParams} fetchProducts={getProducts} />
+        <Products
+          initialProducts={initialProducts.products}
+          searchParams={searchParams}
+          fetchProducts={getProducts}
+        />
       </div>
     </>
   );

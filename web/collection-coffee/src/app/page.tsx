@@ -36,6 +36,11 @@ export async function getProducts(
       params.append(key, value);
     }
   }
+  console.log(
+    `${process.env.API_BASE_URL}/api/v1/products?${params.toString()}${
+      params.toString() !== "" ? "&" : ""
+    }${page ? `page=${page}` : ""}`
+  );
   const res = await fetch(
     `${process.env.API_BASE_URL}/api/v1/products?${params.toString()}${
       params.toString() !== "" ? "&" : ""
@@ -74,7 +79,7 @@ const Home = async ({
   return (
     <main className="home-container">
       <HomePage
-        products={products}
+        initialProducts={products}
         lastUpdatedDetails={lastUpdatedDetails}
         searchParams={searchParams}
         getProducts={getProducts}

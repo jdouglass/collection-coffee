@@ -7,6 +7,7 @@ import LoadingDots from "../LoadingSpinner/LoadingDots";
 import "./products.css";
 
 type ProductsProps = {
+  initialProducts: IProductResponse[];
   searchParams: {
     [key: string]: string | string[] | undefined;
   };
@@ -18,9 +19,13 @@ type ProductsProps = {
   ) => Promise<ProductFetchResponse>;
 };
 
-const Products = ({ searchParams, fetchProducts }: ProductsProps) => {
-  const [products, setProducts] = useState<IProductResponse[]>([]);
-  const [page, setPage] = useState(1);
+const Products = ({
+  initialProducts,
+  searchParams,
+  fetchProducts,
+}: ProductsProps) => {
+  const [products, setProducts] = useState<IProductResponse[]>(initialProducts);
+  const [page, setPage] = useState(2);
   const [hasMoreProducts, setHasMoreProducts] = useState(true);
   const loader = useRef(null);
   const isFetching = useRef(false);
@@ -36,7 +41,7 @@ const Products = ({ searchParams, fetchProducts }: ProductsProps) => {
             ? newProducts.products
             : [...prev, ...newProducts.products]
         );
-        setHasMoreProducts(newProducts.products.length === 12); // Assuming 12 is your pagination size
+        setHasMoreProducts(newProducts.products.length === 12);
         if (newProducts.products.length > 0) {
           setPage(currentPage + 1);
         }
@@ -50,33 +55,37 @@ const Products = ({ searchParams, fetchProducts }: ProductsProps) => {
   );
 
   useEffect(() => {
-    setProducts([]);
-    loadProducts(1);
-  }, [loadProducts]);
+    const observerSetup = () => {
+      const currentLoader = loader.current;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (
+            entries[0].isIntersecting &&
+            !isFetching.current &&
+            hasMoreProducts
+          ) {
+            loadProducts(page); // Load next page of products
+          }
+        },
+        { threshold: 1.0 }
+      );
 
-  useEffect(() => {
-    const currentLoader = loader.current;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (
-          entries[0].isIntersecting &&
-          !isFetching.current &&
-          hasMoreProducts
-        ) {
-          loadProducts(page); // Load next page of products
+      if (currentLoader) {
+        observer.observe(currentLoader);
+      }
+
+      return () => {
+        if (currentLoader) {
+          observer.unobserve(currentLoader);
         }
-      },
-      { threshold: 1.0 }
-    );
+      };
+    };
 
-    if (currentLoader) {
-      observer.observe(currentLoader);
-    }
+    // Delay the observer setup to allow the initial page rendering
+    const observerSetupDelay = setTimeout(observerSetup, 1000); // Delay for 1 second
 
     return () => {
-      if (currentLoader) {
-        observer.unobserve(currentLoader);
-      }
+      clearTimeout(observerSetupDelay);
     };
   }, [loadProducts, page, hasMoreProducts]); // Removed unnecessary dependencies
 
