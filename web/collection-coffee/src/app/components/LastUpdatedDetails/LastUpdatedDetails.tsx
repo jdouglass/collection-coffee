@@ -27,9 +27,7 @@ const LastUpdatedDetails = ({
         <div className="last-updated-details-value">{formattedDate}</div>
       </div>
       <span
-        className={`scraper-indicator ${
-          isScraperRunning ? "running" : "stopped"
-        }`}
+        className={`scraper-indicator ${isScraperRunning ? "running" : ""}`}
       ></span>
     </div>
   );
