@@ -10,7 +10,9 @@ export interface ProductFetchResponse {
 }
 
 export async function getReferenceData(): Promise<IReferenceDataResponse> {
-  const res = await fetch(`${process.env.API_BASE_URL}/api/v1/reference-data`);
+  const res = await fetch(`${process.env.API_BASE_URL}/api/v1/reference-data`, {
+    cache: "no-store",
+  });
   if (!res.ok) {
     throw new Error("Failed to fetch reference data");
   }
@@ -41,7 +43,7 @@ export async function getProducts(
     `${process.env.API_BASE_URL}/api/v1/products?${params.toString()}${
       params.toString() !== "" ? "&" : ""
     }${page ? `page=${page}` : ""}`,
-    { next: { revalidate: 60 } }
+    { cache: "no-store" }
   );
 
   if (!res.ok) {
