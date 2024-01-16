@@ -2,10 +2,10 @@
 import { useState } from "react";
 import { FilterBar } from "../FilterBar/FilterBar";
 import { FilterUtilityBar } from "../FilterUtilityBar/FilterUtilityBar";
-import Products from "../Products/Products";
 import { ProductFetchResponse } from "@/app/page";
 import { IReferenceDataResponse } from "@/app/lib/interfaces/IReferenceDataResponse";
 import { ILastUpdatedResponse } from "@/app/lib/interfaces/ILastUpdatedResponse";
+import Products from "../Products/Products";
 
 type HomePageProps = {
   initialProducts: ProductFetchResponse;
