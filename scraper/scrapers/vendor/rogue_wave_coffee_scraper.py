@@ -1,3 +1,4 @@
+from utils.error_handler import handle_exception
 from scrapers.base.shopify_scraper import ShopifyScraper
 from helpers.country_to_continent_mapper import get_continent
 from helpers.variety_normalizer import normalize_variety_names
@@ -10,7 +11,6 @@ import re
 from bs4 import BeautifulSoup
 from helpers.variety_extractor import extract_varieties
 from helpers.country_name_remover import remove_country_names
-import traceback
 
 
 class RogueWaveCoffeeScraper(ShopifyScraper):
@@ -62,9 +62,8 @@ class RogueWaveCoffeeScraper(ShopifyScraper):
 
                     processed_product["variants"] = processed_product_variants
                     processed_products.append(processed_product)
-            except Exception:
-                error_message = f"{self.vendor}\n\n{traceback.format_exc()}"
-                self.email_notifier.send_error_notification(error_message)
+            except Exception as e:
+                handle_exception(e, context_info=f"Error processing product from vendor: {self.vendor}\n{self.build_product_url(handle)}")
 
         return processed_products
 

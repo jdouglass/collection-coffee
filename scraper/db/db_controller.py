@@ -6,7 +6,7 @@ from utils.print_once import check_use_database
 from config.logger_config import logger
 import traceback
 from utils.email_notifier import EmailNotifier
-from config.config import DEVELOPMENT_MODE
+from config.config_loader import is_production
 
 
 class DatabaseController:
@@ -104,7 +104,7 @@ class DatabaseController:
                     product_id = cursor.fetchone()[0]
             except MySQLdb.Error as e:
                 error_message = traceback.format_exc()
-                if not DEVELOPMENT_MODE:
+                if not is_production:
                     self.email_notifier.send_error_notification(error_message)
                 logger.error(
                     f"Error inserting product {product}: {error_message}")
@@ -164,7 +164,7 @@ class DatabaseController:
                             ))
                 except MySQLdb.Error as e:
                     error_message = traceback.format_exc()
-                    if not DEVELOPMENT_MODE:
+                    if not is_production:
                         self.email_notifier.send_error_notification(
                             error_message)
                     logger.error(

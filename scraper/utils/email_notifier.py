@@ -1,17 +1,14 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from dotenv import load_dotenv
-import os
+from config.config_loader import get_env_variable
 from config.logger_config import logger
-
-load_dotenv()
 
 
 class EmailNotifier:
     def __init__(self):
-        self.email_address = os.environ.get('EMAIL_ADDRESS')
-        self.password = os.environ.get('EMAIL_PASSWORD')
+        self.email_address = get_env_variable('EMAIL_ADDRESS')
+        self.password = get_env_variable('EMAIL_PASSWORD')
         self.server = 'smtp.gmail.com'
         self.port = 587
 

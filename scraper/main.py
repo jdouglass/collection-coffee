@@ -1,7 +1,8 @@
 from config.logger_config import logger
 from data.coffee_vendors_data import coffee_vendors_data
 from utils.scraper_scheduler import ScraperScheduler
-from config.config import ENABLE_CRON_JOB, DEVELOPMENT_MODE, USE_DATABASE
+from config.config import ENABLE_CRON_JOB, USE_DATABASE
+from config.config_loader import is_production
 import argparse
 
 SCRAPER_CLASSES = {
@@ -58,9 +59,11 @@ def main():
 
 if __name__ == "__main__":
     if USE_DATABASE:
-        confirm_proceed("USE_DATABASE flag is set to True.")
+        confirm_proceed("USE_DATABASE feature flag is set to True.")
 
-    if not DEVELOPMENT_MODE:
-        confirm_proceed("DEVELOPMENT_MODE is set to False.")
+    print(is_production)
+
+    if is_production:
+        confirm_proceed("is_production feature flag is set to True.")
 
     main()

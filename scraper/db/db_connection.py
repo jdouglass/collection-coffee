@@ -1,17 +1,13 @@
 import psycopg2
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
+from config.config_loader import get_env_variable
 
 class DBConnection:
     def __init__(self):
-        self.host = os.environ.get('DB_HOST')
-        self.port = os.environ.get('DB_PORT')
-        self.user = os.environ.get('DB_USERNAME')
-        self.password = os.environ.get('DB_PASSWORD')
-        self.db_name = os.environ.get('DB_NAME')
+        self.host = get_env_variable('DB_HOST')
+        self.port = get_env_variable('DB_PORT')
+        self.user = get_env_variable('DB_USERNAME')
+        self.password = get_env_variable('DB_PASSWORD')
+        self.db_name = get_env_variable('DB_NAME')
 
     def get_connection(self):
         connection = psycopg2.connect(

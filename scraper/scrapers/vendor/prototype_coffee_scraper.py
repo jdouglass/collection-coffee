@@ -1,17 +1,14 @@
+from utils.error_handler import handle_exception
 from scrapers.base.square_space_scraper import SquareSpaceScraper
 from helpers.country_to_continent_mapper import get_continent
 from helpers.variety_normalizer import normalize_variety_names
 from helpers.size_parser import parse_size
 from helpers.country_name_validator import validate_country_name
 from config.constants import UNKNOWN
-from config.config import DEVELOPMENT_MODE
 from enums.product_type import ProductType
-import requests
 import re
 from bs4 import BeautifulSoup
 from helpers.variety_extractor import extract_varieties
-import traceback
-from config.logger_config import logger
 
 
 class PrototypeCoffeeScraper(SquareSpaceScraper):
@@ -62,11 +59,8 @@ class PrototypeCoffeeScraper(SquareSpaceScraper):
 
                     processed_product["variants"] = processed_product_variants
                     processed_products.append(processed_product)
-            except Exception:
-                error_message = f"{self.vendor}\n\n{traceback.format_exc()}"
-                if not DEVELOPMENT_MODE:
-                    self.email_notifier.send_error_notification(error_message)
-                logger.error(error_message)
+            except Exception as e:
+                handle_exception(e, context_info=f"Error processing product from vendor: {self.vendor}\n{self.build_product_url(handle)}")
 
         return processed_products
 

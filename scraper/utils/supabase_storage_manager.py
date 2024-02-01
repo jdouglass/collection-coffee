@@ -5,15 +5,14 @@ from supabase import create_client, Client, StorageException
 import hashlib
 from PIL import Image
 from io import BytesIO
-from dotenv import load_dotenv
+from config.config_loader import get_env_variable
 
 
 class SupabaseStorageManager():
     def __init__(self):
-        load_dotenv()
-        self.supabase_url = os.getenv("SUPABASE_URL")
-        self.supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-        self.bucket_name = os.getenv("SUPABASE_BUCKET_NAME")
+        self.supabase_url = get_env_variable("SUPABASE_URL")
+        self.supabase_key = get_env_variable("SUPABASE_SERVICE_ROLE_KEY")
+        self.bucket_name = get_env_variable("SUPABASE_BUCKET_NAME")
         self.supabase_client: Client = create_client(
             self.supabase_url, self.supabase_key)
 
