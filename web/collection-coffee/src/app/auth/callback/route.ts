@@ -9,7 +9,6 @@ export async function GET(request: Request) {
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
   const resetPasswordToken = requestUrl.searchParams.get("token");
-  console.log(resetPasswordToken);
 
   if (resetPasswordToken) {
     const cookieStore = cookies();

@@ -30,8 +30,6 @@ const Products = ({
   const loader = useRef(null);
   const isFetching = useRef(false);
 
-  console.log(products);
-
   // Memoize loadProducts function
   const loadProducts = useCallback(
     async (currentPage: number) => {

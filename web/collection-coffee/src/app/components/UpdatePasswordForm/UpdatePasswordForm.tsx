@@ -13,8 +13,6 @@ export default function UpdatePasswordForm({
 
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
-    console.log(formData.get("password") as string);
-    console.log(formData.get("passwordConfirm") as string);
 
     if (
       (formData.get("password") as string) ===
