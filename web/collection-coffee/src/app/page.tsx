@@ -4,19 +4,37 @@ import { IProductResponse } from "./lib/interfaces/IProductResponse";
 import { IReferenceDataResponse } from "./lib/interfaces/IReferenceDataResponse";
 import "./page.css";
 
+export const dynamic = "force-dynamic";
+
 export interface ProductFetchResponse {
   products: IProductResponse[];
   totalCount: number;
 }
 
 async function getReferenceData(): Promise<IReferenceDataResponse> {
-  const res = await fetch(`${process.env.API_BASE_URL}/api/v1/reference-data`, {
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    throw new Error("Failed to fetch reference data");
+  try {
+    const res = await fetch(
+      `${process.env.API_BASE_URL}/api/v1/reference-data`,
+      {
+        cache: "no-store",
+      }
+    );
+    if (!res.ok) {
+      throw new Error("Failed to fetch reference data");
+    }
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return {
+      brands: [""],
+      vendors: [""],
+      tastingNotes: [""],
+      varieties: [""],
+      continents: [""],
+      countries: [""],
+      processCategories: [""],
+    };
   }
-  return res.json();
 }
 
 async function getProducts(
@@ -38,31 +56,43 @@ async function getProducts(
       params.append(key, value);
     }
   }
+  try {
+    const res = await fetch(
+      `${process.env.API_BASE_URL}/api/v1/products?${params.toString()}${
+        params.toString() !== "" ? "&" : ""
+      }${page ? `page=${page}` : ""}`,
+      { cache: "no-store" }
+    );
 
-  const res = await fetch(
-    `${process.env.API_BASE_URL}/api/v1/products?${params.toString()}${
-      params.toString() !== "" ? "&" : ""
-    }${page ? `page=${page}` : ""}`,
-    { cache: "no-store" }
-  );
+    if (!res.ok) {
+      throw new Error("Failed to fetch products");
+    }
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return { products: [], totalCount: 0 };
   }
-
-  return res.json();
 }
 
 async function getLastUpdatedDetails(): Promise<ILastUpdatedResponse> {
-  const res = await fetch(`${process.env.API_BASE_URL}/api/v1/last-updated`, {
-    cache: "no-store",
-  });
+  try {
+    const res = await fetch(`${process.env.API_BASE_URL}/api/v1/last-updated`, {
+      cache: "no-store",
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    if (!res.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return {
+      lastUpdatedDateTime: new Date(),
+      isScraperRunning: false,
+    };
   }
-
-  return res.json();
 }
 
 const Home = async ({
