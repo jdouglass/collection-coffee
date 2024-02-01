@@ -113,22 +113,22 @@ export async function GET(request: Request) {
     sqlQuery +=
       queryParams.sort === SORT_OPTIONS.NEWEST
         ? `
-          ORDER BY p.discovered_date_time DESC
+          ORDER BY p.discovered_date_time DESC, pv.id ASC
           `
         : queryParams.sort === SORT_OPTIONS.OLDEST
         ? `
-          ORDER BY p.discovered_date_time ASC
+          ORDER BY p.discovered_date_time ASC, pv.id ASC
           `
         : queryParams.sort === SORT_OPTIONS.ASCENDING
         ? `
-          ORDER BY pv.product_price ASC
+          ORDER BY pv.product_price ASC, pv.id ASC
           `
         : queryParams.sort === SORT_OPTIONS.DESCENDING
         ? `
-          ORDER BY pv.product_price DESC
+          ORDER BY pv.product_price DESC, pv.id ASC
           `
         : `
-          ORDER BY p.discovered_date_time DESC
+          ORDER BY p.discovered_date_time DESC, pv.id ASC
           `;
 
     const { rows } = await client.query(sqlQuery, values);

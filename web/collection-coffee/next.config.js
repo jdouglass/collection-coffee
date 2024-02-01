@@ -29,6 +29,9 @@ const nextConfig = {
   },
   env: {
     DISCORD_INVITE_URL: process.env.DISCORD_INVITE_URL,
+    API_BASE_URL: process.env.API_BASE_URL,
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   },
   images: {
     remotePatterns: [
