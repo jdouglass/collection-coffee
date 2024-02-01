@@ -42,7 +42,7 @@ class HatchCoffeeRoasterScraper(BaseScraper):
                         "brand": self.vendor,
                         "vendor": self.vendor,
                         "title": title,
-                        "handle": self.extract_handle(url),
+                        "handle": (handle := self.extract_handle(url)),
                         "product_url": url,
                         "image_url": self.extract_image_url(soup),
                         "is_decaf": self.is_decaf(title),
@@ -81,7 +81,7 @@ class HatchCoffeeRoasterScraper(BaseScraper):
                     processed_product["variants"] = processed_product_variants
                     processed_products.append(processed_product)
                 except Exception as e:
-                    handle_exception(e, context_info=f"Error processing product from vendor: {self.vendor}")
+                    handle_exception(e, context_info=f"Error processing product from vendor: {self.vendor}\n{self.build_product_url(handle)}")
 
         return processed_products
 
