@@ -9,7 +9,7 @@ export interface ProductFetchResponse {
   totalCount: number;
 }
 
-export async function getReferenceData(): Promise<IReferenceDataResponse> {
+async function getReferenceData(): Promise<IReferenceDataResponse> {
   const res = await fetch(`${process.env.API_BASE_URL}/api/v1/reference-data`, {
     cache: "no-store",
   });
@@ -19,7 +19,7 @@ export async function getReferenceData(): Promise<IReferenceDataResponse> {
   return res.json();
 }
 
-export async function getProducts(
+async function getProducts(
   searchParams: {
     [key: string]: string | string[] | undefined;
   },

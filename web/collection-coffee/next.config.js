@@ -32,13 +32,16 @@ const nextConfig = {
     API_BASE_URL: process.env.API_BASE_URL,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    BUCKET_PROTOCOL: process.env.BUCKET_PROTOCOL,
+    BUCKET_HOSTNAME: process.env.BUCKET_HOSTNAME,
+    BUCKET_PORT: process.env.BUCKET_PORT,
   },
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "54321",
+        protocol: process.env.BUCKET_PROTOCOL,
+        hostname: process.env.BUCKET_HOSTNAME,
+        port: process.env.BUCKET_PORT,
         pathname: "/storage/v1/object/public/product-images/**",
       },
     ],
