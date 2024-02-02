@@ -2,7 +2,16 @@ from config.constants import LBS_TO_GRAMS, KG_TO_GRAMS
 
 
 def parse_size(size):
-    size = size.lower()
+    size = size.lower().replace(' ', '')
+    if 'x' in size and 'g' in size:
+        # Handle "2x200g" case by splitting at 'x' and then at 'g'
+        parts = size.split('x')
+        if len(parts) == 2 and 'g' in parts[1]:
+            try:
+                num, grams = int(parts[0]), int(parts[1].split('g')[0])
+                return num * grams
+            except ValueError:
+                return 0
     if '-kg' in size:
         return int(float(size.split('-kg')[0].strip()) * KG_TO_GRAMS)
     elif '-g' in size:
