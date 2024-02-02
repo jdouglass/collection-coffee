@@ -1,5 +1,6 @@
 def normalize_brand_name(brand):
     mapping = {
+        'anchored': 'Anchored Coffee',
         'barn': 'The Barn',
         'dak': 'DAK Coffee Roasters',
         'ethica': 'Ethica Coffee Roasters',
