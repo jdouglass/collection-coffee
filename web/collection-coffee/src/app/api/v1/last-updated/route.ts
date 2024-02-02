@@ -6,6 +6,8 @@ interface LastUpdatedResponse {
   end_time: Date;
 }
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     const client = await pool.connect();

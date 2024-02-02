@@ -5,6 +5,8 @@ import { paramToColumnMapping } from "@/app/lib/utils/api/productQueryMappings";
 import { IProductResponse } from "@/app/lib/interfaces/IProductResponse";
 import { SORT_OPTIONS } from "@/app/lib/enums/sortOptions";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const queryParams: IQueryParams = {};
