@@ -7,6 +7,7 @@ from config.logger_config import logger
 import traceback
 from utils.email_notifier import EmailNotifier
 from config.config_loader import is_production
+from enums.vendor_name import VendorName
 
 
 class DatabaseController:
@@ -63,7 +64,24 @@ class DatabaseController:
             # Insert product data into Product table
             product_id = None
             try:
-                if existing_product:
+                if existing_product and product["vendor"] == VendorName.HATCH.value:
+                    # Update the existing product without adding the date time
+                    cursor.execute(update_product_without_date_time_query, (
+                        product["brand"],
+                        product["country_of_origin"],
+                        product["vendor"],
+                        product["process_category"],
+                        product["product_type"],
+                        product["title"],
+                        product["process"],
+                        product["product_url"],
+                        product["handle"],
+                        product["is_decaf"],
+                        # This identifies the record to update
+                        product["product_url"]
+                    ))
+                    product_id = existing_product[0]
+                elif existing_product:
                     # Update the existing product
                     cursor.execute(update_product_query, (
                         product["brand"],

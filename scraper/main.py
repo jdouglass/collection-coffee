@@ -61,8 +61,6 @@ if __name__ == "__main__":
     if USE_DATABASE:
         confirm_proceed("USE_DATABASE feature flag is set to True.")
 
-    print(is_production)
-
     if is_production:
         confirm_proceed("is_production feature flag is set to True.")
 

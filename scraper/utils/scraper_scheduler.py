@@ -65,7 +65,7 @@ class ScraperScheduler:
             logger.info("Scheduling all scrapers...")
             for vendor in self.scraper_classes.keys():
                 self.scheduler.add_job(
-                    self.run_scraper, 'interval', minutes=60, args=[vendor])
+                    self.run_scraper, 'cron', minute=0, args=[vendor])
 
     def start(self, specific_vendor=None):
         if ENABLE_CRON_JOB:

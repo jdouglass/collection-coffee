@@ -77,6 +77,23 @@ update_product_query = """
         product_url = %s;
 """
 
+update_product_without_date_time_query = """
+    UPDATE product
+    SET
+        brand_id = (SELECT id FROM brand WHERE name = %s),
+        country_of_origin_id = (SELECT id FROM country WHERE name = %s),
+        vendor_id = (SELECT id FROM vendor WHERE name = %s),
+        process_category_id = (SELECT id FROM process_category WHERE name = %s),
+        product_type_id = (SELECT id FROM product_type WHERE name = %s),
+        title = %s,
+        process = %s,
+        product_url = %s,
+        product_handle = %s,
+        is_decaf = %s
+    WHERE
+        product_url = %s;
+"""
+
 insert_product_variant_query = """
     INSERT INTO product_variant (
         product_id, 

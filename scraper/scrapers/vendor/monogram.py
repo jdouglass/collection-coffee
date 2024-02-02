@@ -27,7 +27,6 @@ class MonogramScraper(ShopifyScraper):
                 try:
                     processed_product_variants = []
                     product_details = self.get_product_details(product_url)
-                    # print(product_details)
                     processed_product = {
                         "brand": self.extract_brand(product),
                         "vendor": self.vendor,
@@ -123,12 +122,9 @@ class MonogramScraper(ShopifyScraper):
         if 'VARIETY:' in product["body_html"]:
             varieties = product["body_html"].split(
                 'VARIETY:')[1].split('<')[0].strip()
-            # print(varieties)
             variety_list = [x.strip().title() for x in varieties.split(',')]
-            # print(variety_list)
             return extract_varieties(' '.join(variety_list))
         for content in product_details["body_content"]:
-            # print("in here")
             if 'Variety:' in content:
                 varieties = content.replace('Variety:', '').strip()
                 variety_list = [x.strip().title()
