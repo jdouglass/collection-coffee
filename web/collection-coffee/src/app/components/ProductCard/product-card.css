@@ -112,4 +112,10 @@
   .product-card-link {
     color: white;
   }
+
+  .product-card-sold-by-vendor {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+  }
 }
