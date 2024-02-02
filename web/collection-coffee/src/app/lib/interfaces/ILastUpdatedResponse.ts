@@ -1,4 +1,4 @@
 export interface ILastUpdatedResponse {
-  lastUpdatedDateTime: string;
+  lastUpdatedDateTime: Date;
   isScraperRunning: boolean;
 }
