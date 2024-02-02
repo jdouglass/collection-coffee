@@ -51,8 +51,16 @@
 }
 
 .product-card-sold-by-info {
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--gray-700);
+  display: flex;
+}
+
+.product-card-sold-by-vendor {
+  font-size: 13px;
+  font-weight: 600;
+  color: black;
 }
 
 .product-card-main-info-header {

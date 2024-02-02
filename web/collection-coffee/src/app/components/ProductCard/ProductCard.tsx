@@ -49,7 +49,10 @@ export const ProductCard = (product: IProductCard) => {
             <div className="product-card-info-top-left">
               <div className="product-card-brand">{brand}</div>
               <div className="product-card-title">{title}</div>
-              <div className="product-card-sold-by-info">Sold by {vendor}</div>
+              <div className="product-card-sold-by-info">
+                Sold by&nbsp;
+                <div className="product-card-sold-by-vendor">{vendor}</div>
+              </div>
             </div>
             <div className="product-card-info-top-right">
               <div className="product-card-price">${productPrice}</div>
