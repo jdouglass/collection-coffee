@@ -4,8 +4,6 @@ import { IProductResponse } from "./lib/interfaces/IProductResponse";
 import { IReferenceDataResponse } from "./lib/interfaces/IReferenceDataResponse";
 import "./page.css";
 
-export const dynamic = "force-dynamic";
-
 export interface ProductFetchResponse {
   products: IProductResponse[];
   totalCount: number;
@@ -14,7 +12,8 @@ export interface ProductFetchResponse {
 async function getReferenceData(): Promise<IReferenceDataResponse> {
   try {
     const res = await fetch(
-      `${process.env.API_BASE_URL}/api/v1/reference-data`
+      `${process.env.API_BASE_URL}/api/v1/reference-data`,
+      { next: { revalidate: 60 } }
     );
     if (!res.ok) {
       throw new Error("Failed to fetch reference data");
@@ -57,7 +56,8 @@ async function getProducts(
     const res = await fetch(
       `${process.env.API_BASE_URL}/api/v1/products?${params.toString()}${
         params.toString() !== "" ? "&" : ""
-      }${page ? `page=${page}` : ""}`
+      }${page ? `page=${page}` : ""}`,
+      { next: { revalidate: 60 } }
     );
 
     if (!res.ok) {
@@ -73,7 +73,9 @@ async function getProducts(
 
 async function getLastUpdatedDetails(): Promise<ILastUpdatedResponse> {
   try {
-    const res = await fetch(`${process.env.API_BASE_URL}/api/v1/last-updated`);
+    const res = await fetch(`${process.env.API_BASE_URL}/api/v1/last-updated`, {
+      next: { revalidate: 60 },
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch products");
