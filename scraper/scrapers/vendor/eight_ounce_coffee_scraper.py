@@ -35,7 +35,7 @@ class EightOunceCoffeeScraper(ShopifyScraper):
                         "vendor": self.vendor,
                         "title": self.extract_title(product),
                         "handle": (handle := self.extract_handle(product)),
-                        "product_url": self.build_product_url(handle),
+                        "product_url": (product_url := self.build_product_url(handle)),
                         "image_url": self.extract_image_url(product),
                         "is_decaf": self.is_decaf(product, product_details),
                         "product_type": self.extract_product_type(product, product_details),
@@ -64,7 +64,8 @@ class EightOunceCoffeeScraper(ShopifyScraper):
                     processed_product["variants"] = processed_product_variants
                     processed_products.append(processed_product)
             except Exception as e:
-                handle_exception(e, context_info=f"Error processing product from vendor: {self.vendor}\n{self.build_product_url(handle)}")
+                handle_exception(e, context_info=f"Error processing product from vendor: {self.vendor}\n{product_url}")
+                continue  # continue to next product
 
         return processed_products
 
