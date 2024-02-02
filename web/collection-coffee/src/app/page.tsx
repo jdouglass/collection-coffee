@@ -83,7 +83,7 @@ async function getLastUpdatedDetails(): Promise<ILastUpdatedResponse> {
   } catch (error) {
     console.error(error);
     return {
-      lastUpdatedDateTime: new Date(),
+      lastUpdatedDateTime: "00/00/000, 00:00:00",
       isScraperRunning: false,
     };
   }
