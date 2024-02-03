@@ -61,6 +61,20 @@ export const ProductCard = (product: IProductCard) => {
               </div>
             </div>
           </div>
+          <div className="product-card-info-top-small">
+            <div className="product-card-brand">{brand}</div>
+            <div className="product-card-title">{title}</div>
+            <div className="product-card-price-size">
+              <div className="product-card-price">${productPrice}</div>
+              <div className="product-card-size">
+                &nbsp;for {productSize.split(".")[0]}g
+              </div>
+            </div>
+            <div className="product-card-sold-by-info-small">
+              Sold by&nbsp;
+              <div className="product-card-sold-by-vendor">{vendor}</div>
+            </div>
+          </div>
         </Link>
       </div>
       <div className="product-card-info-border" />
