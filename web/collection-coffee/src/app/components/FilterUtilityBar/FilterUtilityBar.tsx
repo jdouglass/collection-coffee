@@ -7,6 +7,7 @@ import ProductResultsCount from "../ProductResultsCount/ProductResultsCount";
 import LastUpdatedDetails from "../LastUpdatedDetails/LastUpdatedDetails";
 import FilterIcon from "../../../../public/filterAltIcon.svg";
 import { ILastUpdatedResponse } from "@/app/lib/interfaces/ILastUpdatedResponse";
+import ScraperStatus from "../ScraperStatus/ScraperStatus";
 
 type FilterUtilityBarProps = {
   lastUpdatedDetails: ILastUpdatedResponse;
@@ -37,9 +38,9 @@ export const FilterUtilityBar = ({
       <div className="product-results-count-section">
         <ProductResultsCount totalCount={totalCount ? totalCount : 0} />
       </div>
-      <div className="combined-filter-utility-data">
+      <div className="mobile-filter-utility-bar">
         <ProductResultsCount totalCount={totalCount ? totalCount : 0} />
-        <div className="smaller-last-updated-details-section">
+        <div className="mobile-last-updated-details">
           <LastUpdatedDetails {...lastUpdatedDetails} />
         </div>
       </div>

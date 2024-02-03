@@ -19,7 +19,7 @@
   display: none;
 }
 
-.combined-filter-utility-data {
+.mobile-filter-utility-bar {
   display: none;
 }
 
@@ -55,7 +55,11 @@
     justify-content: flex-end;
   }
 
-  .smaller-last-updated-details-section {
+  .mobile-filter-utility-bar {
+    display: block;
+  }
+
+  .mobile-last-updated-details {
     display: flex;
     justify-content: flex-end;
   }

@@ -1,3 +1,4 @@
+import ScraperStatus from "../ScraperStatus/ScraperStatus";
 import "./last-updated-details.css";
 
 type LastUpdatedDetailsProps = {
@@ -26,9 +27,7 @@ const LastUpdatedDetails = ({
         Last Updated:&nbsp;
         <div className="last-updated-details-value">{formattedDate}</div>
       </div>
-      <span
-        className={`scraper-indicator ${isScraperRunning ? "running" : ""}`}
-      ></span>
+      <ScraperStatus />
     </div>
   );
 };
