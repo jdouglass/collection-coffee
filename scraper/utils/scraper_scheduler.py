@@ -4,6 +4,7 @@ from db.db_controller import DatabaseController
 from config.config import PRINT_PRODUCTS, ENABLE_CRON_JOB, USE_DATABASE
 from config.logger_config import logger
 from apscheduler.schedulers.background import BackgroundScheduler
+from enums.vendor_name import VendorName
 from utils.email_notifier import EmailNotifier
 
 
@@ -60,12 +61,14 @@ class ScraperScheduler:
         if vendor:
             logger.info(f"Scheduling scraper for vendor: {vendor}")
             self.scheduler.add_job(
-                self.run_scraper, 'interval', minutes=5, args=[vendor])
+                self.run_scraper, 'cron', minute=0, args=[vendor])
         else:
             logger.info("Scheduling all scrapers...")
             for vendor in self.scraper_classes.keys():
-                self.scheduler.add_job(
-                    self.run_scraper, 'cron', minute=0, args=[vendor])
+                if vendor == VendorName.EIGHT_OUNCE.value:
+                    self.scheduler.add_job(self.run_scraper, 'cron', minute=55, args=[vendor])
+                else :
+                    self.scheduler.add_job(self.run_scraper, 'cron', minute=0, args=[vendor])
 
     def start(self, specific_vendor=None):
         if ENABLE_CRON_JOB:
