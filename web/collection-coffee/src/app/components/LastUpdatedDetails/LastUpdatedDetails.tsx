@@ -27,7 +27,7 @@ const LastUpdatedDetails = ({
         Last Updated:&nbsp;
         <div className="last-updated-details-value">{formattedDate}</div>
       </div>
-      <ScraperStatus />
+      <ScraperStatus lastUpdatedDateTime={lastUpdatedDateTime} />
     </div>
   );
 };
