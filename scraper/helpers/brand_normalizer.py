@@ -5,6 +5,8 @@ def normalize_brand_name(brand):
         'dak': 'DAK Coffee Roasters',
         'ethica': 'Ethica Coffee Roasters',
         'firebat': 'Firebat Coffee Roasters',
+        'fried hats': 'Friedhats Coffee Roasters',
+        'fritz': 'Fritz Coffee Company',
         'hasty': 'Hasty Coffee',
         'hatch': 'Hatch Coffee Roasters',
         'house of funk': 'House of Funk Brewing Co',
