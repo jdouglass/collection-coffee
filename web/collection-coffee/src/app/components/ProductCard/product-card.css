@@ -104,6 +104,12 @@
   display: none;
 }
 
+.product-image-size-wrapper {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
 [data-theme="dark"] {
   .product-card-container {
     border-color: var(--gray-950);

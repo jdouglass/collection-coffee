@@ -44,6 +44,10 @@ const nextConfig = {
         port: process.env.BUCKET_PORT,
         pathname: "/storage/v1/object/public/product-images/**",
       },
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
+      },
     ],
   },
 };

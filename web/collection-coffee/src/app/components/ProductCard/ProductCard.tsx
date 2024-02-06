@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import "./product-card.css";
 import { SoldOutChip } from "../SoldOutChip/SoldOutChip";
 import { IProductCard } from "@/app/lib/interfaces/IProductCard";
+import Image from "next/image";
 
 export const ProductCard = (product: IProductCard) => {
   const {
@@ -29,18 +29,22 @@ export const ProductCard = (product: IProductCard) => {
               <SoldOutChip />
             </div>
           ) : null}
-          <img
-            src={imageUrl}
-            placeholder="blur"
-            alt={`${brand} ${title} coffee beans`}
-            className={`product-card-image ${
-              brand === "Monogram" ||
-              brand === "Manhattan" ||
-              vendor === "Pallet Coffee Roasters"
-                ? "object-contain"
-                : "object-cover"
-            }`}
-          />
+          <div className="product-image-size-wrapper">
+            <Image
+              fill={true}
+              src={imageUrl}
+              placeholder="blur"
+              blurDataURL={imageUrl}
+              alt={`${brand} ${title} coffee beans`}
+              className={`product-card-image ${
+                brand === "Monogram" ||
+                brand === "Manhattan" ||
+                vendor === "Pallet Coffee Roasters"
+                  ? "object-contain"
+                  : "object-cover"
+              }`}
+            />
+          </div>
         </div>
       </Link>
       <div className="product-card-info-container">
