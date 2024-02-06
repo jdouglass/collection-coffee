@@ -39,9 +39,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: process.env.BUCKET_PROTOCOL,
-        hostname: process.env.BUCKET_HOSTNAME,
-        port: process.env.BUCKET_PORT,
+        protocol: "https",
+        hostname: "**.supabase.co",
         pathname: "/storage/v1/object/public/product-images/**",
       },
       {
