@@ -4,6 +4,7 @@ import { ThemeProvider } from "./lib/providers/ThemeProvider";
 import "./globals.css";
 import { TopNav } from "./components/TopNav/TopNav";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { PHProvider } from "./lib/providers/PostHogProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +20,15 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body>
-        <ThemeProvider>
-          <TopNav />
-          {children}
-          <SpeedInsights />
-        </ThemeProvider>
-      </body>
+      <PHProvider>
+        <body>
+          <ThemeProvider>
+            <TopNav />
+            {children}
+            <SpeedInsights />
+          </ThemeProvider>
+        </body>
+      </PHProvider>
     </html>
   );
 }
