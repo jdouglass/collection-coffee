@@ -1,4 +1,4 @@
-from config.logger_config import logger
+from config.logger_config import logger, clear_old_log_entries
 from data.coffee_vendors_data import coffee_vendors_data
 from utils.scraper_scheduler import ScraperScheduler
 from config.config import ENABLE_CRON_JOB, USE_DATABASE
@@ -31,6 +31,8 @@ def main():
     args = parser.parse_args()
 
     scheduler = ScraperScheduler(SCRAPER_CLASSES)
+
+    clear_old_log_entries("app.log", days_old=1)
 
     if args.vendor:
         scraper_data = SCRAPER_CLASSES.get(args.vendor)
