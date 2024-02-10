@@ -31,6 +31,12 @@ export default async function MobileAuthButton() {
   ) : (
     <div className="mobile-auth__button--container">
       <Link
+        href="/"
+        className="mobile-auth__button mobile-sign-in__button mobile-auth-button"
+      >
+        View Collection
+      </Link>
+      <Link
         href="/account/login"
         className="mobile-auth__button mobile-sign-in__button mobile-auth-button"
       >
