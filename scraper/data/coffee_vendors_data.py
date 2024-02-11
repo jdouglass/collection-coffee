@@ -85,5 +85,17 @@ coffee_vendors_data = [
         "mock_html_dom_path": "scrapers/mock_data/monogram/monogram.html",
         "currency": "CAD",
         "vendor_location": "Canada",
+    },
+    {
+        "key": VendorName.BLACK_CREEK.value,
+        "home_url": "https://blackcreekcoffee.com/",
+        "url": "https://blackcreekcoffee.com/collections/all-coffee/products.json?limit=250",
+        "product_base_url": "https://blackcreekcoffee.com/products",
+        "vendor": VendorName.BLACK_CREEK.value,
+        "scraper_class": BlackCreekCoffeeScraper,
+        "mock_data_path": "",
+        "mock_html_dom_path": "",
+        "currency": "CAD",
+        "vendor_location": "Canada",
     }
 ]

@@ -5,3 +5,4 @@ from scrapers.vendor.prototype_coffee_scraper import PrototypeCoffeeScraper
 from scrapers.vendor.revolver_coffee_scraper import RevolverCoffeeScraper
 from scrapers.vendor.rogue_wave_coffee_scraper import RogueWaveCoffeeScraper
 from scrapers.vendor.traffic_coffee_scraper import TrafficCoffeeScraper
+from scrapers.vendor.black_creek_coffee import BlackCreekCoffeeScraper

@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class VendorName(Enum):
+    BLACK_CREEK = "Black Creek Coffee"
     EIGHT_OUNCE = "Eight Ounce Coffee"
     HATCH = "Hatch Coffee Roasters"
     MONOGRAM = "Monogram Coffee"

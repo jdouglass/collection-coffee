@@ -1,8 +1,10 @@
 box
+bundle
 calendar
 cascara
 DesBarres
 garage sale
+garage time fuel
 gift card
 merch
 mini pack
