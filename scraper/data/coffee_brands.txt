@@ -19,6 +19,7 @@ Loquat
 Luna
 Middle State
 Monogram
+Nomad
 Phil & Sebastian
 Prodigal
 Prototype
