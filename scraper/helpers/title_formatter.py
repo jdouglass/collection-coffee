@@ -6,11 +6,13 @@ def title_formatter(input_string):
     title_case_list = []
 
     # Always capitalize the first word in the title
-    title_case_list.append(word_list[0].capitalize())
+    if len(word_list) > 0:
+        title_case_list.append(word_list[0].capitalize())
 
-    # Capitalize words that are not in the exception list
-    for word in word_list[1:]:
-        title_case_list.append(word if word.lower(
-        ) in title_case_exceptions else word.capitalize())
+        # Capitalize words that are not in the exception list
+        for word in word_list[1:]:
+            title_case_list.append(word if word.lower(
+            ) in title_case_exceptions else word.capitalize())
 
-    return ' '.join(title_case_list)
+        return ' '.join(title_case_list)
+    return ""

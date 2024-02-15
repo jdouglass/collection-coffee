@@ -12,6 +12,7 @@ from helpers.variety_extractor import extract_varieties
 from helpers.title_formatter import title_formatter
 import pycountry
 from enums.process_category import ProcessCategory
+import collections.abc
 
 
 class RevolverCoffeeScraper(ShopifyScraper):
@@ -192,7 +193,11 @@ class RevolverCoffeeScraper(ShopifyScraper):
             for tag in tags_to_remove:
                 content = content.replace(tag, "")
 
-            return content.split(":")[1].split("<")[0].strip()
+            content = content.split(":")
+            if len(content) >= 2:
+                content = content[1].split("<")
+                if len(content) >= 1:
+                    return content[0].strip()
         return ""
 
     def build_product_url(self, handle):
