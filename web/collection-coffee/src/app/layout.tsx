@@ -5,6 +5,7 @@ import "./globals.css";
 import { TopNav } from "./components/TopNav/TopNav";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { PHProvider } from "./lib/providers/PostHogProvider";
+import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,6 +13,13 @@ export const metadata: Metadata = {
   title: "Collection Coffee",
   description: "The one and only aggregator for speciality coffee products",
 };
+
+const PostHogPageView = dynamic(
+  () => import("./components/PostHogPageView/PostHogPageView"),
+  {
+    ssr: false,
+  }
+);
 
 export default function RootLayout({
   children,
@@ -22,6 +30,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <PHProvider>
         <body>
+          <PostHogPageView />
           <ThemeProvider>
             <TopNav />
             {children}
