@@ -121,6 +121,9 @@ class RevolverCoffeeScraper(ShopifyScraper):
             'grams': lambda p: p["variants"][0]["grams"]
         }
 
+        if 'is located' in product['body_html']:
+            product['body_html'] = product['body_html'].split('is located')[0]
+
         for unit, pattern in search_patterns.items():
             if callable(pattern):
                 size = pattern(product)
